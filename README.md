@@ -1,54 +1,181 @@
-# Elementor MCP Server & WordPress MCP Server Plugin
+# Elementor MCP Server for WordPress - AI Website Builder & Automation
 
-<p align="center">
-  <a href="https://github.com/wpFelix/elementor-mcp-server/releases/latest/download/elementor-mcp.zip"><img src="https://img.shields.io/badge/Download_Elementor_MCP_Free-Latest_Stable_ZIP-5B36D0?style=for-the-badge&amp;logo=wordpress" alt="Download the latest stable Elementor MCP Server and WordPress MCP Server plugin ZIP"></a>
-</p>
+![Elementor MCP Server for WordPress](assets/banner-1544x500.png)
+
+The open-source **Elementor MCP Server for WordPress**. Connect Claude,
+ChatGPT, Codex, Cursor, and other AI agents to Elementor to build, edit,
+inspect, and automate WordPress websites through the Model Context Protocol
+(MCP).
 
 <p align="center">
   <a href="https://github.com/wpFelix/elementor-mcp-server/releases/latest"><img src="https://img.shields.io/github/v/release/wpFelix/elementor-mcp-server?label=latest%20release" alt="Latest Elementor MCP release"></a>
-  <a href="https://github.com/wpFelix/elementor-mcp-server/actions/workflows/ci.yml"><img src="https://github.com/wpFelix/elementor-mcp-server/actions/workflows/ci.yml/badge.svg" alt="Elementor MCP Server continuous integration status"></a>
+  <a href="https://github.com/wpFelix/elementor-mcp-server/actions/workflows/ci.yml"><img src="https://github.com/wpFelix/elementor-mcp-server/actions/workflows/ci.yml/badge.svg" alt="Elementor MCP Server build and test status"></a>
+  <a href="https://github.com/wpFelix/elementor-mcp-server/stargazers"><img src="https://img.shields.io/github/stars/wpFelix/elementor-mcp-server?style=flat" alt="GitHub stars"></a>
+  <a href="https://github.com/wpFelix/elementor-mcp-server/releases"><img src="https://img.shields.io/github/downloads/wpFelix/elementor-mcp-server/total?label=downloads" alt="Elementor MCP release downloads"></a>
+  <img src="https://img.shields.io/badge/WordPress-6.9%2B-21759B?logo=wordpress" alt="Requires WordPress 6.9 or newer">
+  <img src="https://img.shields.io/badge/PHP-8.0%2B-777BB4?logo=php" alt="Requires PHP 8.0 or newer">
+  <img src="https://img.shields.io/badge/Elementor-3.6%2B-92003B?logo=elementor" alt="Supports Elementor 3.6 or newer">
+  <img src="https://img.shields.io/badge/MCP-compatible-5B36D0" alt="Model Context Protocol compatible">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/wpFelix/elementor-mcp-server" alt="GPL 2.0 or later license"></a>
 </p>
 
 <p align="center">
-  <a href="https://elementormcp.com">Website and documentation</a> |
-  <a href="https://github.com/wpFelix/elementor-mcp-server/releases">Releases and checksums</a> |
-  <a href="docs/SAFETY.md">Safety model</a> |
-  <a href="docs/ARCHITECTURE.md">Architecture</a>
+  <a href="https://github.com/wpFelix/elementor-mcp-server/releases/latest/download/elementor-mcp.zip"><img src="https://img.shields.io/badge/Download_Elementor_MCP_Free-Latest_Stable_ZIP-5B36D0?style=for-the-badge&amp;logo=wordpress" alt="Download the latest stable Elementor MCP Server plugin ZIP"></a>
 </p>
 
-Elementor MCP is an open-source **WordPress MCP server** plugin built for
-AI-assisted WordPress and Elementor work. It adds a typed Model Context
-Protocol endpoint that compatible AI clients can use to inspect, build, edit,
-and manage WordPress content and Elementor page designs.
+<p align="center">
+  <a href="https://elementormcp.com">Documentation</a> |
+  <a href="#download-and-install">Installation</a> |
+  <a href="#elementor-mcp-server-features">Features</a> |
+  <a href="#what-you-can-ask-an-ai-agent-to-do">Examples</a> |
+  <a href="#connect-claude-chatgpt-codex-cursor-and-other-mcp-clients">AI client setup</a> |
+  <a href="https://elementormcp.com/elementor-mcp-pro/">Pro</a>
+</p>
 
-The Free plugin includes a complete **Elementor MCP server** core with 41 typed
-Elementor abilities, WordPress content and administration workflows, three
-connection methods, safety profiles, approvals, change evidence, verified
-rollback where supported, and 10 detailed industry page-building prompts.
+Build and manage Elementor websites with Claude, ChatGPT, Codex, Cursor, and
+other MCP-compatible AI agents.
+
+- **Open source:** GPL-2.0-or-later WordPress plugin with public source, tests,
+  release workflows, and checksums.
+- **WordPress MCP Server:** Typed content, media, settings, diagnostics, and
+  controlled administration workflows.
+- **Elementor MCP:** 41 Elementor Core abilities included in Free.
+- **Production-safe permissions:** WordPress capabilities, typed schemas,
+  safety profiles, rate limits, and explicit confirmations.
+- **Change evidence and rollback:** Redacted before and after evidence with
+  verified rollback where the operation supports it.
+- **Elementor 4 support:** Compatible Atomic Elements, Global Classes, and
+  Variables when the installed Elementor version exposes them.
+- **Prompt library:** 10 detailed Free industry prompts and more than 300
+  specialized Pro prompts.
 
 > Install the attached `elementor-mcp.zip` release asset. GitHub's automatically
 > generated "Source code" archives are development snapshots, not installable
 > WordPress plugin packages.
 
-## Why use Elementor MCP
+## Model Context Protocol for Elementor and WordPress
 
-- **Elementor Core is included in Free.** Inspect documents, create pages, edit
-  containers and widgets, use templates and global styles, and work with
-  compatible Elementor 4 Atomic Elements, Global Classes, and Variables.
-- **WordPress is a first-class surface.** Work with posts, pages, public custom
-  post types, taxonomies, media, comments, revisions, menus, allowlisted
-  settings, diagnostics, and controlled plugin and theme lifecycle operations.
-- **Safety is enforced at runtime.** WordPress capabilities, typed schemas,
-  manual ability policy, safety profiles, rate limits, explicit confirmation,
-  redacted change evidence, and bounded rollback are part of execution.
-- **Client setup is guided.** The Connect screen provides client-specific
-  instructions and configuration for OAuth, access tokens, or WordPress
-  Application Passwords when that method is compatible with the selected
-  client.
-- **The prompt library is practical.** Free ships 10 long, evidence-led,
-  industry-specific Elementor homepage prompts. Pro contains more than 300
-  specialized prompts.
+Elementor MCP applies the Model Context Protocol for WordPress and the Model
+Context Protocol for Elementor through a typed, permission-aware server. It can
+be used as an AI Elementor builder, an AI WordPress builder, an Elementor automation layer,
+or a WordPress automation layer without giving an agent unrestricted access by
+default.
+
+```mermaid
+flowchart LR
+    A["Claude, ChatGPT, Codex, Cursor"] --> B["Elementor MCP Server"]
+    B --> C["Typed abilities and WordPress permissions"]
+    C --> D["WordPress and Elementor"]
+    D --> E["Draft, preview, verify, and record evidence"]
+```
+
+The AI client discovers the abilities available to its authenticated WordPress
+user, reads live schemas, inspects the current document, performs the approved
+operation, and returns structured evidence. The active safety profile can block
+the operation before execution.
+
+### Example Elementor AI workflow
+
+Give your connected AI agent this request:
+
+```text
+Build a premium SaaS landing page in Elementor with a hero, product workflow,
+features, pricing, proof, FAQ, and final CTA. Create a coherent design system,
+use native Elementor containers and widgets, keep the page as a draft, and
+verify desktop, tablet, and mobile behavior before asking for publication.
+```
+
+The expected path is:
+
+1. Claude, ChatGPT, Codex, Cursor, or another client discovers the live tools.
+2. Elementor MCP checks the WordPress user, safety profile, and input schema.
+3. The agent inspects the site, theme, Elementor version, and existing content.
+4. The agent creates or edits native Elementor data as a draft.
+5. The result is previewed and reviewed with returned change evidence.
+
+## What you can ask an AI agent to do
+
+These are realistic starting requests. Available actions still depend on the
+connected user's permissions, enabled abilities, safety profile, Elementor
+version, and installed integrations.
+
+### Build an Elementor website
+
+```text
+Build a premium seven-page website for a dental clinic using Elementor. Create
+a consistent design system and reusable global styles. Use only verified
+business facts and leave missing claims clearly marked for confirmation.
+```
+
+### Modify an existing page
+
+```text
+Inspect the current homepage and redesign the hero while preserving the
+existing content, links, forms, tracking, and Elementor editability.
+```
+
+### Fix responsive Elementor design
+
+```text
+Audit this Elementor page for tablet and mobile problems. Explain the issues,
+fix approved layout and overflow defects, and verify representative widths.
+```
+
+### Work with Elementor 4 Atomic Elements
+
+```text
+Inspect this component and convert it to compatible Elementor Atomic Elements
+and reusable Global Classes without changing its visible content.
+```
+
+### Manage WordPress structure
+
+```text
+Create draft Services pages, organize the navigation structure, and assign
+approved featured images. Do not publish anything until I review it.
+```
+
+### Run a WordPress SEO workflow
+
+```text
+Audit this landing page and update only the SEO metadata supported by the
+installed SEO integration. Do not invent schema facts or promise rankings.
+```
+
+### Build a WooCommerce landing page
+
+```text
+Inspect the authoritative WooCommerce catalog and create a draft Elementor
+landing page for this product category. Preserve real prices, stock, product
+links, shipping facts, and return terms.
+```
+
+### Inspect before maintenance
+
+```text
+Inspect the site for configuration, performance, and content problems. Explain
+what should be fixed and request approval before making any changes.
+```
+
+## Why Elementor first
+
+Elementor MCP is designed to be the Elementor MCP Server for AI agents, not a
+generic adapter for every page builder. Elementor is the only page-builder
+integration in this repository. That focus allows the Free plugin to include a
+deep native workflow for documents, containers, widgets, templates, global
+styles, Atomic Elements, Global Classes, and Variables.
+
+WordPress remains the foundation underneath. Content, media, taxonomies,
+comments, revisions, menus, settings, diagnostics, and compatible non-builder
+integrations remain available when their requirements are present.
+
+The stable product identity is:
+
+- Product: **Elementor MCP**
+- Website: [ElementorMCP.com](https://elementormcp.com)
+- GitHub: `wpFelix/elementor-mcp-server`
+- Primary term: **Elementor MCP Server**
+- Secondary term: **WordPress MCP Server**
 
 ## Elementor MCP server features
 
@@ -66,13 +193,11 @@ runtime:
 - Preview consequential operations where available, then return change evidence
   for review.
 
-Elementor is the only page-builder integration in this repository. No alternate
-page-builder adapter, loader, skill, or ability is shipped.
+No alternate page-builder adapter, loader, skill, or ability is shipped.
 
 ## WordPress MCP server features
 
-Elementor MCP also exposes a typed WordPress core surface that works without an
-alternate page builder:
+The Free plugin also exposes a typed WordPress core surface:
 
 - Posts, pages, supported custom post types, terms, media, comments, revisions,
   and navigation menus.
@@ -88,22 +213,87 @@ alternate page builder:
 Creation is draft-first. Publishing requires an explicit published status and
 the connected WordPress user's matching capability.
 
-## Supported AI and MCP clients
+## Connect Claude, ChatGPT, Codex, Cursor, and other MCP clients
 
-The built-in client registry provides connection guidance for popular MCP
-clients, including:
+After activation, open **Elementor MCP > Connect** in WordPress. Choose the
+client first, then use the exact URL and authentication method generated for
+that site. The examples below contain placeholders and must not be copied with
+real secrets into a repository.
 
-- Claude Code, Claude Desktop, and Claude on the web
-- ChatGPT and the Codex desktop app
-- Codex CLI, Cursor, VS Code, and GitHub Copilot
-- Gemini CLI, Qwen Code, Kimi Code CLI, and Factory Droid
-- Mistral Le Chat, Perplexity, Manus, Zed, Cline, OpenCode, and compatible
-  remote MCP clients
+### Claude Elementor and Claude WordPress setup
 
-Authentication availability differs by client. The Connect screen shows only
-the methods recorded as compatible for the selected client. Hosted web clients
-require a publicly reachable HTTPS WordPress site and cannot connect to
-localhost.
+For Claude Code with an access token, the Connect screen generates a command in
+this shape:
+
+```bash
+claude mcp add --transport http elementor-mcp <YOUR_GENERATED_MCP_URL> --header "Authorization: Bearer <YOUR_TOKEN>" --scope user
+```
+
+Restart Claude Code after adding the server. Claude Desktop can use the
+generated `claude_desktop_config.json` or the guided connector flow. Claude on
+the web requires a publicly reachable HTTPS site.
+
+### ChatGPT Elementor setup
+
+ChatGPT uses OAuth rather than a fixed Authorization-header field:
+
+1. Make the WordPress site reachable over public HTTPS.
+2. Open **ChatGPT > Settings > Apps > Advanced settings**.
+3. Enable Developer mode and choose **Create app**.
+4. Paste the OAuth MCP URL generated by **Elementor MCP > Connect**.
+5. Complete the browser consent flow with the intended WordPress account.
+
+### Codex Elementor setup
+
+For Codex CLI with an access token, add the generated values to
+`~/.codex/config.toml` on macOS or Linux, or
+`%USERPROFILE%\.codex\config.toml` on Windows:
+
+```toml
+[mcp_servers.elementor-mcp]
+url = "<YOUR_GENERATED_MCP_URL>"
+
+[mcp_servers.elementor-mcp.http_headers]
+Authorization = "Bearer <YOUR_TOKEN>"
+```
+
+For OAuth, follow the Connect screen and run `codex mcp login` after adding the
+server. The Codex desktop app uses its remote MCP settings and OAuth browser
+sign-in.
+
+### Cursor Elementor setup
+
+For Cursor, add the generated access-token configuration to `~/.cursor/mcp.json`
+or the project's `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "elementor-mcp": {
+      "type": "http",
+      "url": "<YOUR_GENERATED_MCP_URL>",
+      "headers": {
+        "Authorization": "Bearer <YOUR_TOKEN>"
+      }
+    }
+  }
+}
+```
+
+Cursor can also use OAuth. Complete its browser sign-in when it reports that the
+server needs authentication.
+
+### Other supported clients
+
+The built-in registry also provides client-specific guidance for Claude
+Desktop, Claude on the web, VS Code, GitHub Copilot, Gemini CLI, Qwen Code,
+Kimi Code CLI, Factory Droid, Mistral Le Chat, Perplexity, Manus, Zed, Cline,
+OpenCode, and other compatible remote MCP clients.
+
+Configuration shapes differ. VS Code nests entries under `servers`; Gemini CLI
+and Qwen Code use `httpUrl`; some editors use `serverUrl`; and hosted web clients
+require public HTTPS. Use the generated client-specific configuration instead
+of changing field names by guesswork.
 
 ## Requirements
 
@@ -132,9 +322,7 @@ Elementor version unlocks the 41-ability page-building surface.
 The public release includes a matching SHA-256 checksum. Use the release asset,
 not GitHub's generated source archive.
 
-## Connect an MCP client
-
-Elementor MCP supports three connection methods:
+## Authentication methods
 
 | Method | Best for | Notes |
 | --- | --- | --- |
@@ -152,9 +340,8 @@ For a safe first session:
 6. Apply only the approved change and review its returned evidence.
 
 The server uses the WordPress Abilities API and bundles the official WordPress
-MCP Adapter. It supports the repository's documented legacy and modern MCP
-protocol paths while applying the same authorization and safety controls to
-both.
+MCP Adapter. It supports the documented legacy and modern MCP protocol paths
+while applying the same authorization and safety controls to both.
 
 ## Safety and change control
 
@@ -209,15 +396,27 @@ must remain explicit instead of being invented by the AI client.
 | Popups, forms and submissions, custom code, interactions, and SVG upload | Not included | Included |
 
 Elementor MCP Pro depends on the Free plugin and is not included in this public
-repository.
+repository. See [Elementor MCP Pro](https://elementormcp.com/elementor-mcp-pro/)
+for the product overview.
 
-## Release quality
+## Project history and release quality
+
+Follow meaningful public development through the
+[commit history](https://github.com/wpFelix/elementor-mcp-server/commits/main),
+[changelog](CHANGELOG.txt), and
+[tagged releases](https://github.com/wpFelix/elementor-mcp-server/releases).
+Do not infer maturity from an artificial commit count; releases and commits are
+kept as real project history.
 
 Tagged releases are built by GitHub Actions. The release workflow runs the
 repository tests and static verification, builds the dashboard assets, creates
 the installable plugin ZIP, and publishes its SHA-256 checksum. A passing build
 is repository-level evidence, not a guarantee for every hosting stack,
 third-party plugin combination, or production site.
+
+Every public release should clearly identify what changed, what was improved or
+fixed, security or compatibility notes where applicable, the installable ZIP,
+its checksum, and any required upgrade steps.
 
 ## Frequently asked questions
 
@@ -233,6 +432,12 @@ active safety profile, and installed integrations.
 Yes. Free includes 41 Elementor Core abilities for document inspection, page
 building, element editing, templates, global styles, and compatible Elementor 4
 Atomic features.
+
+### Is Elementor MCP an AI agent for WordPress or Elementor?
+
+Elementor MCP is the governed connection layer, not the AI model. It lets a
+compatible AI agent for WordPress or AI agent for Elementor use typed tools
+under WordPress permissions and the active safety profile.
 
 ### Does Elementor have to be installed?
 
@@ -265,4 +470,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidance and
 
 Elementor MCP is licensed under
 [GPL-2.0-or-later](LICENSE). Product documentation is available at
-[elementormcp.com](https://elementormcp.com).
+[ElementorMCP.com](https://elementormcp.com).
