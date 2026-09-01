@@ -1,6 +1,6 @@
 {
 	"name": "elementor-mcp/elementor-mcp",
-	"description": "Open-source Elementor MCP server for WordPress with safe, typed AI automation.",
+	"description": "Open-source WordPress MCP server and Elementor MCP server plugin with safe, typed AI automation.",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0-or-later",
 	"require": {

@@ -9,7 +9,7 @@ Canonical public Free repository:
 
 Description:
 
-> Open-source Elementor MCP server for WordPress with safe AI page building, typed tools, approvals, OAuth, diagnostics, and Elementor 4 support.
+> Open-source WordPress MCP server and Elementor MCP server plugin for AI agents. Build and edit Elementor pages with 41 typed core abilities, OAuth, approvals, change evidence, rollback, diagnostics, and 10 free industry prompts.
 
 Website:
 

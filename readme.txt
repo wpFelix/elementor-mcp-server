@@ -8,13 +8,14 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Connect AI clients to WordPress and Elementor through a safe, typed Model
-Context Protocol (MCP) server.
+WordPress MCP server and Elementor MCP server with 41 typed page-building
+abilities, OAuth, safety profiles, approvals, rollback, and prompts.
 
 == Description ==
 
-Elementor MCP gives AI clients a focused connection to WordPress core and
-Elementor. The free plugin provides transport, authentication, safety
+Elementor MCP is an open-source WordPress MCP server and Elementor MCP server
+plugin for compatible AI clients. The free plugin provides transport,
+authentication, safety
 profiles, approvals, diagnostics, skills, design-library operations, and
 WordPress content and developer abilities. It also includes the complete
 Elementor Core workflow: page inspection and construction, element editing,
