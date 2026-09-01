@@ -1,0 +1,1957 @@
+variant = "loose"
+
+[[issues]]
+file = "includes/abilities/diagnostics.php"
+code = "no-else-clause"
+message = "Avoid `elseif` clauses."
+count = 1
+
+[[issues]]
+file = "includes/abilities/diagnostics.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-content.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-params.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-params.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "no-else-clause"
+message = "Avoid `elseif` clauses."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-templates.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-templates.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-templates.php"
+code = "literal-named-argument"
+message = "Literal argument `true` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-templates.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-templates.php"
+code = "no-else-clause"
+message = "Avoid `elseif` clauses."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-place-stock-image.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-place-stock-image.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-place-stock-image.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "literal-named-argument"
+message = "Literal argument `'approve'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "literal-named-argument"
+message = "Literal argument `'hold'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 7
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/create-post.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "inline-variable-return"
+message = "Variable assignment can be inlined into the return statement."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "literal-named-argument"
+message = "Literal argument `'.php'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "literal-named-argument"
+message = "Literal argument `'/'` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "no-nested-ternary"
+message = "Nested ternary expressions are confusing due to PHP's operator associativity rules."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/helpers.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/media-attachments.php"
+code = "literal-named-argument"
+message = "Literal argument `'thumbnail'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/menus.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/menus.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/menus.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/search-images.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/search-images.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "kan-defect"
+message = "Function has a high kan defect score."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'_menu_item_classes'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'_menu_item_menu_item_parent'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'_menu_item_object'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'_menu_item_object_id'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'_menu_item_target'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'_menu_item_type'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'_menu_item_url'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'_menu_item_xfn'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "literal-named-argument"
+message = "Literal argument `'nav_menu'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "no-shorthand-ternary"
+message = "Use of the shorthand ternary operator."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "literal-named-argument"
+message = "Literal argument `' '` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "literal-named-argument"
+message = "Literal argument `'assign_terms'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "literal-named-argument"
+message = "Literal argument `'delete_terms'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "literal-named-argument"
+message = "Literal argument `'edit_terms'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 7
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/update-post.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/admin/abilities-hub.php"
+code = "no-else-clause"
+message = "Avoid `elseif` clauses."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 5
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "no-else-clause"
+message = "Avoid `elseif` clauses."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/tokens-panel.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 2
+
+[[issues]]
+file = "includes/admin/connect/web-apps.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 2
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 2
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "literal-named-argument"
+message = "Literal argument `'#elementor-mcp-recent-activity'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "literal-named-argument"
+message = "Literal argument `'%d observed'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "literal-named-argument"
+message = "Literal argument `''` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "literal-named-argument"
+message = "Literal argument `'brand'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 7
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "prefer-arrow-function"
+message = "This closure can be simplified to a more concise arrow function."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 2
+
+[[issues]]
+file = "includes/admin/nav.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/admin/pro-upsell.php"
+code = "literal-named-argument"
+message = "Literal argument `2` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/admin/pro-upsell.php"
+code = "unfulfilled-expect"
+message = "This pragma was not used and may be removed."
+count = 1
+
+[[issues]]
+file = "includes/admin/settings.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/admin/ui.php"
+code = "literal-named-argument"
+message = "Literal argument `'%d sections'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/assets/chat/index.asset.php"
+code = "array-style"
+message = "Short array style `[..]` is preferred over `array(..)`."
+count = 2
+
+[[issues]]
+file = "includes/assets/chat/index.asset.php"
+code = "strict-types"
+message = "Missing `declare(strict_types=1);` statement at the beginning of the file."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 2
+
+[[issues]]
+file = "includes/change-log.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "literal-named-argument"
+message = "Literal argument `'nav_menu'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "literal-named-argument"
+message = "Literal argument `null` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 5
+
+[[issues]]
+file = "includes/clients.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/connections.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/check-contrast.php"
+code = "halstead"
+message = "Closure has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/check-contrast.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/compare-references.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/compare-references.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/compare-references.php"
+code = "literal-named-argument"
+message = "Literal argument `'is_array'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/compare-references.php"
+code = "literal-named-argument"
+message = "Literal argument `2` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/compare-references.php"
+code = "no-nested-ternary"
+message = "Nested ternary expressions are confusing due to PHP's operator associativity rules."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/design-spec.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/design-spec.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/design-spec.php"
+code = "literal-named-argument"
+message = "Literal argument `1` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/generate-design.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/generate-design.php"
+code = "literal-named-argument"
+message = "Literal argument `1` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/abilities/generate-design.php"
+code = "literal-named-argument"
+message = "Literal argument `2` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "cyclomatic-complexity"
+message = "Closure has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "halstead"
+message = "Closure has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-typefaces.php"
+code = "cyclomatic-complexity"
+message = "Closure has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-typefaces.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-typefaces.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "literal-named-argument"
+message = '''Literal argument `" \t\n\r\0\x0B\"'"` should be passed as a named argument for clarity.'''
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "literal-named-argument"
+message = "Literal argument `' '` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "literal-named-argument"
+message = "Literal argument `'$1-$2'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "literal-named-argument"
+message = "Literal argument `''` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "literal-named-argument"
+message = "Literal argument `'-'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 2
+
+[[issues]]
+file = "includes/design/context.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "kan-defect"
+message = "Function has a high kan defect score."
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "literal-named-argument"
+message = "Literal argument `' '` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "literal-named-argument"
+message = "Literal argument `''` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/context.php"
+code = "literal-named-argument"
+message = "Literal argument `'.'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/context.php"
+code = "literal-named-argument"
+message = "Literal argument `'0'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "literal-named-argument"
+message = "Literal argument `2` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "no-else-clause"
+message = "Avoid `elseif` clauses."
+count = 1
+
+[[issues]]
+file = "includes/design/contract.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "readable-literal"
+message = "Numeric literal could use underscore separators for readability."
+count = 1
+
+[[issues]]
+file = "includes/design/distinct.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/design/distinct.php"
+code = "literal-named-argument"
+message = "Literal argument `2` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/design/distinct.php"
+code = "literal-named-argument"
+message = "Literal argument `3` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/distinct.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/design/distinct.php"
+code = "no-else-clause"
+message = "Avoid `elseif` clauses."
+count = 2
+
+[[issues]]
+file = "includes/design/examples.php"
+code = "no-shorthand-ternary"
+message = "Use of the shorthand ternary operator."
+count = 1
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "literal-named-argument"
+message = "Literal argument `2.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "literal-named-argument"
+message = "Literal argument `360.0` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 2
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 2
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'accent-lit'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'accent-sat'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'accent-shift'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'bg-lit'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'bg-sat'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'body'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'body-leading'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'body-size'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'corner'` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'corner-family'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'display-face'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'display-leading'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'display-tracking'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'display-weight'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'grammar-count'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'grammar-set'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'ground'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'hue'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'ink-sat'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'measure'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'scale-ratio'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'small-measure'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'space-section'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `'space-unit'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.005` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.01` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.02` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.05` should be passed as a named argument for clarity."
+count = 5
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.06` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.0` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.14` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.1` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.28` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.35` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.3` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.45` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.5` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.6` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.7` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.85` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.92` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `0.9` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `1.08` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `1.0` should be passed as a named argument for clarity."
+count = 11
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `1.25` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `1.5` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `1.75` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `1.7` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `10.0` should be passed as a named argument for clarity."
+count = 4
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `12.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `14.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `16.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `160.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `17.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `2.0` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `20.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `200.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `20` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `21.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `28.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `3.0` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `30.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `32.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `360.0` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `4.0` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `42.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `46.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `5.0` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `55.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `56.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `58.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `6.0` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `72.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `74.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `8.0` should be passed as a named argument for clarity."
+count = 4
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `88.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `90.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `93.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `95.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "literal-named-argument"
+message = "Literal argument `97.0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "no-redundant-math"
+message = "Redundant multiplication by `-1`: multiplication by -1 is equivalent to negation."
+count = 1
+
+[[issues]]
+file = "includes/design/grammars.php"
+code = "halstead"
+message = "Function has a high halstead volume"
+count = 1
+
+[[issues]]
+file = "includes/design/grammars.php"
+code = "literal-named-argument"
+message = "Literal argument `0` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/grammars.php"
+code = "literal-named-argument"
+message = "Literal argument `2` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "inline-variable-return"
+message = "Variable assignment can be inlined into the return statement."
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "literal-named-argument"
+message = "Literal argument `'.'` should be passed as a named argument for clarity."
+count = 6
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "literal-named-argument"
+message = "Literal argument `'0'` should be passed as a named argument for clarity."
+count = 6
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "literal-named-argument"
+message = "Literal argument `1` should be passed as a named argument for clarity."
+count = 6
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 2
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "halstead"
+message = "Function has a high halstead effort"
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "kan-defect"
+message = "Function has a high kan defect score."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "literal-named-argument"
+message = '''Literal argument `" \t\n\r\0\x0B\"'"` should be passed as a named argument for clarity.'''
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "literal-named-argument"
+message = "Literal argument `' '` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 2
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "readable-literal"
+message = "Numeric literal could use underscore separators for readability."
+count = 3
+
+[[issues]]
+file = "includes/design/seed.php"
+code = "readable-literal"
+message = "Numeric literal could use underscore separators for readability."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 7
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 4
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "kan-defect"
+message = "Function has a high kan defect score."
+count = 2
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "literal-named-argument"
+message = "Literal argument `3` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "no-nested-ternary"
+message = "Nested ternary expressions are confusing due to PHP's operator associativity rules."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "no-shorthand-ternary"
+message = "Use of the shorthand ternary operator."
+count = 3
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 2
+
+[[issues]]
+file = "includes/design/templates/hero.php"
+code = "literal-named-argument"
+message = "Literal argument `'%d colours'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/hero.php"
+code = "literal-named-argument"
+message = "Literal argument `'%d enforced rules'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/hero.php"
+code = "literal-named-argument"
+message = "Literal argument `'%d typefaces'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/hero.php"
+code = "literal-named-argument"
+message = "Literal argument `'elementor-mcp'` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/design/templates/hero.php"
+code = "no-nested-ternary"
+message = "Nested ternary expressions are confusing due to PHP's operator associativity rules."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/panel.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 2
+
+[[issues]]
+file = "includes/design/templates/starters.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 1
+
+[[issues]]
+file = "includes/design/tokens.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/design/tokens.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/tokens.php"
+code = "kan-defect"
+message = "Function has a high kan defect score."
+count = 1
+
+[[issues]]
+file = "includes/design/typefaces.php"
+code = "halstead"
+message = "Function has a high halstead volume and effort"
+count = 1
+
+[[issues]]
+file = "includes/design/typefaces.php"
+code = "literal-named-argument"
+message = "Literal argument `' '` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/design/typefaces.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/lifecycle.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/mcp/errors.php"
+code = "literal-named-argument"
+message = "Literal argument `'Unsupported protocol version'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/errors.php"
+code = "literal-named-argument"
+message = "Literal argument `200` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/errors.php"
+code = "literal-named-argument"
+message = "Literal argument `400` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/mcp/errors.php"
+code = "literal-named-argument"
+message = "Literal argument `404` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/errors.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/mcp/errors.php"
+code = "readable-literal"
+message = "Numeric literal could use underscore separators for readability."
+count = 9
+
+[[issues]]
+file = "includes/mcp/headers.php"
+code = "literal-named-argument"
+message = "Literal argument `'-'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/headers.php"
+code = "no-redundant-literal-return"
+message = "Redundant literal guard: the if statement can be removed."
+count = 1
+
+[[issues]]
+file = "includes/mcp/results.php"
+code = "readable-literal"
+message = "Numeric literal could use underscore separators for readability."
+count = 2
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `'_'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `'confirm'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `'mcp'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `'prompts/get'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `'tools/call'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `200` should be passed as a named argument for clarity."
+count = 3
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `30` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `3` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "literal-named-argument"
+message = "Literal argument `400` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 3
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "literal-named-argument"
+message = "Literal argument `'location'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "literal-named-argument"
+message = "Literal argument `12` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "literal-named-argument"
+message = "Literal argument `8` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "no-error-control-operator"
+message = "Unsafe use of error control operator `@`."
+count = 3
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 8
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "readable-literal"
+message = "Numeric literal could use underscore separators for readability."
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-validation.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/preview/admin.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/preview/diff.php"
+code = "literal-named-argument"
+message = "Literal argument `'is_scalar'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/preview/diff.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 2
+
+[[issues]]
+file = "includes/preview/diff.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 2
+
+[[issues]]
+file = "includes/preview/gate.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 1
+
+[[issues]]
+file = "includes/preview/projectors.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 2
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "literal-named-argument"
+message = "Literal argument `'aes-256-gcm'` should be passed as a named argument for clarity."
+count = 2
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "literal-named-argument"
+message = "Literal argument `16` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/preview/templates/detail.php"
+code = "literal-named-argument"
+message = "Literal argument `'%d fields would change'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/preview/templates/detail.php"
+code = "literal-named-argument"
+message = "Literal argument `'elementor-mcp'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/preview/templates/detail.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/preview/templates/detail.php"
+code = "no-else-clause"
+message = "Avoid `elseif` clauses."
+count = 1
+
+[[issues]]
+file = "includes/preview/templates/list.php"
+code = "literal-named-argument"
+message = "Literal argument `'%d fields'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/preview/templates/list.php"
+code = "literal-named-argument"
+message = "Literal argument `'elementor-mcp'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/preview/templates/list.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/privacy.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1
+
+[[issues]]
+file = "includes/prompt-library/admin.php"
+code = "no-else-clause"
+message = "Avoid `else` clauses."
+count = 1
+
+[[issues]]
+file = "includes/prompt-library/packs.php"
+code = "halstead"
+message = "Function has a high halstead volume"
+count = 1
+
+[[issues]]
+file = "includes/skills/abilities/skill-write.php"
+code = "cyclomatic-complexity"
+message = "Function has high complexity."
+count = 1
+
+[[issues]]
+file = "includes/telemetry/send.php"
+code = "literal-named-argument"
+message = "Literal argument `'daily'` should be passed as a named argument for clarity."
+count = 1
+
+[[issues]]
+file = "includes/telemetry/settings.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "includes/telemetry/settings.php"
+code = "no-isset"
+message = "Use of the `isset` construct."
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 1

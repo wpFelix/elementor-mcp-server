@@ -1,0 +1,257 @@
+/*
+ * Sandbox admin styles. Visual language mirrors the Skills list (card
+ * section, 44px compact rows, hover-revealed actions, status check on
+ * the left) so the two pages feel like one product.
+ */
+
+.elementor-mcp-sandbox-section {
+    background: #fff;
+    border: 1px solid #d7e0ea;
+    border-radius: 6px;
+    margin: 16px 0 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.elementor-mcp-sandbox-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e4e4e7;
+}
+
+.elementor-mcp-sandbox-header h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #142033;
+    letter-spacing: -0.01em;
+}
+
+.elementor-mcp-sandbox-header h2 .count {
+    color: #75859a;
+    font-weight: 400;
+    font-size: 13px;
+    margin-left: 8px;
+}
+
+.elementor-mcp-sandbox-rows {
+    display: block;
+}
+
+.elementor-mcp-sandbox-row {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) minmax(160px, auto) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 0 24px;
+    height: 44px;
+    border-bottom: 1px solid #f4f4f5;
+    transition: background 0.1s;
+}
+
+.elementor-mcp-sandbox-row:last-child {
+    border-bottom: none;
+}
+
+.elementor-mcp-sandbox-row:hover {
+    background: #fafafa;
+}
+
+.elementor-mcp-sandbox-row.is-disabled .slug,
+.elementor-mcp-sandbox-row.is-disabled .meta {
+    color: #a1a1aa;
+}
+
+.elementor-mcp-sandbox-row.is-suspended {
+    background: #fef2f2;
+}
+
+.elementor-mcp-sandbox-toggle {
+    margin: 0;
+}
+
+.elementor-mcp-sandbox-check {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 1.5px solid #d4d4d8;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.12s, background 0.12s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elementor-mcp-sandbox-check:hover {
+    border-color: #75859a;
+}
+
+.elementor-mcp-sandbox-row.is-on .elementor-mcp-sandbox-check {
+    background: #142033;
+    border-color: #142033;
+}
+
+.elementor-mcp-sandbox-row.is-on .elementor-mcp-sandbox-check::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 10px;
+    margin-bottom: 2px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.elementor-mcp-sandbox-row.is-suspended .elementor-mcp-sandbox-check {
+    border-color: #d4d4d8;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.elementor-mcp-sandbox-main {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.elementor-mcp-sandbox-main .slug {
+    font-family: ui-monospace, "DM Mono", "JetBrains Mono", Consolas, monospace;
+    font-size: 13px;
+    color: #142033;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.elementor-mcp-sandbox-main .meta {
+    color: #75859a;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.elementor-mcp-sandbox-main .meta::before {
+    content: "—";
+    margin-right: 6px;
+    color: #d4d4d8;
+}
+
+.elementor-mcp-sandbox-pills {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.elementor-mcp-sandbox-pills .pill {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #f4f4f5;
+    color: #5e6c7d;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.elementor-mcp-sandbox-pills .pill.ext-php {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.elementor-mcp-sandbox-pills .pill.ext-js {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.elementor-mcp-sandbox-pills .pill.ext-css {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.elementor-mcp-sandbox-pills .pill.ext-twig {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.elementor-mcp-sandbox-pills .pill.warn {
+    background: #fee2e2;
+    color: #b32d2e;
+}
+
+.elementor-mcp-sandbox-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.12s;
+}
+
+.elementor-mcp-sandbox-row:hover .elementor-mcp-sandbox-actions,
+.elementor-mcp-sandbox-row:focus-within .elementor-mcp-sandbox-actions {
+    opacity: 1;
+}
+
+.elementor-mcp-sandbox-actions .action-btn {
+    background: transparent;
+    border: 0;
+    padding: 4px 10px;
+    border-radius: 3px;
+    color: #1c4ea1;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.12s;
+}
+
+.elementor-mcp-sandbox-actions .action-btn:hover {
+    background: #e8f0fd;
+}
+
+.elementor-mcp-sandbox-actions .action-btn--danger {
+    color: #b32d2e;
+}
+
+.elementor-mcp-sandbox-actions .action-btn--danger:hover {
+    background: #fef2f2;
+}
+
+.elementor-mcp-sandbox-empty {
+    padding: 32px 24px;
+    text-align: center;
+    color: #75859a;
+    font-size: 13px;
+}
+
+/* Premium admin alignment. */
+.elementor-mcp-sandbox-section {
+    border-color: #d7e0ea;
+    border-radius: 13px;
+    box-shadow: 0 5px 18px rgba(20, 32, 51, 0.06);
+    overflow: hidden;
+}
+
+.elementor-mcp-sandbox-row:hover {
+    background: #f8f3f9;
+}
+
+.elementor-mcp-sandbox-row.is-on .elementor-mcp-sandbox-check {
+    background: #1c4ea1;
+    border-color: #1c4ea1;
+}
+
+.elementor-mcp-sandbox-actions .action-btn {
+    color: #1c4ea1;
+    border-radius: 7px;
+}
+
+.elementor-mcp-sandbox-actions .action-btn:hover {
+    background: #e8f0fd;
+}

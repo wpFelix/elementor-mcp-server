@@ -1,0 +1,4351 @@
+variant = "loose"
+
+[[issues]]
+file = "includes/abilities/delete-file.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `realpath`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/delete-file.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 3
+
+[[issues]]
+file = "includes/abilities/delete-file.php"
+code = "non-existent-constant"
+message = "Undefined constant: `WP_CONTENT_DIR`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/diagnostics.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 6
+
+[[issues]]
+file = "includes/abilities/elementor/add-element/elementor-mcp-boxed-containers.php"
+code = "docblock-type-mismatch"
+message = "Docblock type mismatch for variable `$plugin`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/add-element/elementor-mcp-dynamic-tags.php"
+code = "docblock-type-mismatch"
+message = "Docblock type mismatch for variable `$plugin`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/add-element/elementor-mcp-input-parsing.php"
+code = "docblock-type-mismatch"
+message = "Docblock type mismatch for variable `$plugin`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Abilities\Elementor\elementor_build_page`: expected `array{'created'?: int, 'dry_run'?: bool, 'error'?: string, 'success': bool, 'top_level'?: int, 'would_create'?: int}`, but found `array{'created'?: int, 'edit_url'?: string, 'error'?: string, 'preview_url'?: string, 'success': bool, 'view_url'?: string}`.'''
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Abilities\Elementor\el_build_node`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "less-specific-nested-argument-type"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Abilities\Elementor\elementor_prepare_content`: expected `list<array<string, mixed>>`, but provided type `non-empty-list<mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Abilities\Elementor\el_build_node`: expected `array<string, mixed>`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Abilities\Elementor\el_split_boxed_containers`: expected `array<string, mixed>`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Abilities\Elementor\el_translate_v3_container_settings`: expected `array<string, mixed>`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 5
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-build-page.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-check-setup.php"
+code = "docblock-type-mismatch"
+message = "Docblock type mismatch for variable `$plugin`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-clear-document-cache.php"
+code = "redundant-comparison"
+message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-clear-document-cache.php"
+code = "redundant-condition"
+message = "Redundant condition: variable `$exists` (type `true`) will always evaluate to true."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-clear-document-cache.php"
+code = "redundant-logical-operation"
+message = "Redundant `&&` operation: left operand is always truthy and right operand is evaluated."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-create-atomic-widget.php"
+code = "less-specific-nested-return-statement"
+message = '''Returned type `array{'assets_dir': null|truthy-string, 'files': non-empty-array<truthy-string, string>, 'mu_dir': mixed, 'template_dir': truthy-string}` is less specific than the declared return type `array{'assets_dir': null|string, 'files': array<string, string>, 'mu_dir': string, 'template_dir': string}` for function `ElementorMCP\Abilities\Elementor\cew_build_file_map` due to nested 'mixed'.'''
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-create-atomic-widget.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-create-atomic-widget.php"
+code = "mixed-operand"
+message = "Invalid left operand: type `mixed` cannot be reliably used in string concatenation."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-create-atomic-widget.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Abilities\Elementor\WPMU_PLUGIN_DIR`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-create-atomic-widget.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #2 of `str_repeat`: expected `non-negative-int`, but possibly received `int`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-delete-page-content.php"
+code = "impossible-assignment"
+message = "Invalid assignment: the right-hand side has type `never` and cannot produce a value."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-delete-page-content.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-delete-page-content.php"
+code = "non-existent-class"
+message = 'Class `Elementor\Core\Files\CSS\Post` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-delete-page-content.php"
+code = "redundant-comparison"
+message = "Redundant `===` comparison: left-hand side is never identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "docblock-type-mismatch"
+message = 'Docblock type `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Contracts\Prop_Type)` for parameter `$prop_type` is incompatible with native type `object`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "invalid-class-string-expression"
+message = "Expression of type `never` cannot be used as a class name."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Abilities\Elementor\gss_describe_prop_type`: expected `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Contracts\Prop_Type)`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\PropTypes\Contracts\Prop_Type`.'
+count = 4
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\String_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Size_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "non-existent-method"
+message = 'Method `get` does not exist on type `Elementor\Modules\AtomicWidgets\Styles\Style_Schema`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Abilities\Elementor\gss_prop_kind`: expected `object`, but possibly received `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Contracts\Prop_Type)`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-style-schema.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `method_exists`: expected `class-string|object`, but possibly received `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Contracts\Prop_Type)`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-params.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_param_is_essential`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-params.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-params.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 4
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Widget_Base)`).'
+count = 5
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "method-access-on-null"
+message = "Attempting to call a method on `null`."
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `trim`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Widget_Base`.'
+count = 6
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\Elements\Base\Atomic_Widget_Base` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Widget_Base` does not exist.'
+count = 9
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Modules\AtomicWidgets\Elements\Base\Atomic_Widget_Base` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Plugin` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-method"
+message = 'Method `get_categories` does not exist on type `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-method"
+message = 'Method `get_controls` does not exist on type `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-method"
+message = 'Method `get_icon` does not exist on type `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "non-existent-method"
+message = 'Method `get_keywords` does not exist on type `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "null-property-access"
+message = "Attempting to access a property on an expression that is always `null`."
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Abilities\Elementor\is_atomic_widget`: expected `unknown-ref(Elementor\Widget_Base)`, but possibly received `Elementor\Widget_Base`.'
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-get-widget-schema.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `get_class`: expected `object`, but possibly received `unknown-ref(Elementor\Widget_Base)`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "less-specific-nested-return-statement"
+message = '''Returned type `array{'classes': array{}|non-empty-list<array{'id': string, 'label': nonnull, 'type': nonnull, 'variants': nonnull}>, 'order': mixed, 'success': true}` is less specific than the declared return type `array{'classes': list<array<string, mixed>>, 'order': array<array-key, mixed>, 'success': bool}` for function `ElementorMCP\Abilities\Elementor\gc_list` due to nested 'mixed'.'''
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "method-access-on-null"
+message = "Attempting to call a method on `null`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `array_filter`: expected `array<string, string>`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "mixed-array-assignment"
+message = "Unsafe array assignment on type `mixed`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 16
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "mixed-method-access"
+message = "Attempting to access a method on a non-object type (`mixed`)."
+count = 26
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Plugin` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "non-existent-method"
+message = 'Method `make` does not exist on type `Elementor\Modules\GlobalClasses\Global_Classes_Repository`.'
+count = 5
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-classes.php"
+code = "null-property-access"
+message = "Attempting to access a property on an expression that is always `null`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-styles-v3.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Core\Kits\Documents\Kit)`).'
+count = 13
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-styles-v3.php"
+code = "method-access-on-null"
+message = "Attempting to call a method on `null`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-styles-v3.php"
+code = "mixed-return-statement"
+message = 'Could not infer a precise return type for function `ElementorMCP\Abilities\Elementor\gsv3_get_kit`. Saw type `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-styles-v3.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Core\Kits\Documents\Kit`.'
+count = 4
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-global-styles-v3.php"
+code = "null-property-access"
+message = "Attempting to access a property on an expression that is always `null`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "ambiguous-object-method-access"
+message = "Cannot statically verify method call on a generic `object` type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "less-specific-return-statement"
+message = '''Returned type `array<string, array{'default': mixed, 'label': string, 'options': array<array-key, mixed>, 'type': string}>` is less specific than the declared return type `array<string, array{'default': mixed, 'label': string, 'options': array<string, mixed>, 'type': string}>` for function `ElementorMCP\Abilities\Elementor\el_page_setting_controls`.'''
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "method-access-on-null"
+message = "Attempting to call a method on `null`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "null-property-access"
+message = "Attempting to access a property on an expression that is always `null`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "redundant-comparison"
+message = "Redundant `===` comparison: left-hand side is never identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-page-settings.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-templates.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_structural_write`: expected `(callable(list<array<string, mixed>>): null)|string`, but possibly received `(closure(array<array-key, mixed>): null|string)`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-templates.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-templates.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\Variables\Storage\Entities\Variable)`).'
+count = 5
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\Variables\Storage\Variables_Collection)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\Variables\Storage\Variables_Repository)`).'
+count = 6
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "method-access-on-null"
+message = "Attempting to call a method on `null`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Abilities\Elementor\var_resolve_target`: expected `unknown-ref(Elementor\Modules\Variables\Storage\Variables_Collection)`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `method_exists`: expected `class-string|object`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #2 of `ElementorMCP\Abilities\Elementor\var_save`: expected `unknown-ref(Elementor\Modules\Variables\Storage\Variables_Collection)`, but found `mixed`.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 12
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "mixed-method-access"
+message = "Attempting to access a method on a non-object type (`mixed`)."
+count = 14
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "mixed-return-statement"
+message = 'Could not infer a precise return type for function `ElementorMCP\Abilities\Elementor\var_resolve_target`. Saw type `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "never-return"
+message = "Cannot return value with type 'never' from this function."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "non-existent-class"
+message = 'Class `Elementor\Modules\Variables\Storage\Variables_Repository` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\Variables\Storage\Entities\Variable`.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\Variables\Storage\Variables_Collection`.'
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\Variables\Storage\Variables_Repository`.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Modules\Variables\Adapters\Prop_Type_Adapter` not found.'
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "non-existent-method"
+message = 'Method `create_new` does not exist on type `Elementor\Modules\Variables\Storage\Entities\Variable`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-manage-variables.php"
+code = "null-property-access"
+message = "Attempting to access a property on an expression that is always `null`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-place-stock-image.php"
+code = "possible-method-access-on-null"
+message = "Attempting to call a method on `null`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-runtime.php"
+code = "docblock-type-mismatch"
+message = "Docblock type mismatch for variable `$plugin`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-runtime.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\String_Prop_Type` does not exist.'
+count = 5
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-runtime.php"
+code = "non-existent-method"
+message = 'Method `enum` does not exist on type `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\String_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-runtime.php"
+code = "non-existent-method"
+message = 'Method `get_enum` does not exist on type `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\String_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "invalid-class-string-expression"
+message = 'Expression of type `unknown-ref(Elementor\Modules\AtomicWidgets\Elements\Base\Atomic_Widget_Base)` cannot be used as a class name.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\AtomicWidgets\Elements\Base\Atomic_Widget_Base)`).'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Widget_Base)`).'
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "less-specific-nested-return-statement"
+message = '''Returned type `array{'controls': array<string, array<string, mixed>>, 'description': string, 'is_atomic': false, 'label': mixed, 'widgetType': string}` is less specific than the declared return type `array{'controls': array<string, array<string, mixed>>, 'description': string, 'is_atomic': bool, 'label': string, 'widgetType': string}|null` for function `ElementorMCP\Abilities\Elementor\build_widget_compact_schema` due to nested 'mixed'.'''
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "less-specific-nested-return-statement"
+message = '''Returned type `array{'controls': array<string, array<string, mixed>>, 'description': string, 'is_atomic': true, 'label': mixed, 'widgetType': string}` is less specific than the declared return type `array{'controls': array<string, array<string, mixed>>, 'description': string, 'is_atomic': bool, 'label': string, 'widgetType': string}|null` for function `ElementorMCP\Abilities\Elementor\build_widget_compact_schema` due to nested 'mixed'.'''
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "method-access-on-null"
+message = "Attempting to call a method on `null`."
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 4
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "mixed-operand"
+message = "Invalid left operand: type `mixed` cannot be reliably used in string concatenation."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\Elements\Base\Atomic_Widget_Base`.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type` does not exist.'
+count = 6
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Widget_Base` does not exist.'
+count = 5
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "non-existent-method"
+message = 'Method `get_controls` does not exist on type `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "non-existent-method"
+message = 'Method `get_prop_types` does not exist on type `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type`.'
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "non-existent-method"
+message = 'Method `get_title` does not exist on type `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "null-property-access"
+message = "Attempting to access a property on an expression that is always `null`."
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Abilities\Elementor\build_compact_description`: expected `unknown-ref(Elementor\Widget_Base)`, but possibly received `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-schema-extractor.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Abilities\Elementor\is_atomic_widget`: expected `unknown-ref(Elementor\Widget_Base)`, but possibly received `Elementor\Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-set-content.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Abilities\Elementor\elementor_prepare_content`: expected `array{'assigned'?: array<string, mixed>, 'error'?: string, 'success': bool, 'tree'?: list<array<string, mixed>>}`, but found `array<string, mixed>`.'''
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-set-content.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Abilities\Elementor\elementor_prepare_content`: expected `array{'assigned'?: array<string, mixed>, 'error'?: string, 'success': bool, 'tree'?: list<array<string, mixed>>}`, but found `array{'assigned': list<string>, 'success': true, 'tree': list<array<string, mixed>>}`.'''
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-set-content.php"
+code = "possibly-undefined-string-array-index"
+message = "Possibly undefined array key 'assigned' accessed on `array{'assigned'?: array<string, mixed>, 'error'?: string, 'success': bool, 'tree'?: list<array<string, mixed>>}`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-set-content.php"
+code = "possibly-undefined-string-array-index"
+message = "Possibly undefined array key 'tree' accessed on `array{'assigned'?: array<string, mixed>, 'error'?: string, 'success': bool, 'tree'?: list<array<string, mixed>>}`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-set-content.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "docblock-type-mismatch"
+message = "Docblock type `(callable(list<array<string, mixed>>): null)|string` for parameter `$mutate` is incompatible with native type `(callable(...mixed=): mixed)`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_structural_write`: expected `(callable(list<array<string, mixed>>): null)|string`, but possibly received `(closure(array<array-key, mixed>): non-empty-string|null)`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_structural_write`: expected `(callable(list<array<string, mixed>>): null)|string`, but possibly received `(closure(array<array-key, mixed>): null|string)`.'
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "redundant-docblock-type"
+message = "Redundant docblock type for variable `$children`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-structure.php"
+code = "reference-constraint-violation"
+message = "Invalid assignment to by-reference parameter `$elements`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-validate-widget.php"
+code = "method-access-on-null"
+message = "Attempting to call a method on `null`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-validate-widget.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Abilities\Elementor\WP_PLUGIN_DIR`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/elementor-mcp-validate-widget.php"
+code = "null-property-access"
+message = "Attempting to access a property on an expression that is always `null`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-atomic-values.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-atomic-values.php"
+code = "mixed-method-access"
+message = "Attempting to access a method on a non-object type (`mixed`)."
+count = 4
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-atomic-values.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Modules\AtomicWidgets\Parsers\Props_Parser` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-atomic-values.php"
+code = "non-existent-method"
+message = 'Method `make` does not exist on type `Elementor\Modules\AtomicWidgets\Parsers\Props_Parser`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "docblock-type-mismatch"
+message = "Docblock type mismatch for variable `$plugin`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "impossible-assignment"
+message = "Invalid assignment: the right-hand side has type `never` and cannot produce a value."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "impossible-condition"
+message = "Redundant ternary operator: condition is always falsy."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Core\Base\Document)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "mixed-method-access"
+message = "Attempting to access a method on a non-object type (`mixed`)."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "non-existent-class"
+message = 'Class `Elementor\Core\Files\CSS\Post` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "non-existent-class"
+message = 'Class `Elementor\Modules\Interactions\Parser` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Core\Base\Document`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Modules\Interactions\Parser` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "non-existent-method"
+message = 'Method `instance` does not exist on type `Elementor\Modules\AtomicWidgets\DynamicTags\Dynamic_Tags_Module`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "redundant-comparison"
+message = "Redundant `===` comparison: left-hand side is never identical to right-hand side."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-page-io.php"
+code = "redundant-logical-operation"
+message = "Redundant `&&` operation: left operand is evaluated and right operand is always falsy."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-schema.php"
+code = "docblock-type-mismatch"
+message = "Docblock type mismatch for variable `$plugin`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-schema.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `array_keys`: expected `array<('K.array_keys() extends array-key), ('V.array_keys() extends mixed)>`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\Elements\Base\Atomic_Widget_Base` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-schema.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type` does not exist.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-schema.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Modules\AtomicWidgets\Elements\Base\Atomic_Widget_Base` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-schema.php"
+code = "non-existent-method"
+message = 'Method `get_prop_types` does not exist on type `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-schema.php"
+code = "non-existent-method"
+message = 'Method `get_props_schema` does not exist on type `Elementor\Modules\AtomicWidgets\Elements\Base\Atomic_Widget_Base`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-unions.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-unions.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-unions.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-unions.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type` does not exist.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-unions.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\String_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-unions.php"
+code = "non-existent-method"
+message = 'Method `get_shape` does not exist on type `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-unions.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "invalid-class-string-expression"
+message = 'Expression of type `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type)` cannot be used as a class name.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "invalid-class-string-expression"
+message = 'Expression of type `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type)` cannot be used as a class name.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Size_Prop_Type)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #2 of `ElementorMCP\Abilities\Elementor\el_wrap_style_string_scalar`: expected `string`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\PropTypes\Size_Prop_Type`.'
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\Boolean_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\Number_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\String_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Size_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "non-existent-method"
+message = 'Method `get_key` does not exist on type `Elementor\Modules\AtomicWidgets\PropTypes\Primitives\String_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_wrap_style_array`: expected `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type)`, but possibly received `Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_wrap_style_object`: expected `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type)`, but possibly received `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_wrap_style_size`: expected `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Size_Prop_Type)`, but possibly received `Elementor\Modules\AtomicWidgets\PropTypes\Size_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_wrap_style_union`: expected `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type)`, but possibly received `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-style-values.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$key` is already `string`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\AtomicWidgets\Parsers\Style_Parser)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Abilities\Elementor\el_parse_single_style`: expected `unknown-ref(Elementor\Modules\AtomicWidgets\Parsers\Style_Parser)`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "mixed-method-access"
+message = "Attempting to access a method on a non-object type (`mixed`)."
+count = 4
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\Parsers\Style_Parser`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Modules\AtomicWidgets\Parsers\Style_Parser` not found.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "non-existent-class-like"
+message = 'Class, interface, enum, or trait `Elementor\Modules\AtomicWidgets\Styles\Style_Schema` not found.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "non-existent-method"
+message = 'Method `get` does not exist on type `Elementor\Modules\AtomicWidgets\Styles\Style_Schema`.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "non-existent-method"
+message = 'Method `make` does not exist on type `Elementor\Modules\AtomicWidgets\Parsers\Style_Parser`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always false and right operand is evaluated."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$props` (type `array<string, mixed>`) is already known to be `array<array-key, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-styles-map.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$props` is already `array<string, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type)`).'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Size_Prop_Type` does not exist.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "non-existent-class-like"
+message = 'Class, Interface, or Trait `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type` does not exist.'
+count = 3
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "non-existent-method"
+message = 'Method `get_prop_types` does not exist on type `Elementor\Modules\AtomicWidgets\PropTypes\Union_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_walk_unknown_array_subkeys`: expected `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type)`, but possibly received `Elementor\Modules\AtomicWidgets\PropTypes\Base\Array_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/elementor/helpers/elementor-mcp-unknown-keys.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #2 of `ElementorMCP\Abilities\Elementor\el_walk_unknown_object_subkeys`: expected `unknown-ref(Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type)`, but possibly received `Elementor\Modules\AtomicWidgets\PropTypes\Base\Object_Prop_Type`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/execute-php.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `set_time_limit`: expected `int`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/execute-php.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ELEMENTOR_MCP_MAX_EXECUTION_TIME`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/list-directory.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/run-wp-cli.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `escapeshellarg`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/run-wp-cli.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `elementor_mcp_build_windows_job_script`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/run-wp-cli.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #3 of `str_replace`: expected `array<array-key, string>|string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/run-wp-cli.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #4 of `proc_open`: expected `non-empty-string|null`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/run-wp-cli.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 4
+
+[[issues]]
+file = "includes/abilities/run-wp-cli.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #1 of `rtrim`: expected `string`, but possibly received `array<array-key, string>|string`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #1 of `get_comments`: expected `array{'author__in'?: array<array-key, int>, 'author__not_in'?: array<array-key, int>, 'author_email'?: string, 'author_url'?: string, 'cache_domain'?: string, 'comment__in'?: array<array-key, int>, 'comment__not_in'?: array<array-key, int>, 'count'?: bool, 'date_query'?: array<array-key, mixed>, 'fields'?: string, 'hierarchical'?: bool|string, 'include_unapproved'?: array<array-key, mixed>, 'karma'?: int, 'meta_compare'?: string, 'meta_compare_key'?: string, 'meta_key'?: array<array-key, string>|string, 'meta_query'?: array<array-key, mixed>, 'meta_type'?: string, 'meta_type_key'?: string, 'meta_value'?: array<array-key, string>|string, 'no_found_rows'?: bool, 'number'?: int, 'offset'?: int, 'order'?: string, 'orderby'?: array<array-key, mixed>|string, 'paged'?: int, 'parent'?: int, 'parent__in'?: array<array-key, int>, 'parent__not_in'?: array<array-key, int>, 'post__in'?: array<array-key, int>, 'post__not_in'?: array<array-key, int>, 'post_author'?: int, 'post_author__in'?: array<array-key, int>, 'post_author__not_in'?: array<array-key, int>, 'post_id'?: int, 'post_name'?: string, 'post_parent'?: int, 'post_status'?: array<array-key, string>|string, 'post_type'?: array<array-key, string>|string, 'search'?: string, 'status'?: array<array-key, mixed>|string, 'type'?: array<array-key, string>|string, 'type__in'?: array<array-key, string>, 'type__not_in'?: array<array-key, string>, 'update_comment_meta_cache'?: bool, 'update_comment_post_cache'?: bool, 'user_id'?: int}`, but possibly received `array{'author_email'?: string, 'number': int<1, 100>, 'order': string('DESC'), 'orderby': string('comment_date_gmt'), 'paged': positive-int, 'post_id'?: int|string, 'search'?: int|string, 'status': string, 'type'?: int|string}`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "possibly-invalid-iterator"
+message = "The expression provided to `foreach` (type `array<array-key, WP_Comment|int>|int`) might not be iterable at runtime."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 8
+
+[[issues]]
+file = "includes/abilities/wordpress/comments.php"
+code = "redundant-condition"
+message = "Redundant ternary operator: condition is always truthy."
+count = 4
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "impossible-type-comparison"
+message = "Impossible condition: variable `$terms` (type `array<array-key, mixed>`) can never be `WP_Error`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 9
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 8
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "mixed-assignment"
+message = "Assigning `nonnull` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "null-argument"
+message = 'Argument #1 of function `ElementorMCP\Abilities\WordPress\wordpress_builder_signals` is `null`, but parameter type `int` does not accept it.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "null-argument"
+message = 'Argument #1 of function `ElementorMCP\Abilities\WordPress\wordpress_first_meta` is `null`, but parameter type `int` does not accept it.'
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "null-argument"
+message = 'Argument #1 of function `ElementorMCP\Abilities\WordPress\wordpress_public_post_meta` is `null`, but parameter type `int` does not accept it.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "null-argument"
+message = "Argument #1 of function `get_page_template_slug` is `null`, but parameter type `WP_Post|int` does not accept it."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "null-argument"
+message = "Argument #1 of function `parse_blocks` is `null`, but parameter type `string` does not accept it."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "null-argument"
+message = "Argument #1 of function `strip_shortcodes` is `null`, but parameter type `string` does not accept it."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "null-argument"
+message = "Argument #1 of function `strlen` is `null`, but parameter type `string` does not accept it."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "null-argument"
+message = "Argument #2 of function `hash` is `null`, but parameter type `string` does not accept it."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "redundant-docblock-type"
+message = "Redundant docblock type for variable `$inner`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always false and right operand is evaluated."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$post` is already known to be `WP_Post`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$taxonomies` is already `array<int, string>`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/content-read.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$taxonomy` is already `string`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/delete-post.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `float`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "less-specific-return-statement"
+message = 'Returned type `array<array-key, mixed>` is less specific than the declared return type `array<string, mixed>` for function `ElementorMCP\Abilities\WordPress\wordpress_extension_to_array`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 5
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Abilities\WordPress\ABSPATH`.'
+count = 48
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #2 of `themes_api`: expected `array{'author'?: string, 'browse'?: string, 'fields'?: array{'description'?: bool, 'downloaded'?: bool, 'downloadlink'?: bool, 'extended_author'?: bool, 'homepage'?: bool, 'last_updated'?: bool, 'parent'?: bool, 'photon_screenshots'?: bool, 'rating'?: bool, 'ratings'?: bool, 'screenshot_count'?: int, 'screenshot_url'?: bool, 'screenshots'?: bool, 'sections'?: bool, 'tags'?: bool, 'template'?: bool, 'theme_url'?: bool, 'versions'?: bool}, 'locale'?: string, 'number'?: int, 'page'?: int, 'per_page'?: int, 'search'?: string, 'slug'?: string, 'tag'?: string, 'user'?: string}|object`, but possibly received `array{'fields': array{'sections': false, 'short_description': true}, 'page': positive-int, 'per_page': int<1, 50>, 'search': string}`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/extensions.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/helpers.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 4
+
+[[issues]]
+file = "includes/abilities/wordpress/media-attachments.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/media-attachments.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/media-attachments.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/media-attachments.php"
+code = "redundant-comparison"
+message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/media-attachments.php"
+code = "redundant-condition"
+message = "This condition (type `true`) will always evaluate to true."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/media-attachments.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always falsy and right operand is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/media-attachments.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$attachment` is already known to be `WP_Post`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 5
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Abilities\WordPress\ABSPATH`.'
+count = 6
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "null-argument"
+message = "Argument #1 of function `wp_get_attachment_metadata` is `null`, but parameter type `int` does not accept it."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "redundant-comparison"
+message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "redundant-condition"
+message = "Redundant ternary operator: condition is always truthy."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "redundant-condition"
+message = "This condition (type `true`) will always evaluate to true."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always falsy and right operand is always truthy."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/media.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$attachment` is already known to be `WP_Post`."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/menus.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `array`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/menus.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Abilities\WordPress\wordpress_existing_menu_item_args`: expected `WP_Post`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/menus.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/menus.php"
+code = "mixed-property-access"
+message = "Attempting to access a property on a non-object type (`mixed`)."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/menus.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 5
+
+[[issues]]
+file = "includes/abilities/wordpress/restore-post.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/restore-post.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/restore-post.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/restore-post.php"
+code = "redundant-comparison"
+message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/restore-post.php"
+code = "redundant-condition"
+message = "This condition (type `true`) will always evaluate to true."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/revisions.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/revisions.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/revisions.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #2 of `sprintf`: expected `Stringable|null|scalar`, but possibly received `WP_Post|int`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/revisions.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 17
+
+[[issues]]
+file = "includes/abilities/wordpress/revisions.php"
+code = "redundant-condition"
+message = "Redundant ternary operator: condition is always truthy."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/search-images.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/search-images.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "ambiguous-object-property-access"
+message = "Cannot statically verify property access on a generic `object` type."
+count = 10
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "impossible-condition"
+message = "Redundant ternary operator: condition is always falsy."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "impossible-type-comparison"
+message = "Impossible type assertion: `$parent_membership` of type `false` can never be `WP_Error`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 5
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `array`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 6
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "never-return"
+message = "Cannot return value with type 'never' from this function."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Abilities\WordPress\ABSPATH`.'
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 6
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-comparison"
+message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
+count = 5
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-comparison"
+message = "Redundant `===` comparison: left-hand side is never identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-condition"
+message = "Redundant ternary operator: condition is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-condition"
+message = "This condition (type `true`) will always evaluate to true."
+count = 4
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-logical-operation"
+message = "Redundant `&&` operation: left operand is always truthy and right operand is evaluated."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-logical-operation"
+message = "Redundant `&&` operation: left operand is evaluated and right operand is always falsy."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always falsy and right operand is always truthy."
+count = 3
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always true and right operand is not evaluated."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$item` is already known to be `WP_Post`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/site-management.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$post` is already known to be `WP_Post`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `array`."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 4
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #3 of `wp_insert_term`: expected `array{'alias_of'?: string, 'description'?: string, 'parent'?: int, 'slug'?: string}`, but possibly received `array<string, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #3 of `wp_update_term`: expected `array{'alias_of'?: string, 'description'?: string, 'parent'?: int, 'slug'?: string}`, but possibly received `non-empty-array<string, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "redundant-cast"
+message = "Redundant cast to `(array)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 7
+
+[[issues]]
+file = "includes/abilities/wordpress/taxonomies.php"
+code = "string-member-selector"
+message = "This member selector uses a non-literal string type (`string`); its specific value cannot be statically determined."
+count = 1
+
+[[issues]]
+file = "includes/abilities/wordpress/update-post.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/abilities-toggle.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/oauth-panel.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `elementor_mcp_render_mcp_dependency_inline_notice`: expected `WP_Error|null`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "non-existent-function"
+message = "Function `elementor_mcp_get_mcp_dependency_error` could not be found."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 4
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "redundant-condition"
+message = "Redundant ternary operator: condition is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/page.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$client` is already `array{'credentials': int, 'first_seen': string, 'ids': list<int>, 'known': bool, 'label': string, 'last_seen': string, 'methods': list<string>, 'reachable': bool, 'requests': int, 'users': list<string>, 'versions': list<string>}`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/token-configs.php"
+code = "invalid-return-statement"
+message = "Invalid return type for function `elementor_mcp_build_token_api_configs`: expected `array<string, array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>}>`, but found `array{'anthropic-api': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'curl': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'openai-api': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}}`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/token-configs.php"
+code = "invalid-return-statement"
+message = "Invalid return type for function `elementor_mcp_build_token_configs`: expected `array<string, array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>}>`, but found `array{'antigravity-cli': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'antigravity-ide': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'claude-code': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'claude-desktop': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'codex': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'cursor': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'factory-droid': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'github-copilot': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'vscode': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'windsurf': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, ...<string, array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps'?: list<string>}>}`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/token-configs.php"
+code = "invalid-return-statement"
+message = "Invalid return type for function `elementor_mcp_build_token_vscode_family_configs`: expected `array<string, array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>}>`, but found `array{'amazon-q': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'cline': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'gemini-cli': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'kilo-code': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'kimi-cli': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'openclaw': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'opencode': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'qwen-code': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'roo-code': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'zcode': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}, 'zed': array{'code': string, 'hint': string, 'isShell': bool, 'paths': array<string, string>, 'steps': list<string>}}`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/tokens-panel.php"
+code = "impossible-type-comparison"
+message = "Impossible condition: variable `$raw_id` can never be `int`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/tokens-panel.php"
+code = "impossible-type-comparison"
+message = "Impossible condition: variable `$raw_ttl` can never be `int`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/tokens-panel.php"
+code = "impossible-type-comparison"
+message = "Impossible type assertion: `$raw_id` of type `non-empty-array<int|non-empty-string, array<int|non-empty-string, mixed>|string>` can never be `int`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/tokens-panel.php"
+code = "impossible-type-comparison"
+message = "Impossible type assertion: `$raw_ttl` of type `non-empty-array<int|non-empty-string, array<int|non-empty-string, mixed>|string>` can never be `int`."
+count = 1
+
+[[issues]]
+file = "includes/admin/connect/tokens-panel.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/admin/connect/tokens-panel.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is evaluated and right operand is always falsy."
+count = 2
+
+[[issues]]
+file = "includes/admin/connect/web-apps.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 4
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_results`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')|string('OBJECT_K')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ARRAY_A`."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "non-existent-function"
+message = "Function `elementor_mcp_get_mcp_dependency_error` could not be found."
+count = 2
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #1 of `wpdb::get_var`: expected `null|string`, but possibly received `string|void`."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #1 of `wpdb::prepare`: expected `literal-string`, but possibly received `non-empty-string`."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 5
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "redundant-condition"
+message = "Redundant ternary operator: condition is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "redundant-logical-operation"
+message = "Redundant `&&` operation: left operand is always truthy and right operand is evaluated."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 3
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$preview` is already `array<string, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/admin/dashboard.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$previews` is already `list<array<string, mixed>>`."
+count = 1
+
+[[issues]]
+file = "includes/admin/nav.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/admin/pro-upsell.php"
+code = "impossible-nonnull-entry-check"
+message = "Impossible `isset` check on key `'abilities'` accessed on `array{'category': string, 'class'?: string, 'constant'?: string, 'function'?: string, 'label': string}`."
+count = 1
+
+[[issues]]
+file = "includes/admin/pro-upsell.php"
+code = "invalid-return-statement"
+message = "Invalid return type for function `elementor_mcp_pro_integration_catalog`: expected `list<array{'category': string, 'class'?: string, 'constant'?: string, 'function'?: string, 'label': string}>`, but found `list{array{'abilities': int(26), 'category': string('builder'), 'constant': string('ELEMENTOR_VERSION'), 'label': string('Elementor')}, array{'abilities': int(23), 'category': string('content'), 'class': string('ACF'), 'label': string('Advanced Custom Fields')}, array{'abilities': int(26), 'category': string('content'), 'function': string('jet_engine'), 'label': string('JetEngine')}, array{'abilities': int(32), 'category': string('content'), 'constant': string('RWMB_VER'), 'label': string('Meta Box')}, array{'abilities': int(25), 'category': string('content'), 'constant': string('PODS_VERSION'), 'label': string('Pods')}, array{'abilities': int(24), 'category': string('content'), 'constant': string('ACPT_PLUGIN_VERSION'), 'label': string('ACPT')}, array{'abilities': int(18), 'category': string('content'), 'constant': string('ASENHA_VERSION'), 'label': string('ASE')}, array{'abilities': int(10), 'category': string('seo'), 'constant': string('WPSEO_VERSION'), 'label': string('Yoast SEO')}, array{'abilities': int(8), 'category': string('seo'), 'constant': string('RANK_MATH_VERSION'), 'label': string('Rank Math SEO')}, array{'abilities': int(12), 'category': string('seo'), 'constant': string('AIOSEO_VERSION'), 'label': string('All in One SEO')}, array{'abilities': int(16), 'category': string('seo'), 'constant': string('SEOPRESS_VERSION'), 'label': string('SeoPress')}, array{'abilities': int(9), 'category': string('forms'), 'constant': string('WPCF7_VERSION'), 'label': string('Contact Form 7')}, array{'abilities': int(28), 'category': string('forms'), 'constant': string('WPFORMS_VERSION'), 'label': string('WPForms')}, array{'abilities': int(28), 'category': string('forms'), 'class': string('GFForms'), 'label': string('Gravity Forms')}, array{'abilities': int(37), 'category': string('forms'), 'constant': string('FLUENTFORM_VERSION'), 'label': string('Fluent Forms')}, array{'abilities': int(39), 'category': string('forms'), 'class': string('FrmAppHelper'), 'label': string('Formidable Forms')}, array{'abilities': int(21), 'category': string('forms'), 'class': string('Ninja_Forms'), 'label': string('Ninja Forms')}, array{'abilities': int(35), 'category': string('commerce'), 'class': string('WooCommerce'), 'label': string('WooCommerce')}, array{'abilities': int(11), 'category': string('dev'), 'constant': string('CODE_SNIPPETS_VERSION'), 'label': string('Code Snippets')}, array{'abilities': int(9), 'category': string('dynamic'), 'constant': string('DYNAMIC_SHORTCODES_VERSION'), 'label': string('Dynamic Shortcodes')}}`."
+count = 1
+
+[[issues]]
+file = "includes/admin/pro-upsell.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always false and right operand is evaluated."
+count = 1
+
+[[issues]]
+file = "includes/admin/pro-upsell.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side is always `null`."
+count = 1
+
+[[issues]]
+file = "includes/admin/pro-upsell.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$abilities` (type `int(0)`) is already known to be `int`."
+count = 1
+
+[[issues]]
+file = "includes/admin/pro-upsell.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$abilities` is already `int(0)`."
+count = 1
+
+[[issues]]
+file = "includes/admin/settings.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 3
+
+[[issues]]
+file = "includes/admin/settings.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 3
+
+[[issues]]
+file = "includes/admin/settings.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/admin/ui.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/admin/ui.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ELEMENTOR_MCP_PLUGIN_URL`."
+count = 1
+
+[[issues]]
+file = "includes/admin/ui.php"
+code = "non-existent-function"
+message = "Function `elementor_mcp_get_mcp_dependency_error` could not be found."
+count = 2
+
+[[issues]]
+file = "includes/admin/ui.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 4
+
+[[issues]]
+file = "includes/admin/ui.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$items` is already `list<array<int, string>>`."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "docblock-type-mismatch"
+message = "Docblock type mismatch for variable `$findings`."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 2
+
+[[issues]]
+file = "includes/change-log.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Comment|array<array-key, mixed>|null)&array<int|string, mixed>&null&WP_Comment`)."
+count = 5
+
+[[issues]]
+file = "includes/change-log.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `maybe_unserialize`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "mixed-property-access"
+message = "Attempting to access a property on a non-object type (`mixed`)."
+count = 3
+
+[[issues]]
+file = "includes/change-log.php"
+code = "non-existent-class-like"
+message = "Class, Interface, or Trait `WC_Order` does not exist."
+count = 16
+
+[[issues]]
+file = "includes/change-log.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 4
+
+[[issues]]
+file = "includes/change-log.php"
+code = "non-existent-method"
+message = "Method `get_id` does not exist on type `WC_Order`."
+count = 3
+
+[[issues]]
+file = "includes/change-log.php"
+code = "non-existent-method"
+message = "Method `get_status` does not exist on type `WC_Order`."
+count = 3
+
+[[issues]]
+file = "includes/change-log.php"
+code = "non-existent-method"
+message = "Method `update_status` does not exist on type `WC_Order`."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #3 of `wp_update_term`: expected `array{'alias_of'?: string, 'description'?: string, 'parent'?: int, 'slug'?: string}`, but possibly received `array{'description': string, 'name': string, 'parent': int, 'slug': string}`."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "redundant-cast"
+message = "Redundant cast to `(array)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 7
+
+[[issues]]
+file = "includes/change-log.php"
+code = "redundant-comparison"
+message = "Redundant `===` comparison: left-hand side is never identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "redundant-condition"
+message = "This condition (type `true`) will always evaluate to true."
+count = 2
+
+[[issues]]
+file = "includes/change-log.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$post` is already `(WP_Post|array<array-key, mixed>|null)&array<string, mixed>&null`."
+count = 1
+
+[[issues]]
+file = "includes/change-log.php"
+code = "unfulfilled-expect"
+message = "This pragma was not used and may be removed."
+count = 5
+
+[[issues]]
+file = "includes/chat/admin.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ELEMENTOR_MCP_PLUGIN_URL`."
+count = 2
+
+[[issues]]
+file = "includes/chat/ai.php"
+code = "never-return"
+message = "Cannot return value with type 'never' from this function."
+count = 3
+
+[[issues]]
+file = "includes/chat/ai.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Files\DTO\File` not found.'
+count = 1
+
+[[issues]]
+file = "includes/chat/ai.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Messages\DTO\MessagePart` not found.'
+count = 4
+
+[[issues]]
+file = "includes/chat/ai.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Messages\DTO\Message` not found.'
+count = 3
+
+[[issues]]
+file = "includes/chat/ai.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Tools\DTO\FunctionCall` not found.'
+count = 1
+
+[[issues]]
+file = "includes/chat/ai.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Tools\DTO\FunctionResponse` not found.'
+count = 1
+
+[[issues]]
+file = "includes/chat/ai.php"
+code = "non-existent-method"
+message = 'Method `model` does not exist on type `WordPress\AiClient\Messages\Enums\MessageRoleEnum`.'
+count = 2
+
+[[issues]]
+file = "includes/chat/ai.php"
+code = "non-existent-method"
+message = 'Method `user` does not exist on type `WordPress\AiClient\Messages\Enums\MessageRoleEnum`.'
+count = 2
+
+[[issues]]
+file = "includes/chat/attachments.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "impossible-assignment"
+message = "Invalid assignment: the right-hand side has type `never` and cannot produce a value."
+count = 3
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "less-specific-nested-return-statement"
+message = "Returned type `array{'default': array{'model': string, 'provider': mixed}, 'providers': array{}|list<array{'configured': mixed, 'id': mixed, 'models': array{}|list<array{'id': string, 'name': string, 'supports_image_input': bool}>, 'name': string}>}` is less specific than the declared return type `WP_Error|array{'default': array{'model': string, 'provider': string}, 'providers': list<array{'configured': bool, 'id': string, 'models': list<array{'id': string, 'name': string, 'supports_image_input': bool}>, 'name': string}>}` for function `elementor_mcp_chat_list_text_models` due to nested 'mixed'."
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `method_exists`: expected `class-string|object`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `elementor_mcp_chat_provider_model_rows`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `elementor_mcp_chat_provider_name`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 4
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "mixed-return-statement"
+message = "Could not infer a precise return type for function `elementor_mcp_chat_image_model_requirements`. Saw type `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "mixed-return-statement"
+message = "Could not infer a precise return type for function `elementor_mcp_chat_text_model_requirements`. Saw type `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "never-return"
+message = "Cannot return value with type 'never' from this function."
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Files\DTO\File` not found.'
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Messages\DTO\MessagePart` not found.'
+count = 3
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Messages\DTO\Message` not found.'
+count = 2
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Providers\Models\DTO\ModelConfig` not found.'
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `WordPress\AiClient\Providers\Models\DTO\ModelConfig`.'
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-method"
+message = 'Method `defaultRegistry` does not exist on type `WordPress\AiClient\AiClient`.'
+count = 1
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-method"
+message = 'Method `fromPromptData` does not exist on type `WordPress\AiClient\Providers\Models\DTO\ModelRequirements`.'
+count = 2
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-method"
+message = 'Method `textGeneration` does not exist on type `WordPress\AiClient\Providers\Models\Enums\CapabilityEnum`.'
+count = 2
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "non-existent-method"
+message = 'Method `user` does not exist on type `WordPress\AiClient\Messages\Enums\MessageRoleEnum`.'
+count = 2
+
+[[issues]]
+file = "includes/chat/models.php"
+code = "unknown-iterator-type"
+message = "Cannot determine the type of the expression provided to `foreach`."
+count = 1
+
+[[issues]]
+file = "includes/chat/rest.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 5
+
+[[issues]]
+file = "includes/chat/schema.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 2
+
+[[issues]]
+file = "includes/chat/tools.php"
+code = "docblock-type-mismatch"
+message = 'Docblock return type `unknown-ref(WordPress\AiClient\Tools\DTO\FunctionDeclaration)` is incompatible with native return type `object`.'
+count = 1
+
+[[issues]]
+file = "includes/chat/tools.php"
+code = "never-return"
+message = "Cannot return value with type 'never' from this function."
+count = 1
+
+[[issues]]
+file = "includes/chat/tools.php"
+code = "non-existent-class"
+message = 'Class `WordPress\AiClient\Tools\DTO\FunctionDeclaration` not found.'
+count = 2
+
+[[issues]]
+file = "includes/chat/tools.php"
+code = "non-existent-class-like"
+message = 'Cannot find class, interface, enum, or type alias `WordPress\AiClient\Tools\DTO\FunctionDeclaration`.'
+count = 2
+
+[[issues]]
+file = "includes/clients.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/compatibility.php"
+code = "invalid-return-statement"
+message = "Invalid return type for function `elementor_mcp_rest_api_features`: expected `array{'abilities_bearer_auth': bool, 'agent_context': bool, 'generalized_execution_shim': bool, 'rest_skills': bool}`, but found `array{'abilities_bearer_auth': true, 'agent_context': true, 'generalized_execution_shim': true, 'mcp_legacy_protocol': true, 'mcp_modern_protocol': true, 'mcp_subscriptions': false, 'mcp_tasks_extension': false, 'rest_skills': true}`."
+count = 1
+
+[[issues]]
+file = "includes/compatibility.php"
+code = "invalid-return-statement"
+message = "Invalid return type for function `elementor_mcp_server_compatibility`: expected `array{'features': array<string, bool>, 'minimum_wordpress_version': string, 'plugin_version': string, 'rest_api_version': int, 'wordpress_version': string}`, but found `array{'features': array{'abilities_bearer_auth': bool, 'agent_context': bool, 'generalized_execution_shim': bool, 'rest_skills': bool}, 'mcp_protocol_versions': list<string>, 'minimum_wordpress_version': string('6.9'), 'plugin_version': string('1.0.0'), 'rest_api_version': int(1), 'wordpress_version': string}`."
+count = 1
+
+[[issues]]
+file = "includes/connections.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_results`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')|string('OBJECT_K')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/connections.php"
+code = "mixed-operand"
+message = "Right operand in binary operation has type `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/connections.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 2
+
+[[issues]]
+file = "includes/connections.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ARRAY_A`."
+count = 1
+
+[[issues]]
+file = "includes/connections.php"
+code = "non-existent-constant"
+message = "Undefined constant: `HOUR_IN_SECONDS`."
+count = 1
+
+[[issues]]
+file = "includes/connections.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 4
+
+[[issues]]
+file = "includes/connections.php"
+code = "unfulfilled-expect"
+message = "This pragma was not used and may be removed."
+count = 2
+
+[[issues]]
+file = "includes/design/abilities/adopt-design.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/check-composition.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/design/abilities/check-composition.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Design\Abilities\CheckComposition\composed_items`: expected `list<array<string, mixed>>`, but possibly received `non-empty-array<array-key, mixed>`.'
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/check-composition.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Design\Abilities\CheckComposition\depth_of`: expected `list<array<string, mixed>>`, but possibly received `non-empty-array<array-key, mixed>`.'
+count = 2
+
+[[issues]]
+file = "includes/design/abilities/check-composition.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Design\Spec\normalize_composition`: expected `list<mixed>`, but possibly received `non-empty-array<array-key, mixed>`.'
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/check-contrast.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/design/abilities/check-contrast.php"
+code = "redundant-comparison"
+message = "Redundant `===` comparison: left-hand side is always identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/check-contrast.php"
+code = "redundant-logical-operation"
+message = "Redundant `&&` operation: left operand is evaluated and right operand is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/check-design.php"
+code = "possibly-invalid-argument"
+message = '''Possible argument type mismatch for argument #2 of `ElementorMCP\Design\Preflight\violations`: expected `array{'accent': string, 'allowed_colors': list<string>, 'allowed_fonts': list<string>, 'allows': list<string>, 'donts': list<string>, 'has_active': bool}`, but possibly received `array{'accent': string, 'allowed_colors': list<string>, 'allowed_fonts': list<string>, 'allows': list<string>, 'declared_radii': list<float>, 'declared_sizes': list<float>, 'declared_spacing': list<float>, 'donts': list<string>, 'has_active': bool}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/compare-references.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/design-spec.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #2 of `ElementorMCP\Design\Spec\compare`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/design-spec.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #2 of `ElementorMCP\Design\Spec\save`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/generate-design.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `float`."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/generate-design.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Design\Generate\resolve`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/generate-design.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Design\Spec\from_tokens`: expected `array<string, mixed>`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/generate-design.php"
+code = "mixed-array-access"
+message = "Unsafe array access on type `mixed`."
+count = 6
+
+[[issues]]
+file = "includes/design/abilities/generate-design.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "impossible-nonnull-entry-check"
+message = "Impossible `isset` check on key `'layout'` accessed on `array{'colors'?: array<string, string>, 'components'?: array<string, string>, 'dials'?: array<string, string>, 'rounded'?: array<string, string>, 'spacing'?: array<string, string>, 'typography'?: array<string, array<string, string>>}`."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `float`."
+count = 2
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "possibly-invalid-argument"
+message = '''Possible argument type mismatch for argument #1 of `ElementorMCP\Design\Tokens\dials`: expected `array{'colors': array<string, string>, 'components': array<string, string>, 'dials': array<string, string>, 'rounded': array<string, string>, 'spacing': array<string, string>, 'typography': array<string, array<string, string>>}`, but possibly received `array{'colors'?: array<string, string>, 'components'?: array<string, string>, 'dials'?: array<string, string>, 'rounded'?: array<string, string>, 'spacing'?: array<string, string>, 'typography'?: array<string, array<string, string>>}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "redundant-cast"
+message = "Redundant cast to `(float)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-layout-grammars.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side is always `null`."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-typefaces.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `array`."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/list-typefaces.php"
+code = "mixed-operand"
+message = "Casting `mixed` to `bool`."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/verify-rendered-page.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/verify-rendered-page.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/verify-rendered-page.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/verify-rendered-page.php"
+code = "redundant-comparison"
+message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/design/abilities/verify-rendered-page.php"
+code = "redundant-condition"
+message = "This condition (type `true`) will always evaluate to true."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 2
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #4 of `wp_enqueue_script`: expected `bool|null|string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #4 of `wp_enqueue_style`: expected `bool|null|string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Design\Admin\ELEMENTOR_MCP_PLUGIN_URL`.'
+count = 2
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "non-existent-function"
+message = "Function `elementor_mcp_asset_version` could not be found."
+count = 2
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "null-argument"
+message = 'Argument #1 of function `ElementorMCP\Design\Store\set_active` is `null`, but parameter type `string` does not accept it.'
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "redundant-comparison"
+message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
+count = 2
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "redundant-condition"
+message = "Redundant ternary operator: condition is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "redundant-condition"
+message = "This condition (type `true`) will always evaluate to true."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "redundant-logical-operation"
+message = "Redundant `&&` operation: left operand is always truthy and right operand is evaluated."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "redundant-logical-operation"
+message = "Redundant `&&` operation: left operand is evaluated and right operand is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always falsy and right operand is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$post` is already known to be `WP_Post`."
+count = 1
+
+[[issues]]
+file = "includes/design/admin.php"
+code = "unfulfilled-expect"
+message = "This pragma was not used and may be removed."
+count = 2
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Design\Adopt\gather`: expected `array{'colors': array<string, string>, 'notes': list<string>, 'sources': list<array{'colors': int, 'fonts': int, 'source': string}>, 'spacing': array<string, string>, 'typography': array<string, array<string, string>>}`, but found `array<string, mixed>`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #2 of `ElementorMCP\Design\Adopt\merge_source`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `array_key_exists`: expected `array<array-key, mixed>`, but found `mixed`."
+count = 3
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "mixed-array-assignment"
+message = "Unsafe array assignment on type `mixed`."
+count = 6
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 7
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/design/adopt.php"
+code = "reference-to-undefined-variable"
+message = "Reference created from a previously undefined variable `$m`."
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "impossible-nonnull-entry-check"
+message = "Impossible `isset` check on key `'layout'` accessed on `array{'colors': array<string, string>, 'components': array<string, string>, 'dials': array<string, string>, 'rounded': array<string, string>, 'spacing': array<string, string>, 'typography': array<string, array<string, string>>}`."
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 7
+
+[[issues]]
+file = "includes/design/context.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/design/context.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side is always `null`."
+count = 1
+
+[[issues]]
+file = "includes/design/contract.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/design/contract.php"
+code = "impossible-nonnull-entry-check"
+message = "Impossible `isset` check on key `'layout'` accessed on `array{'colors': array<string, string>, 'components': array<string, string>, 'dials': array<string, string>, 'rounded': array<string, string>, 'spacing': array<string, string>, 'typography': array<string, array<string, string>>}`."
+count = 2
+
+[[issues]]
+file = "includes/design/contract.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Design\Contract\inspect`: expected `array{'dials': array{'density': float, 'motion': float, 'variance': float}, 'guidance': array{'donts': list<string>, 'dos': list<string>}, 'readiness': array{'errors': list<string>, 'ready': bool, 'sync_ready': bool, 'warnings': list<string>}, 'token_sources': array{'colors': string, 'components': string, 'dials': string, 'layout': string, 'rounded': string, 'scale': string, 'spacing': string, 'typography': string}, 'tokens': array{'colors': array<string, string>, 'components': array<string, string>, 'rounded': array<string, string>, 'spacing': array<string, string>, 'typography': array<string, array<string, string>>}, 'waivers': list<string>}`, but found `array{'dials': array{'density': float, 'motion': float, 'variance': float}, 'guidance': array{'donts': list<string>, 'dos': list<string>}, 'readiness': array{'errors': list<string>, 'ready': bool, 'sync_ready': bool, 'warnings': list<string>}, 'token_sources': array{'colors': string, 'components': string, 'dials': string, 'rounded': string, 'scale': string, 'spacing': string, 'typography': string}, 'tokens': array{'colors': array<string, string>, 'components': array<string, string>, 'layout': array{}, 'rounded': array<string, string>, 'spacing': array<string, string>, 'typography': array<string, array<string, string>>}, 'waivers': list<string>}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/contract.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Design\Contract\token_sources`: expected `array{'colors': string, 'components': string, 'dials': string, 'rounded': string, 'scale': string, 'spacing': string, 'typography': string}`, but found `array{'colors': string, 'components': string, 'dials': string, 'layout': string, 'rounded': string, 'scale': string, 'spacing': string, 'typography': string}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/contract.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side is always `null`."
+count = 2
+
+[[issues]]
+file = "includes/design/contract.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$props` is already `array<string, string>`."
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Design\Contrast\analyze_palette`: expected `array{'pairs': list<array{'background': string, 'background_role': string, 'foreground': string, 'foreground_role': string, 'grade': string, 'ratio': float}>, 'readable_pairs': int, 'text_safe': list<string>, 'total_pairs': int, 'warnings': list<string>}`, but found `array{'pairs': list<array{'background': non-empty-string|null, 'background_role': null|string, 'foreground': non-empty-string|null, 'foreground_role': null|string, 'grade': string, 'ratio': float}>, 'readable_pairs': non-negative-int, 'text_safe': list<string>, 'total_pairs': non-negative-int, 'warnings': list<string>}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "mixed-assignment"
+message = "Assigning `nonnull` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "mixed-operand"
+message = "Left operand in `<` comparison has `mixed` type."
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "possibly-null-argument"
+message = 'Argument #1 of function `ElementorMCP\Design\Contrast\ratio` is possibly `null`, but parameter type `string` does not accept it.'
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "possibly-null-argument"
+message = 'Argument #2 of function `ElementorMCP\Design\Contrast\ratio` is possibly `null`, but parameter type `string` does not accept it.'
+count = 1
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "possibly-null-array-access"
+message = "Cannot perform array access on possibly `null` value."
+count = 4
+
+[[issues]]
+file = "includes/design/contrast.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 3
+
+[[issues]]
+file = "includes/design/distinct.php"
+code = "less-specific-nested-argument-type"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Design\Preflight\collect_allowed_fonts`: expected `array<string, array<string, string>>`, but provided type `array<string, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/design/distinct.php"
+code = "redundant-cast"
+message = "Redundant cast to `(float)`: the expression already has this type."
+count = 8
+
+[[issues]]
+file = "includes/design/distinct.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "invalid-argument"
+message = '''Invalid argument type for argument #1 of `ElementorMCP\Design\Gate\pending_findings`: expected `list<array<string, mixed>>|null`, but found `array{'ability': string, 'design': non-empty-string, 'mode': string, 'violations': list<array<string, mixed>>}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "invalid-type-cast"
+message = "Non numeric string of type `string` implicitly cast to `float`."
+count = 3
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/design/gate.php"
+code = "possibly-invalid-argument"
+message = '''Possible argument type mismatch for argument #2 of `ElementorMCP\Design\Preflight\violations`: expected `array{'accent': string, 'allowed_colors': list<string>, 'allowed_fonts': list<string>, 'allows': list<string>, 'donts': list<string>, 'has_active': bool}`, but possibly received `array{'accent': string, 'allowed_colors': list<string>, 'allowed_fonts': list<string>, 'allows': list<string>, 'declared_radii': list<float>, 'declared_sizes': list<float>, 'declared_spacing': list<float>, 'donts': list<string>, 'has_active': true}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `array`."
+count = 1
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `float`."
+count = 2
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "redundant-cast"
+message = "Redundant cast to `(float)`: the expression already has this type."
+count = 3
+
+[[issues]]
+file = "includes/design/generate.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/design/grammars.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `float`."
+count = 1
+
+[[issues]]
+file = "includes/design/library.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Design\Library\active_tokens`: expected `array{'colors': array<string, string>, 'fonts': array<string, string>, 'name': string, 'readiness': array{'errors': list<string>, 'ready': bool, 'sync_ready': bool, 'warnings': list<string>}, 'slug': string, 'token_sources': array{'colors': string, 'components': string, 'dials': string, 'rounded': string, 'scale': string, 'spacing': string, 'typography': string}}|null`, but found `array{'colors': array{'accent'?: string, 'bg'?: string, 'ink'?: string}, 'fonts': array{'body'?: string, 'heading'?: string}, 'name': string, 'readiness': array{'errors': list<string>, 'ready': bool, 'sync_ready': bool, 'warnings': list<string>}, 'slug': string, 'token_sources': array{'colors': string, 'components': string, 'dials': string, 'layout': string, 'rounded': string, 'scale': string, 'spacing': string, 'typography': string}}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Design\Preflight\context`: expected `array{'accent': string, 'allowed_colors': list<string>, 'allowed_fonts': list<string>, 'allows': list<string>, 'declared_radii': list<float>, 'declared_sizes': list<float>, 'declared_spacing': list<float>, 'donts': list<string>, 'has_active': bool}`, but found `array{'accent': string, 'allowed_colors': list<non-empty-string>, 'allowed_fonts': list<string>, 'allows': list<string>, 'declared_radii': list<float>, 'declared_sizes': array<array-key, mixed>, 'declared_spacing': list<float>, 'donts': list<string>, 'has_active': true}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Design\Preflight\violations`: expected `list<array{'evidence': string, 'message': string, 'rule': string, 'severity': string}>`, but found `array<array-key, mixed>|non-empty-list<array<string, string>|array{'evidence': string, 'message': string, 'rule': string, 'severity': string}>`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "invalid-type-cast"
+message = "Non numeric string of type `string` implicitly cast to `float`."
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "less-specific-nested-return-statement"
+message = '''Returned type `list<mixed>` is less specific than the declared return type `list<string>` for function `ElementorMCP\Design\Preflight\checked` due to nested 'mixed'.'''
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 5
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "null-argument"
+message = 'Argument #2 of function `ElementorMCP\Design\Preflight\type_scale` is `null`, but parameter type `list<float>` does not accept it.'
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/design/preflight.php"
+code = "undefined-string-array-index"
+message = "Undefined array key 'declared_sizes' accessed on `array{'accent': string, 'allowed_colors': list<string>, 'allowed_fonts': list<string>, 'allows': list<string>, 'donts': list<string>, 'has_active': true}`."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "invalid-iterator"
+message = "The expression provided to `foreach` is not iterable. It resolved to type `mixed`, which is not iterable."
+count = 3
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "invalid-return-statement"
+message = 'Invalid return type for function `ElementorMCP\Design\Rendered\colors_in`: expected `array<string, string>`, but found `array<int|string, string>`.'
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 8
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "mixed-operand"
+message = "Left operand in `>` comparison has `mixed` type."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "mixed-property-access"
+message = "Attempting to access a property on a non-object type (`mixed`)."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "possibly-false-argument"
+message = "Argument #1 of function `basename` is possibly `false`, but parameter type `string` does not accept it."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "possibly-false-operand"
+message = "Possibly false right operand used in string concatenation (type `false|string`)."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "possibly-undefined-variable"
+message = "Variable `$match` might not have been defined on all execution paths leading to this point."
+count = 1
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "reference-to-undefined-variable"
+message = "Reference created from a previously undefined variable `$matches`."
+count = 2
+
+[[issues]]
+file = "includes/design/rendered.php"
+code = "reference-to-undefined-variable"
+message = "Reference created from a previously undefined variable `$rgb`."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "impossible-condition"
+message = "This condition (type `false`) will always evaluate to false."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "invalid-return-statement"
+message = 'Invalid return type for function `ElementorMCP\Design\Spec\normalize_composition`: expected `WP_Error|list<array<string, mixed>>`, but found `WP_Error|array<array-key, mixed>`.'
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `float`."
+count = 33
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "invalid-type-cast"
+message = "Non numeric string of type `non-empty-string` implicitly cast to `float`."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Design\Spec\ratio_layouts`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "less-specific-return-statement"
+message = 'Returned type `array<array-key, mixed>|null` is less specific than the declared return type `array<string, mixed>|null` for function `ElementorMCP\Design\Spec\get`.'
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `array_map`: expected `array<('K.array_map() extends array-key), array<array-key, mixed>>`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 15
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "mixed-operand"
+message = "Casting `mixed` to `bool`."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Design\Spec\block_signature`: expected `list<array<string, mixed>>`, but possibly received `non-empty-array<array-key, mixed>`.'
+count = 2
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "possibly-invalid-argument"
+message = 'Possible argument type mismatch for argument #1 of `ElementorMCP\Design\Spec\normalize_sections`: expected `list<mixed>`, but possibly received `array<array-key, mixed>`.'
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "possibly-undefined-variable"
+message = "Variable `$parts` might not have been defined on all execution paths leading to this point."
+count = 1
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "redundant-cast"
+message = "Redundant cast to `(float)`: the expression already has this type."
+count = 3
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 5
+
+[[issues]]
+file = "includes/design/spec.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$block` is already `array<string, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/edit.php"
+code = "invalid-property-access"
+message = "Attempting to access a property on a non-object type (`(WP_Post|array<array-key, mixed>|null)&array<int|string, mixed>&WP_Post&null`)."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/edit.php"
+code = "redundant-comparison"
+message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/edit.php"
+code = "redundant-condition"
+message = "This condition (type `true`) will always evaluate to true."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/edit.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is evaluated and right operand is always truthy."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/edit.php"
+code = "unfulfilled-expect"
+message = "This pragma was not used and may be removed."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/hero.php"
+code = "possibly-null-argument"
+message = "Argument #1 of function `number_format` is possibly `null`, but parameter type `float` does not accept it."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/hero.php"
+code = "possibly-null-operand"
+message = "Left operand in `>=` comparison might be `null` (type `float|null`)."
+count = 3
+
+[[issues]]
+file = "includes/design/templates/hero.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/panel.php"
+code = "invalid-iterator"
+message = "The expression provided to `foreach` is not iterable. It resolved to type `mixed`, which is not iterable."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/panel.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `esc_html`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/panel.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 3
+
+[[issues]]
+file = "includes/design/templates/starters.php"
+code = "invalid-iterator"
+message = "The expression provided to `foreach` is not iterable. It resolved to type `mixed`, which is not iterable."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/starters.php"
+code = "mixed-array-access"
+message = "Unsafe array access on type `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/starters.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/starters.php"
+code = "possibly-null-argument"
+message = "Argument #1 of function `number_format` is possibly `null`, but parameter type `float` does not accept it."
+count = 1
+
+[[issues]]
+file = "includes/design/templates/starters.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/design/templates/starters.php"
+code = "undefined-variable"
+message = "Undefined variable: `$library`."
+count = 1
+
+[[issues]]
+file = "includes/design/tokens.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Design\Tokens\extract`: expected `array{'colors': array<string, string>, 'components': array<string, string>, 'dials': array<string, string>, 'rounded': array<string, string>, 'spacing': array<string, string>, 'typography': array<string, array<string, string>>}`, but found `array{'colors': array<string, string>, 'components': array<string, non-empty-string>, 'dials': array<string, non-empty-string>, 'layout': array<string, non-empty-string>, 'rounded': array<string, non-empty-string>|array{'md'?: non-empty-string}, 'spacing': array<string, non-empty-string>|array{'md'?: non-empty-string}, 'typography': array<string, array<string, string>|array{'fontFamily'?: string, 'fontWeight'?: string}>}`.'''
+count = 1
+
+[[issues]]
+file = "includes/design/typefaces.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `array`."
+count = 2
+
+[[issues]]
+file = "includes/design/typefaces.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `sprintf`: expected `Stringable|null|scalar`, but found `mixed`."
+count = 4
+
+[[issues]]
+file = "includes/design/typefaces.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #3 of `sprintf`: expected `Stringable|null|scalar`, but found `mixed`."
+count = 3
+
+[[issues]]
+file = "includes/environment.php"
+code = "mixed-operand"
+message = "Casting `mixed` to `bool`."
+count = 1
+
+[[issues]]
+file = "includes/filesystem.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 2
+
+[[issues]]
+file = "includes/lifecycle.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `plugin_basename`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/lifecycle.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `register_activation_hook`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/lifecycle.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `register_deactivation_hook`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/lifecycle.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 2
+
+[[issues]]
+file = "includes/lifecycle.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ELEMENTOR_MCP_PLUGIN_FILE`."
+count = 3
+
+[[issues]]
+file = "includes/mcp/discover.php"
+code = "invalid-return-statement"
+message = 'Invalid return type for function `ElementorMCP\Mcp\runtime_capabilities`: expected `array<string, array<string, mixed>>`, but found `array<string, object>`.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/headers.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 3
+
+[[issues]]
+file = "includes/mcp/headers.php"
+code = "mixed-assignment"
+message = "Assigning `nonnull` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/mcp/headers.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/mcp/protocol.php"
+code = "less-specific-return-statement"
+message = 'Returned type `array<array-key, mixed>` is less specific than the declared return type `array<string, mixed>` for function `ElementorMCP\Mcp\client_capabilities`.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/protocol.php"
+code = "less-specific-return-statement"
+message = 'Returned type `array<array-key, mixed>` is less specific than the declared return type `array<string, mixed>` for function `ElementorMCP\Mcp\request_meta`.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/protocol.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 8
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Mcp\call_tool`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Mcp\force_schema_objects`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 3
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Mcp\force_schema_objects`: expected `array<string, mixed>`, but provided type `non-empty-array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Mcp\get_prompt`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Mcp\is_modern_request`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Mcp\validate_modern_headers`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #2 of `ElementorMCP\Mcp\handle_modern`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "mixed-array-assignment"
+message = "Unsafe array assignment on type `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 9
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 5
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "redundant-condition"
+message = "Redundant ternary operator: condition is always truthy."
+count = 2
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "redundant-logical-operation"
+message = "Redundant `||` operation: left operand is always false and right operand is evaluated."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "redundant-type-comparison"
+message = "Redundant condition: variable `$body` (type `array<array-key, mixed>`) is already known to be `array<array-key, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$body` is already `array<array-key, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/mcp/transport.php"
+code = "redundant-type-comparison"
+message = "Redundant type assertion: `$meta` is already `array<string, mixed>`."
+count = 2
+
+[[issues]]
+file = "includes/oauth/cli.php"
+code = "non-existent-method"
+message = "Method `add_command` does not exist on type `WP_CLI`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/cli.php"
+code = "non-existent-method"
+message = "Method `error` does not exist on type `WP_CLI`."
+count = 2
+
+[[issues]]
+file = "includes/oauth/cli.php"
+code = "non-existent-method"
+message = "Method `success` does not exist on type `WP_CLI`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "less-specific-return-statement"
+message = 'Returned type `array<array-key, mixed>` is less specific than the declared return type `WP_Error|array<string, mixed>` for function `ElementorMCP\OAuth\ClientIdMetadata\decode_document`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "less-specific-return-statement"
+message = 'Returned type `array<array-key, mixed>` is less specific than the declared return type `WP_Error|array<string, mixed>` for function `ElementorMCP\OAuth\ClientIdMetadata\fetch_client_metadata`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 9
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "mixed-assignment"
+message = "Assigning `nonnull` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-id-metadata.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 3
+
+[[issues]]
+file = "includes/oauth/client-validation.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #3 of `set_transient`: expected `int`, but found `mixed`."
+count = 2
+
+[[issues]]
+file = "includes/oauth/client-validation.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-validation.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\ClientValidation\HOUR_IN_SECONDS`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/client-validation.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\ClientValidation\MINUTE_IN_SECONDS`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/connected-apps.php"
+code = "invalid-array-access"
+message = "Cannot access array index on object `stdClass` that does not implement `ArrayAccess`."
+count = 4
+
+[[issues]]
+file = "includes/oauth/connected-apps.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_results`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')|string('OBJECT_K')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/connected-apps.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\ConnectedApps\ARRAY_A`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/consent.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/oauth/endpoints/discovery.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/oauth/endpoints/legacy-fallback.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/oauth/endpoints/revoke.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `json_decode`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/endpoints/revoke.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/oauth/endpoints/revoke.php"
+code = "non-existent-method"
+message = 'Method `decryptWithPassword` does not exist on type `Defuse\Crypto\Crypto`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/middleware.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/oauth/repositories/access-token-repository.php"
+code = "invalid-method-access"
+message = 'Attempting to access a method on a non-object type (`unknown-ref(Lcobucci\JWT\Configuration)`).'
+count = 3
+
+[[issues]]
+file = "includes/oauth/repositories/access-token-repository.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_row`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/repositories/access-token-repository.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 4
+
+[[issues]]
+file = "includes/oauth/repositories/access-token-repository.php"
+code = "mixed-method-access"
+message = "Attempting to access a method on a non-object type (`mixed`)."
+count = 9
+
+[[issues]]
+file = "includes/oauth/repositories/access-token-repository.php"
+code = "mixed-return-statement"
+message = 'Could not infer a precise return type for function `ElementorMCP\OAuth\Repositories\AccessTokenEntity::__toString`. Saw type `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/repositories/access-token-repository.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\Repositories\ARRAY_A`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/repositories/auth-code-repository.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_row`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/repositories/auth-code-repository.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\Repositories\ARRAY_A`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/repositories/client-repository.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_results`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')|string('OBJECT_K')`, but found `mixed`."
+count = 2
+
+[[issues]]
+file = "includes/oauth/repositories/client-repository.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_row`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/repositories/client-repository.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\Repositories\ARRAY_A`.'
+count = 3
+
+[[issues]]
+file = "includes/oauth/repositories/refresh-token-repository.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_row`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/repositories/refresh-token-repository.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\Repositories\ARRAY_A`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/schema.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `wp_schedule_event`: expected `int`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/schema.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `gmdate`: expected `int|null`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/oauth/schema.php"
+code = "mixed-operand"
+message = "Right operand in binary operation has type `mixed`."
+count = 3
+
+[[issues]]
+file = "includes/oauth/schema.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\Schema\ABSPATH`.'
+count = 2
+
+[[issues]]
+file = "includes/oauth/schema.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\Schema\DAY_IN_SECONDS`.'
+count = 1
+
+[[issues]]
+file = "includes/oauth/schema.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\OAuth\Schema\HOUR_IN_SECONDS`.'
+count = 1
+
+[[issues]]
+file = "includes/preview/admin.php"
+code = "array-to-string-conversion"
+message = "Potentially casting `array` to `string`."
+count = 2
+
+[[issues]]
+file = "includes/preview/admin.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #4 of `wp_enqueue_style`: expected `bool|null|string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/preview/admin.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Preview\Admin\ELEMENTOR_MCP_PLUGIN_URL`.'
+count = 1
+
+[[issues]]
+file = "includes/preview/admin.php"
+code = "non-existent-function"
+message = "Function `elementor_mcp_asset_version` could not be found."
+count = 1
+
+[[issues]]
+file = "includes/preview/diff.php"
+code = "invalid-type-cast"
+message = "Casting `mixed` to `array`."
+count = 1
+
+[[issues]]
+file = "includes/preview/diff.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 4
+
+[[issues]]
+file = "includes/preview/preview.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Preview\Diff\compare`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/preview/preview.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Preview\scope_fingerprint`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 2
+
+[[issues]]
+file = "includes/preview/preview.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Preview\target_summary`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/preview/preview.php"
+code = "less-specific-argument"
+message = "Argument type mismatch for argument #1 of `callable`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific."
+count = 1
+
+[[issues]]
+file = "includes/preview/preview.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/preview/preview.php"
+code = "redundant-docblock-type"
+message = "Redundant docblock type for variable `$after`."
+count = 1
+
+[[issues]]
+file = "includes/preview/preview.php"
+code = "redundant-docblock-type"
+message = "Redundant docblock type for variable `$path`."
+count = 1
+
+[[issues]]
+file = "includes/preview/preview.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side can never be `null` or undefined."
+count = 1
+
+[[issues]]
+file = "includes/preview/projectors.php"
+code = "less-specific-nested-return-statement"
+message = '''Returned type `array<string, (callable(...mixed): mixed)>` is less specific than the declared return type `array<string, (callable(array<string, mixed>, array<string, mixed>): WP_Error|array<string, mixed>)>` for function `ElementorMCP\Preview\Projectors\registry` due to nested 'mixed'.'''
+count = 1
+
+[[issues]]
+file = "includes/preview/projectors.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/preview/projectors.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "invalid-argument"
+message = "Invalid argument type for argument #4 of `add_option`: expected `bool|null`, but found `string('no')`."
+count = 2
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Preview\Store\applying_is_stale`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "less-specific-argument"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Preview\Store\is_expired`: expected `array<string, mixed>`, but provided type `array<array-key, mixed>` is less specific.'
+count = 2
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "less-specific-nested-argument-type"
+message = 'Argument type mismatch for argument #1 of `ElementorMCP\Preview\Store\write_index`: expected `list<string>`, but provided type `list{mixed, ...<string>}` is less specific.'
+count = 1
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "less-specific-return-statement"
+message = 'Returned type `array<array-key, mixed>` is less specific than the declared return type `array<string, mixed>|null` for function `ElementorMCP\Preview\Store\get`.'
+count = 1
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `ElementorMCP\Preview\Store\option_name`: expected `string`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "mixed-array-assignment"
+message = "Unsafe array assignment on type `mixed`."
+count = 3
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 2
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "mixed-return-statement"
+message = 'Could not infer a precise return type for function `ElementorMCP\Preview\Store\create`. Saw type `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/preview/store.php"
+code = "possibly-false-operand"
+message = "Left operand in `<` comparison might be `false` (type `false|int`)."
+count = 1
+
+[[issues]]
+file = "includes/preview/templates/detail.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 4
+
+[[issues]]
+file = "includes/privacy.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_results`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')|string('OBJECT_K')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/privacy.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/privacy.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ARRAY_A`."
+count = 1
+
+[[issues]]
+file = "includes/privacy.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/prompt-library/admin.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 3
+
+[[issues]]
+file = "includes/rate-limit.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/sandbox/guards.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `is_dir`: expected `string`, but found `mixed`."
+count = 2
+
+[[issues]]
+file = "includes/sandbox/guards.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `realpath`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/sandbox/guards.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `wp_mkdir_p`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/sandbox/guards.php"
+code = "mixed-return-statement"
+message = "Could not infer a precise return type for function `elementor_mcp_get_sandbox_dir`. Saw type `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/sandbox/guards.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ELEMENTOR_MCP_SANDBOX_DIR`."
+count = 6
+
+[[issues]]
+file = "includes/sandbox/loader.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `elementor_mcp_sandbox_loadable_files`: expected `string`, but found `mixed`."
+count = 2
+
+[[issues]]
+file = "includes/sandbox/loader.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `is_dir`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/sandbox/loader.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/sandbox/loader.php"
+code = "mixed-operand"
+message = "Invalid left operand: type `mixed` cannot be reliably used in string concatenation."
+count = 2
+
+[[issues]]
+file = "includes/sandbox/loader.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ELEMENTOR_MCP_SANDBOX_DIR`."
+count = 1
+
+[[issues]]
+file = "includes/skills/admin.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #4 of `wp_enqueue_style`: expected `bool|null|string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/skills/admin.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Skills\Admin\ELEMENTOR_MCP_PLUGIN_URL`.'
+count = 1
+
+[[issues]]
+file = "includes/skills/admin.php"
+code = "non-existent-function"
+message = "Function `elementor_mcp_asset_version` could not be found."
+count = 1
+
+[[issues]]
+file = "includes/skills/admin.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #1 of `wp_update_post`: expected `array{'ID'?: int, 'comment_status'?: string, 'guid'?: string, 'import_id'?: int, 'menu_order'?: int, 'meta_input'?: array<array-key, mixed>, 'page_template'?: string, 'ping_status'?: string, 'pinged'?: string, 'post_author'?: int, 'post_category'?: array<array-key, int>, 'post_content'?: string, 'post_content_filtered'?: string, 'post_date'?: string, 'post_date_gmt'?: string, 'post_excerpt'?: string, 'post_mime_type'?: string, 'post_name'?: string, 'post_parent'?: int, 'post_password'?: string, 'post_status'?: string, 'post_title'?: string, 'post_type'?: string, 'tags_input'?: array<array-key, mixed>, 'tax_input'?: array<array-key, mixed>, 'to_ping'?: string}`, but possibly received `array<array-key, mixed>`."
+count = 1
+
+[[issues]]
+file = "includes/telemetry/send.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Telemetry\ELEMENTOR_MCP_PRO_VERSION`.'
+count = 1
+
+[[issues]]
+file = "includes/telemetry/send.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #2 of `wp_remote_post`: expected `array{'blocking'?: bool, 'body'?: array<array-key, mixed>|string, 'compress'?: bool, 'cookies'?: array<array-key, mixed>, 'decompress'?: bool, 'filename'?: string, 'headers'?: array<array-key, mixed>|string, 'httpversion'?: string, 'limit_response_size'?: int, 'method'?: string, 'redirection'?: int, 'reject_unsafe_urls'?: bool, 'sslcertificates'?: string, 'sslverify'?: bool, 'stream'?: bool, 'timeout'?: float, 'user-agent'?: string}`, but possibly received `array{'blocking': bool, 'body': false|non-empty-string, 'headers': array{'Content-Type': string('application/json')}, 'redirection': int(0), 'timeout': int(3)|int(5), 'user-agent': truthy-string}`."
+count = 1
+
+[[issues]]
+file = "includes/telemetry/send.php"
+code = "redundant-cast"
+message = "Redundant cast to `(bool)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/telemetry/settings.php"
+code = "mixed-assignment"
+message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
+count = 1
+
+[[issues]]
+file = "includes/telemetry/settings.php"
+code = "mixed-return-statement"
+message = 'Could not infer a precise return type for function `ElementorMCP\Telemetry\install_id`. Saw type `mixed`.'
+count = 1
+
+[[issues]]
+file = "includes/tokens.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `gmdate`: expected `int|null`, but found `mixed`."
+count = 2
+
+[[issues]]
+file = "includes/tokens.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_results`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')|string('OBJECT_K')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/tokens.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #2 of `wpdb::get_row`: expected `string('ARRAY_A')|string('ARRAY_N')|string('OBJECT')`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/tokens.php"
+code = "mixed-operand"
+message = "Right operand in binary operation has type `mixed`."
+count = 3
+
+[[issues]]
+file = "includes/tokens.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ABSPATH`."
+count = 2
+
+[[issues]]
+file = "includes/tokens.php"
+code = "non-existent-constant"
+message = "Undefined constant: `ARRAY_A`."
+count = 2
+
+[[issues]]
+file = "includes/tokens.php"
+code = "non-existent-constant"
+message = "Undefined constant: `DAY_IN_SECONDS`."
+count = 1
+
+[[issues]]
+file = "includes/tokens.php"
+code = "non-existent-constant"
+message = "Undefined constant: `MINUTE_IN_SECONDS`."
+count = 1
+
+[[issues]]
+file = "includes/tokens.php"
+code = "possibly-false-operand"
+message = "Left operand in `<` comparison might be `false` (type `false|int`)."
+count = 1
+
+[[issues]]
+file = "includes/tokens.php"
+code = "possibly-invalid-argument"
+message = "Possible argument type mismatch for argument #1 of `wpdb::prepare`: expected `literal-string`, but possibly received `non-empty-string`."
+count = 5
+
+[[issues]]
+file = "includes/tokens.php"
+code = "unfulfilled-expect"
+message = "This pragma was not used and may be removed."
+count = 4
+
+[[issues]]
+file = "includes/troubleshoot/admin.php"
+code = "invalid-return-statement"
+message = '''Invalid return type for function `ElementorMCP\Troubleshoot\Admin\detect_connection_method`: expected `string('')|string('oauth')|string('password')|string('token')`, but found `truthy-lowercase-string`.'''
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/admin.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/bootstrap.php"
+code = "mixed-operand"
+message = "Right operand in `<` comparison has `mixed` type."
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/bootstrap.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Troubleshoot\MINUTE_IN_SECONDS`.'
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "impossible-condition"
+message = "Redundant ternary operator: condition is always falsy."
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "impossible-nonnull-entry-check"
+message = "Impossible `isset` check on key `'headers'` accessed on `array{'sslverify': bool, 'timeout': int}`."
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #1 of `is_dir`: expected `string`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #3 of `set_transient`: expected `int`, but found `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Troubleshoot\Checks\ELEMENTOR_MCP_SANDBOX_DIR`.'
+count = 2
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "non-existent-constant"
+message = 'Undefined constant: `ElementorMCP\Troubleshoot\Checks\MINUTE_IN_SECONDS`.'
+count = 1
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "redundant-cast"
+message = "Redundant cast to `(string)`: the expression already has this type."
+count = 2
+
+[[issues]]
+file = "includes/troubleshoot/checks.php"
+code = "redundant-null-coalesce"
+message = "Redundant null coalesce: left-hand side is always `null`."
+count = 1
+
+[[issues]]
+file = "includes/updater.php"
+code = "mixed-argument"
+message = "Invalid argument type for argument #3 of `set_transient`: expected `int`, but found `mixed`."
+count = 2
+
+[[issues]]
+file = "includes/updater.php"
+code = "mixed-operand"
+message = "Right operand in binary operation has type `mixed`."
+count = 1
+
+[[issues]]
+file = "includes/updater.php"
+code = "non-existent-constant"
+message = "Undefined constant: `HOUR_IN_SECONDS`."
+count = 2

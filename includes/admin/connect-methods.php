@@ -1,0 +1,845 @@
+<?php
+
+// SPDX-FileCopyrightText: 2026 Elementor MCP <dev@elementormcp.com>
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+declare(strict_types=1);
+
+// Standalone-testable: allow require under PHP CLI without a WordPress bootstrap.
+if (!defined('ABSPATH')) {
+    exit();
+}
+
+/**
+ * True when an IPv4/IPv6 literal is in a private, loopback, link-local, or reserved range.
+ */
+function elementor_mcp_ip_is_private_or_loopback(string $ip): bool
+{
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) !== false) {
+        // Fails validation (=== false) exactly when the address is private or reserved.
+        return (
+            filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)
+            === false
+        );
+    }
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) !== false) {
+        $lower = strtolower($ip);
+        return (
+            $lower === '::1'
+            || str_starts_with($lower, 'fe80:')
+            || str_starts_with($lower, 'fc')
+            || str_starts_with($lower, 'fd')
+        );
+    }
+    return false;
+}
+
+/**
+ * True when a host is only reachable from the local machine and never from the public
+ * internet: single-label hosts, private/loopback IP literals, and local-dev suffixes.
+ * Expects a bare host without a port.
+ */
+function elementor_mcp_host_is_local_only(string $host): bool
+{
+    $host = strtolower(trim($host));
+    $host = trim($host, characters: '[]');
+    if ($host === '') {
+        return false;
+    }
+
+    // IP literal → private/loopback ranges are local-only.
+    $ip = filter_var($host, FILTER_VALIDATE_IP);
+    if ($ip !== false) {
+        return elementor_mcp_ip_is_private_or_loopback($ip);
+    }
+
+    // Single-label host (no dot), e.g. "localhost" or "wordpress".
+    if (!str_contains($host, '.')) {
+        return true;
+    }
+
+    /** @var array<int, string> $suffixes */
+    $suffixes = apply_filters('elementor_mcp_local_only_host_patterns', [
+        '.local',
+        '.test',
+        '.localhost',
+        '.ddev.site',
+        '.lndo.site',
+    ]);
+    foreach ($suffixes as $suffix) {
+        if ($suffix !== '' && str_ends_with($host, $suffix)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * True when this site's host cannot be reached from Anthropic's cloud, so a native remote
+ * connector will not work and the OAuth flow must run through a local stdio bridge.
+ */
+function elementor_mcp_host_unreachable_from_cloud(): bool
+{
+    $host = (string) wp_parse_url(home_url(), PHP_URL_HOST);
+    return elementor_mcp_host_is_local_only($host);
+}
+
+/**
+ * True when it is safe to run the OAuth flow: the site is served over HTTPS, or WordPress reports a
+ * local environment. On a plain-HTTP site the authorization code and the bearer tokens travel in
+ * cleartext (RFC 6749/6750 require TLS), and "not reachable from the public internet" is not enough
+ * on its own: a private-IP or *.local/*.test host still shares a LAN wire another device can sniff.
+ * So HTTP is allowed only when wp_get_environment_type() is 'local' — the same transport policy
+ * wp_is_application_passwords_supported() applies. Keyed off the canonical home_url() scheme, not
+ * is_ssl(), so a TLS-terminating reverse proxy (https to the public, http to PHP) is not misjudged.
+ */
+function elementor_mcp_oauth_transport_allowed(): bool
+{
+    if (str_starts_with(strtolower(home_url()), 'https://')) {
+        return true;
+    }
+    return wp_get_environment_type() === 'local';
+}
+
+/**
+ * Build the Claude "add custom connector" prefill link. Opens the dialog with the name and
+ * URL pre-filled; the user still reviews and confirms. No secret is embedded.
+ */
+function elementor_mcp_build_connector_install_link(string $mcp_url, string $connector_name): string
+{
+    return (
+        'https://claude.ai/customize/connectors?modal=add-custom-connector'
+        . '&connectorName='
+        . rawurlencode($connector_name)
+        . '&connectorUrl='
+        . rawurlencode($mcp_url)
+    );
+}
+
+/**
+ * Human-readable connector name shown in Claude. Empty site name falls back to "Elementor MCP".
+ */
+function elementor_mcp_build_connector_display_name(string $site_name): string
+{
+    $site_name = trim($site_name);
+    return $site_name !== '' ? 'Elementor MCP - ' . $site_name : 'Elementor MCP';
+}
+
+/**
+ * npx mcp-remote stdio bridge server object. The bridge runs the OAuth browser flow on behalf
+ * of clients that do not perform it natively. $env carries the self-signed TLS bypass on local
+ * sites and is empty on public ones.
+ *
+ * @param array<string, string> $env
+ * @return array<string, mixed>
+ */
+function elementor_mcp_oauth_bridge_server(string $mcp_url, array $env): array
+{
+    $server = ['command' => 'npx', 'args' => ['-y', 'mcp-remote', $mcp_url]];
+    if ($env !== []) {
+        $server['env'] = $env;
+    }
+    return $server;
+}
+
+/**
+ * Wrap a per-client server object in its JSON envelope (mcpServers or servers).
+ *
+ * @param array<string, mixed> $server
+ */
+function elementor_mcp_oauth_json(string $wrapper, string $mcp_name, array $server): string
+{
+    return (string) json_encode([$wrapper => [$mcp_name => $server]], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+}
+
+/**
+ * Build a plain code-snippet client entry (no shell, no connector button). The optional note is
+ * extra HTML rendered under the snippet (e.g. a CLI alternative); empty means none.
+ *
+ * @param array<string, string> $paths
+ * @return array<string, mixed>
+ */
+function elementor_mcp_oauth_code_entry(string $code, string $hint, array $paths, string $note = ''): array
+{
+    return ['kind' => 'code', 'code' => $code, 'hint' => $hint, 'paths' => $paths, 'isShell' => false, 'note' => $note];
+}
+
+/**
+ * "Add to <code>file</code>." hint, shared by the client config entries.
+ */
+function elementor_mcp_oauth_add_to(string $file): string
+{
+    return sprintf(
+        /* translators: %s: config file name wrapped in <code> tags */
+        __(
+            'Add to %s, then restart the client. It will report the server as needing sign-in — approve it, and a browser window opens. Nothing here contains a secret, so this snippet is safe to commit.',
+            domain: 'elementor-mcp',
+        ),
+        '<code>' . $file . '</code>',
+    );
+}
+
+/**
+ * Codex config.toml snippet for the mcp-remote bridge (stdio launch, optional env block).
+ *
+ * @param array<string, string> $env
+ */
+function elementor_mcp_oauth_bridge_codex(string $mcp_name, string $mcp_url, array $env): string
+{
+    $tq = static fn(string $v): string => '"' . str_replace(['\\', '"'], ['\\\\', '\\"'], $v) . '"';
+    $lines = [
+        '[mcp_servers.' . $mcp_name . ']',
+        'command = "npx"',
+        'args = ["-y", "mcp-remote", ' . $tq($mcp_url) . ']',
+    ];
+    if ($env !== []) {
+        $lines[] = '';
+        $lines[] = '[mcp_servers.' . $mcp_name . '.env]';
+        foreach ($env as $key => $value) {
+            $lines[] = $key . ' = ' . $tq($value);
+        }
+    }
+    return implode("\n", $lines);
+}
+
+/**
+ * `claude mcp add` command for the mcp-remote bridge (stdio launch, optional --env flags).
+ *
+ * @param array<string, string> $env
+ */
+function elementor_mcp_oauth_bridge_claude_code(string $mcp_name, string $mcp_url, array $env): string
+{
+    $sq = static fn(string $v): string => "'" . str_replace(search: "'", replace: "'\\''", subject: $v) . "'";
+    $parts = ['claude mcp add ' . $sq($mcp_name)];
+    foreach ($env as $key => $value) {
+        $parts[] = '--env ' . $key . '=' . $sq($value);
+    }
+    $parts[] = '-- npx -y mcp-remote ' . $sq($mcp_url);
+    return implode(" \\\n  ", $parts);
+}
+
+/**
+ * Steps for ChatGPT's developer-mode plugin: turn on developer mode, create a plugin, paste the
+ * OAuth server URL. ChatGPT reaches the server from OpenAI's cloud, so this is only offered on a
+ * publicly reachable site (see elementor_mcp_build_oauth_configs()).
+ *
+ * @return list<array<string, string>>
+ */
+function elementor_mcp_oauth_chatgpt_steps(string $mcp_name, string $mcp_url): array
+{
+    return [
+        [
+            'title' => __('Turn on developer mode', domain: 'elementor-mcp'),
+            'body' => __(
+                'In ChatGPT on the web, open Settings, choose Apps in the sidebar, open Advanced settings, and turn on Developer mode. It is the only way to add an MCP server OpenAI has not reviewed, and yours will always be one of those — it connects to your own site, so it can never be a listed app. The warning ChatGPT shows is expected. Available on Plus, Pro, Business, Enterprise and Edu, on the web app; the mobile apps cannot add one.',
+                domain: 'elementor-mcp',
+            ),
+        ],
+        [
+            'title' => __('Business, Enterprise or Edu: have an admin allow it first', domain: 'elementor-mcp'),
+            'body' => __(
+                'On a workspace plan the toggle above stays off until an admin enables it in Workspace settings, under Permissions & roles, as "Developer mode / Create custom MCP connectors". A personal Plus or Pro account needs nothing here.',
+                domain: 'elementor-mcp',
+            ),
+        ],
+        [
+            'title' => __('Create the app', domain: 'elementor-mcp'),
+            'body' => __(
+                'Back on the Apps screen, press Create app. Give it this name, or one you will recognize with "Elementor MCP" in it:',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_name,
+        ],
+        [
+            'title' => __('Enter the server URL', domain: 'elementor-mcp'),
+            'body' => __(
+                'Paste the URL below as the MCP server URL — include the whole path, ChatGPT does not add one. Set Authentication to OAuth, confirm the trust prompt, and create it. Then sign in when the browser opens.',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_url,
+        ],
+        [
+            'title' => __('Use it in a chat', domain: 'elementor-mcp'),
+            'body' => __(
+                'A new connector is not on by default. Start a chat, open the + menu, and enable this one for the conversation. ChatGPT connects from OpenAI\'s servers, so the site has to be reachable over public HTTPS — a localhost URL cannot work.',
+                domain: 'elementor-mcp',
+            ),
+        ],
+    ];
+}
+
+/**
+ * Manus: Settings, then Connectors, then the Custom MCP tab.
+ *
+ * @return list<array<string, string>>
+ */
+function elementor_mcp_oauth_manus_steps(string $mcp_name, string $mcp_url): array
+{
+    return [
+        [
+            'title' => __('Open Connectors', domain: 'elementor-mcp'),
+            'body' => __(
+                'In Manus, open Settings from the sidebar and choose Connectors, then press "+ Add connectors".',
+                domain: 'elementor-mcp',
+            ),
+        ],
+        [
+            'title' => __('Add a custom MCP server', domain: 'elementor-mcp'),
+            'body' => __(
+                'Select the Custom MCP tab, press "+ Add custom MCP", and choose Direct configuration. Name it:',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_name,
+        ],
+        [
+            'title' => __('Enter the server URL', domain: 'elementor-mcp'),
+            'body' => __(
+                'Leave the transport type as HTTP, paste this as the Server URL, and save. Manus then checks it can reach the server and lists the tools it found. Leave the OAuth client id and secret under Advanced settings empty, and sign in when prompted.',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_url,
+        ],
+    ];
+}
+
+/**
+ * Mistral Le Chat: Connectors, then the Custom MCP Connector tab.
+ *
+ * @return list<array<string, string>>
+ */
+function elementor_mcp_oauth_mistral_steps(string $mcp_name, string $mcp_url): array
+{
+    return [
+        [
+            'title' => __('Open Connectors', domain: 'elementor-mcp'),
+            'body' => __(
+                'In Le Chat, open the Connectors page and press "+ Add Connector", then switch to the Custom MCP Connector tab.',
+                domain: 'elementor-mcp',
+            ),
+        ],
+        [
+            'title' => __('Name the connector', domain: 'elementor-mcp'),
+            'body' => __(
+                'Le Chat treats the name as an identifier, so it takes no spaces or punctuation. Use this:',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_name,
+        ],
+        [
+            'title' => __('Enter the server URL and connect', domain: 'elementor-mcp'),
+            'body' => __(
+                'Paste this as the server URL and press Connect. Le Chat detects how the server authenticates and runs the sign-in itself. Afterwards the connector appears in the tools dropdown — enable it in the chat you want to use it in.',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_url,
+        ],
+    ];
+}
+
+/**
+ * Perplexity: Settings, then Connectors.
+ *
+ * @return list<array<string, string>>
+ */
+function elementor_mcp_oauth_perplexity_steps(string $mcp_name, string $mcp_url): array
+{
+    return [
+        [
+            'title' => __('Open Connectors', domain: 'elementor-mcp'),
+            'body' => __(
+                'Click your profile picture at the bottom left, open Settings, and go to Connectors. Custom remote connectors need Pro, Max or Enterprise.',
+                domain: 'elementor-mcp',
+            ),
+        ],
+        [
+            'title' => __('Add a custom connector', domain: 'elementor-mcp'),
+            'body' => __('Choose to add a custom connector and name it:', domain: 'elementor-mcp'),
+            'copy' => $mcp_name,
+        ],
+        [
+            'title' => __('Enter the server URL', domain: 'elementor-mcp'),
+            'body' => __(
+                'Paste this as the remote MCP server URL and save, then complete the sign-in. Perplexity requires HTTPS and connects from its own servers, so a localhost URL cannot work. On a team plan you can keep the connector private or share it with the organization.',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_url,
+        ],
+    ];
+}
+
+/**
+ * A message-only client entry: no config, just an explanation. Used for a cloud client on a local
+ * site, where the client's servers cannot reach the site so no working config exists.
+ *
+ * @return array<string, string>
+ */
+function elementor_mcp_oauth_cloud_only_notice(string $client_label): array
+{
+    return [
+        'kind' => 'notice',
+        'message' => sprintf(
+            /* translators: %s: the AI client name, e.g. ChatGPT */
+            __(
+                '%s connects to your site from its own servers, so it can only reach a site that is available over the public internet, not one that runs only on your local machine.',
+                domain: 'elementor-mcp',
+            ),
+            $client_label,
+        ),
+    ];
+}
+
+/**
+ * OAuth per-client connection configs, mirroring the app-password client list.
+ *
+ * On a publicly reachable site each client gets its native remote-MCP form (a URL the client
+ * connects to and runs OAuth against itself), except a tail of clients whose native OAuth flow
+ * is not verified, which fall back to the mcp-remote stdio bridge. On a local site every client
+ * uses the bridge (which also carries the self-signed TLS bypass), and the browser-only
+ * Claude.ai target is omitted because a local URL is unreachable for it.
+ *
+ * ChatGPT is cloud-only like Claude.ai but always kept in the list: publicly it gets the
+ * developer-mode plugin steps, locally a notice explaining it needs a public site.
+ *
+ * @return array<string, array<string, mixed>>
+ */
+function elementor_mcp_build_oauth_configs(string $mcp_url, string $mcp_name): array
+{
+    // The TLS-verification bypass rides along only for a self-signed local certificate, the same
+    // condition the app-password flow uses; a plain-HTTP local site or a trusted cert needs no flag.
+    $env = elementor_mcp_likely_self_signed_https() ? ['NODE_TLS_REJECT_UNAUTHORIZED' => '0'] : [];
+    if (elementor_mcp_host_unreachable_from_cloud()) {
+        return (
+            elementor_mcp_build_oauth_bridge_configs($mcp_url, $mcp_name, $env)
+            + [
+                'chatgpt' => elementor_mcp_oauth_cloud_only_notice('ChatGPT'),
+                'manus' => elementor_mcp_oauth_cloud_only_notice('Manus'),
+                'mistral-lechat' => elementor_mcp_oauth_cloud_only_notice('Mistral Le Chat'),
+                'perplexity' => elementor_mcp_oauth_cloud_only_notice('Perplexity'),
+            ]
+        );
+    }
+    return (
+        elementor_mcp_build_oauth_public_configs($mcp_url, $mcp_name)
+        + elementor_mcp_build_oauth_web_ui_configs($mcp_url, $mcp_name)
+    );
+}
+
+/**
+ * The hosted web UIs, which add an MCP server through their own interface.
+ *
+ * None of them reads a configuration file, so each is a list of steps rather
+ * than a snippet — and each names a different menu for the same action, which is
+ * exactly the thing worth writing down. All of them connect from their own
+ * servers, so they only appear on a publicly reachable site; the local set
+ * replaces them with a notice explaining why.
+ *
+ * @return array<string, array<string, mixed>>
+ */
+function elementor_mcp_build_oauth_web_ui_configs(string $mcp_url, string $mcp_name): array
+{
+    $steps_entry = static fn(array $steps): array => [
+        'kind' => 'code',
+        'code' => '',
+        'hint' => '',
+        'paths' => [],
+        'isShell' => false,
+        'steps' => $steps,
+    ];
+
+    return [
+        'chatgpt' => $steps_entry(elementor_mcp_oauth_chatgpt_steps($mcp_name, $mcp_url)),
+        'manus' => $steps_entry(elementor_mcp_oauth_manus_steps($mcp_name, $mcp_url)),
+        'mistral-lechat' => $steps_entry(elementor_mcp_oauth_mistral_steps($mcp_name, $mcp_url)),
+        'perplexity' => $steps_entry(elementor_mcp_oauth_perplexity_steps($mcp_name, $mcp_url)),
+    ];
+}
+
+/**
+ * Public site: native form per client, with the mcp-remote bridge as the fallback for the tail
+ * of clients whose native OAuth flow is not verified. A public host has a trusted certificate,
+ * so the bridge needs no TLS bypass.
+ *
+ * @return array<string, array<string, mixed>>
+ */
+function elementor_mcp_build_oauth_public_configs(string $mcp_url, string $mcp_name): array
+{
+    $bridge = elementor_mcp_build_oauth_bridge_configs($mcp_url, $mcp_name, []);
+    $tail = ['cline', 'roo-code', 'amazon-q', 'zed', 'kilo-code', 'opencode'];
+
+    return array_merge(
+        array_intersect_key($bridge, array_flip($tail)),
+        elementor_mcp_build_oauth_native_configs($mcp_url, $mcp_name),
+    );
+}
+
+/**
+ * Manual walkthrough for the Claude connector clients, which add remote MCP servers from the
+ * Connectors UI rather than a config file. The server name keeps the placeholder that the page
+ * script swaps for the live name.
+ *
+ * @return list<array<string, string>>
+ */
+function elementor_mcp_oauth_connector_steps(string $app_label, string $mcp_name, string $mcp_url): array
+{
+    return [
+        [
+            'title' => __('Open Connectors', domain: 'elementor-mcp'),
+            /* translators: %s: the client name, e.g. Claude Desktop */
+            'body' => sprintf(
+                __(
+                    'In %s, open Customize and go to Connectors. Custom connectors are available on Free, Pro and Max as well as Team and Enterprise.',
+                    domain: 'elementor-mcp',
+                ),
+                $app_label,
+            ),
+        ],
+        [
+            'title' => __('Team or Enterprise: an Owner adds it first', domain: 'elementor-mcp'),
+            'body' => __(
+                'On those plans the member-level screen cannot create a connector. An Owner adds it once under Organization settings, Connectors, Add, Custom — choosing Web if asked for a type — and everyone else then finds it under Customize, Connectors and presses Connect. On Free, Pro or Max, skip this step.',
+                domain: 'elementor-mcp',
+            ),
+        ],
+        [
+            'title' => __('Add a custom connector', domain: 'elementor-mcp'),
+            'body' => __(
+                'Click "Add custom connector" and give it this name, or one you’ll recognize with "Elementor MCP" in it:',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_name,
+        ],
+        [
+            'title' => __('Enter the server URL', domain: 'elementor-mcp'),
+            'body' => __(
+                'Paste the URL below and save. Leave the OAuth Client ID and Secret (under Advanced settings) empty, then sign in when the browser opens.',
+                domain: 'elementor-mcp',
+            ),
+            'copy' => $mcp_url,
+        ],
+        [
+            'title' => __('Turn it on in a chat', domain: 'elementor-mcp'),
+            'body' => __(
+                'A connector is not enabled in conversations by default. Use the "+" button in the chat, open Connectors, and switch this one on. The same menu is where you turn it off again.',
+                domain: 'elementor-mcp',
+            ),
+        ],
+    ];
+}
+
+/**
+ * CLI alternative shown under the Codex config.toml snippet, for users who prefer the terminal to
+ * editing the file. The server name is the placeholder swapped in client-side; both it and the URL
+ * are HTML-escaped here because the note is rendered as raw markup, not through the escaping step
+ * the config snippets pass through.
+ */
+function elementor_mcp_oauth_codex_cli_note(string $mcp_name, string $mcp_url): string
+{
+    return sprintf(
+        /* translators: 1: codex mcp add command, 2: codex mcp login command, both in <code> tags */
+        __('Prefer the terminal? Run %1$s, then %2$s.', domain: 'elementor-mcp'),
+        '<code>codex mcp add ' . esc_html($mcp_name) . ' --url ' . esc_html($mcp_url) . '</code>',
+        '<code>codex mcp login ' . esc_html($mcp_name) . '</code>',
+    );
+}
+
+/**
+ * CLI alternative shown under the local (bridge) Codex config.toml snippet. Unlike the public form,
+ * this adds the stdio bridge command (npx mcp-remote), carrying the same TLS-bypass env the snippet
+ * above uses, and needs no separate login step because the bridge runs the OAuth flow itself.
+ *
+ * @param array<string, string> $env
+ */
+function elementor_mcp_oauth_codex_bridge_cli_note(string $mcp_name, string $mcp_url, array $env): string
+{
+    $cmd = 'codex mcp add ' . esc_html($mcp_name);
+    foreach ($env as $key => $value) {
+        $cmd .= ' --env ' . esc_html($key) . '=' . esc_html($value);
+    }
+    $cmd .= ' -- npx -y mcp-remote ' . esc_html($mcp_url);
+
+    /* translators: %s: codex mcp add command in <code> tags */
+    return sprintf(__('Prefer the terminal? Run %s.', domain: 'elementor-mcp'), '<code>' . $cmd . '</code>');
+}
+
+/**
+ * Antigravity CLI and IDE share the same current remote MCP schema and config locations.
+ *
+ * @return array<string, mixed>
+ */
+function elementor_mcp_build_antigravity_oauth_entry(string $mcp_url, string $mcp_name): array
+{
+    return elementor_mcp_oauth_code_entry(
+        elementor_mcp_oauth_json('mcpServers', $mcp_name, ['serverUrl' => $mcp_url]),
+        elementor_mcp_oauth_add_to('mcp_config.json'),
+        [
+            __('Global', domain: 'elementor-mcp') => '~/.gemini/config/mcp_config.json',
+            __('Workspace', domain: 'elementor-mcp') => '.agents/mcp_config.json',
+        ],
+    );
+}
+
+/**
+ * Native remote configs for clients that run the OAuth flow themselves. Claude Desktop and
+ * Claude.ai share the custom-connector prefill (a button, not a snippet); Claude.ai is
+ * public-only, which is why it never appears in the local (bridge) set.
+ *
+ * @return array<string, array<string, mixed>>
+ */
+function elementor_mcp_build_oauth_native_configs(string $mcp_url, string $mcp_name): array
+{
+    // The Gemini-lineage clients are appended from their own builder: they are
+    // the only entries here whose URL field disagrees with everyone else's, and
+    // keeping them separate is what stops that difference being "tidied" away.
+    $tq = static fn(string $v): string => '"' . str_replace(['\\', '"'], ['\\\\', '\\"'], $v) . '"';
+    $connector = elementor_mcp_build_connector_install_link(
+        $mcp_url,
+        elementor_mcp_build_connector_display_name(get_bloginfo('name')),
+    );
+    $deeplink =
+        'cursor://anysphere.cursor-deeplink/mcp/install?name='
+        . $mcp_name
+        . '&config='
+        . base64_encode((string) json_encode(['url' => $mcp_url]));
+
+    $connector_entry = static fn(string $hint): array => [
+        'kind' => 'connector',
+        'code' => '',
+        'connector' => $connector,
+        'hint' => $hint,
+        'paths' => [],
+        'isShell' => false,
+    ];
+    $antigravity_entry = elementor_mcp_build_antigravity_oauth_entry($mcp_url, $mcp_name);
+
+    return [
+        'claude-code' => [
+            'kind' => 'code',
+            'code' => 'claude mcp add ' . $mcp_name . ' --transport http ' . $mcp_url,
+            'hint' => __('Run in your terminal, then sign in when your browser opens.', domain: 'elementor-mcp'),
+            'paths' => [],
+            'isShell' => true,
+        ],
+        // Claude Desktop adds remote servers from its own Connectors UI. The one-click button goes
+        // through claude.ai (account level) and only reaches Desktop after a sync, so the in-app
+        // walkthrough is the primary here rather than that button.
+        'claude-desktop' => [
+            'kind' => 'code',
+            'code' => '',
+            'hint' => '',
+            'paths' => [],
+            'isShell' => false,
+            'steps' => elementor_mcp_oauth_connector_steps('Claude Desktop', $mcp_name, $mcp_url),
+        ],
+        'claude-ai' => array_merge(
+            $connector_entry(__(
+                'Add it as a custom connector on claude.ai, then sign in. Works in the browser and in Claude Desktop.',
+                domain: 'elementor-mcp',
+            )),
+            ['steps' => elementor_mcp_oauth_connector_steps('claude.ai', $mcp_name, $mcp_url)],
+        ),
+        'codex' => elementor_mcp_oauth_code_entry(
+            "[mcp_servers.{$mcp_name}]\nurl = " . $tq($mcp_url),
+            sprintf(
+                /* translators: 1: config.toml file name, 2: codex mcp login command, both in <code> tags */
+                __('Add to %1$s. Then sign in with %2$s.', domain: 'elementor-mcp'),
+                '<code>config.toml</code>',
+                '<code>codex mcp login</code>',
+            ),
+            ['macOS / Linux' => '~/.codex/config.toml', 'Windows' => '%USERPROFILE%\\.codex\\config.toml'],
+            elementor_mcp_oauth_codex_cli_note($mcp_name, $mcp_url),
+        ),
+        'cursor' => array_merge(
+            elementor_mcp_oauth_code_entry(
+                elementor_mcp_oauth_json('mcpServers', $mcp_name, ['url' => $mcp_url]),
+                /* translators: %s: the config file name, wrapped in a code tag */
+                sprintf(__('Use the one-click button, or add to %s.', domain: 'elementor-mcp'), '<code>mcp.json</code>'),
+                [
+                    __('Global', domain: 'elementor-mcp') => '~/.cursor/mcp.json',
+                    __('Project', domain: 'elementor-mcp') => '.cursor/mcp.json',
+                ],
+            ),
+            ['deeplink' => $deeplink],
+        ),
+        'vscode' => elementor_mcp_oauth_code_entry(
+            elementor_mcp_oauth_json('servers', $mcp_name, ['type' => 'http', 'url' => $mcp_url]),
+            elementor_mcp_oauth_add_to('mcp.json'),
+            [
+                __('Workspace', domain: 'elementor-mcp') => '.vscode/mcp.json',
+                __('User', domain: 'elementor-mcp') => __(
+                    'Run: MCP: Open User Configuration (command palette)',
+                    domain: 'elementor-mcp',
+                ),
+            ],
+        ),
+        'github-copilot' => elementor_mcp_oauth_code_entry(
+            elementor_mcp_oauth_json('servers', $mcp_name, ['type' => 'http', 'url' => $mcp_url]),
+            elementor_mcp_oauth_add_to('mcp.json'),
+            [__('Project', domain: 'elementor-mcp') => '.github/copilot/mcp.json'],
+        ),
+        'antigravity-cli' => $antigravity_entry,
+        'antigravity-ide' => $antigravity_entry,
+        'windsurf' => elementor_mcp_oauth_code_entry(
+            elementor_mcp_oauth_json('mcpServers', $mcp_name, ['serverUrl' => $mcp_url]),
+            elementor_mcp_oauth_add_to('mcp_config.json'),
+            [
+                'macOS / Linux' => '~/.codeium/windsurf/mcp_config.json',
+                'Windows' => '%USERPROFILE%\\.codeium\\windsurf\\mcp_config.json',
+            ],
+        ),
+    ];
+}
+
+/**
+ * mcp-remote bridge configs for every client except the browser-only Claude.ai. Used for the
+ * whole list on local sites and for the unverified tail on public sites. File paths mirror
+ * elementor_mcp_build_configs()'s locations, kept here so the OAuth flow stays isolated from the
+ * proven app-password renderer.
+ *
+ * @param array<string, string> $env
+ * @return array<string, array<string, mixed>>
+ */
+function elementor_mcp_build_oauth_bridge_configs(string $mcp_url, string $mcp_name, array $env): array
+{
+    $server = elementor_mcp_oauth_bridge_server($mcp_url, $env);
+
+    return array_merge(
+        elementor_mcp_build_oauth_bridge_special($mcp_url, $mcp_name, $env, $server),
+        elementor_mcp_build_oauth_bridge_standard(
+            elementor_mcp_oauth_json('mcpServers', $mcp_name, $server),
+            elementor_mcp_oauth_json('servers', $mcp_name, $server),
+        ),
+    );
+}
+
+/**
+ * Bridge entries whose format is unique to the client (shell command, TOML, or a bespoke JSON
+ * envelope) rather than the shared mcpServers/servers payload.
+ *
+ * @param array<string, string> $env
+ * @param array<string, mixed>  $server
+ * @return array<string, array<string, mixed>>
+ */
+function elementor_mcp_build_oauth_bridge_special(string $mcp_url, string $mcp_name, array $env, array $server): array
+{
+    $opts = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES;
+
+    $zed_json = (string) json_encode([
+        'context_servers' => [$mcp_name => array_merge(['source' => 'custom', 'enabled' => true], $server)],
+    ], $opts);
+
+    $opencode_server = ['type' => 'local', 'command' => ['npx', '-y', 'mcp-remote', $mcp_url]];
+    if ($env !== []) {
+        $opencode_server['environment'] = $env;
+    }
+    $opencode_json = (string) json_encode(['mcp' => [$mcp_name => $opencode_server]], $opts);
+
+    return [
+        'claude-code' => [
+            'kind' => 'code',
+            'code' => elementor_mcp_oauth_bridge_claude_code($mcp_name, $mcp_url, $env),
+            'hint' => __('Run in your terminal, then sign in when your browser opens.', domain: 'elementor-mcp'),
+            'paths' => [],
+            'isShell' => true,
+        ],
+        'codex' => elementor_mcp_oauth_code_entry(
+            elementor_mcp_oauth_bridge_codex($mcp_name, $mcp_url, $env),
+            elementor_mcp_oauth_add_to('config.toml'),
+            ['macOS / Linux' => '~/.codex/config.toml', 'Windows' => '%USERPROFILE%\\.codex\\config.toml'],
+            elementor_mcp_oauth_codex_bridge_cli_note($mcp_name, $mcp_url, $env),
+        ),
+        'zed' => elementor_mcp_oauth_code_entry($zed_json, elementor_mcp_oauth_add_to('settings.json'), [
+            'macOS / Linux' => '~/.config/zed/settings.json',
+        ]),
+        'opencode' => elementor_mcp_oauth_code_entry($opencode_json, elementor_mcp_oauth_add_to('opencode.json'), [
+            __('Project', domain: 'elementor-mcp') => 'opencode.json',
+            __('Global', domain: 'elementor-mcp') => '~/.config/opencode/opencode.json',
+        ]),
+    ];
+}
+
+/**
+ * Bridge entries that reuse the shared mcpServers/servers JSON payloads. File paths mirror
+ * elementor_mcp_build_configs()'s locations.
+ *
+ * @return array<string, array<string, mixed>>
+ */
+function elementor_mcp_build_oauth_bridge_standard(string $mcp_servers_json, string $servers_json): array
+{
+    return [
+        'claude-desktop' => elementor_mcp_oauth_code_entry(
+            $mcp_servers_json,
+            elementor_mcp_oauth_add_to('claude_desktop_config.json'),
+            [
+                'macOS' => '~/Library/Application Support/Claude/claude_desktop_config.json',
+                'Windows' => '%APPDATA%\\Claude\\claude_desktop_config.json',
+            ],
+        ),
+        'antigravity-cli' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('mcp_config.json'), [
+            __('Global', domain: 'elementor-mcp') => '~/.gemini/config/mcp_config.json',
+            __('Workspace', domain: 'elementor-mcp') => '.agents/mcp_config.json',
+        ]),
+        'antigravity-ide' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('mcp_config.json'), [
+            __('Global', domain: 'elementor-mcp') => '~/.gemini/config/mcp_config.json',
+            __('Workspace', domain: 'elementor-mcp') => '.agents/mcp_config.json',
+        ]),
+        'cursor' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('mcp.json'), [
+            __('Global', domain: 'elementor-mcp') => '~/.cursor/mcp.json',
+            __('Project', domain: 'elementor-mcp') => '.cursor/mcp.json',
+        ]),
+        'kimi-cli' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('mcp.json'), [
+            __('Global', domain: 'elementor-mcp') => '~/.kimi/mcp.json',
+        ]),
+        'qwen-code' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('settings.json'), [
+            __('Global', domain: 'elementor-mcp') => '~/.qwen/settings.json',
+            __('Project', domain: 'elementor-mcp') => '.qwen/settings.json',
+        ]),
+        'gemini-cli' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('settings.json'), [
+            __('Global', domain: 'elementor-mcp') => '~/.gemini/settings.json',
+            __('Project', domain: 'elementor-mcp') => '.gemini/settings.json',
+        ]),
+        'zcode' => elementor_mcp_oauth_code_entry(
+            $mcp_servers_json,
+            __('Add through ZCode\'s MCP server manager, choosing the stdio transport.', domain: 'elementor-mcp'),
+            [],
+        ),
+        'vscode' => elementor_mcp_oauth_code_entry($servers_json, elementor_mcp_oauth_add_to('mcp.json'), [
+            __('Workspace', domain: 'elementor-mcp') => '.vscode/mcp.json',
+            __('User', domain: 'elementor-mcp') => __(
+                'Run: MCP: Open User Configuration (command palette)',
+                domain: 'elementor-mcp',
+            ),
+        ]),
+        'github-copilot' => elementor_mcp_oauth_code_entry($servers_json, elementor_mcp_oauth_add_to('mcp.json'), [
+            __('Project', domain: 'elementor-mcp') => '.github/copilot/mcp.json',
+        ]),
+        'windsurf' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('mcp_config.json'), [
+            'macOS / Linux' => '~/.codeium/windsurf/mcp_config.json',
+            'Windows' => '%USERPROFILE%\\.codeium\\windsurf\\mcp_config.json',
+        ]),
+        'cline' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('cline_mcp_settings.json'), [
+            __('Via UI', domain: 'elementor-mcp') => __(
+                'Cline sidebar → MCP Servers → Configure MCP Servers',
+                domain: 'elementor-mcp',
+            ),
+        ]),
+        'roo-code' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('mcp.json'), [
+            __('Project', domain: 'elementor-mcp') => '.roo/mcp.json',
+            __('Via UI', domain: 'elementor-mcp') => __(
+                'Roo Code sidebar → MCP Servers → Configure MCP Servers',
+                domain: 'elementor-mcp',
+            ),
+        ]),
+        'amazon-q' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('mcp.json'), [
+            __('Global', domain: 'elementor-mcp') => '~/.aws/amazonq/mcp.json',
+            __('Project', domain: 'elementor-mcp') => '.amazonq/mcp.json',
+        ]),
+        'kilo-code' => elementor_mcp_oauth_code_entry($mcp_servers_json, elementor_mcp_oauth_add_to('mcp.json'), [
+            __('Project', domain: 'elementor-mcp') => '.kilocode/mcp.json',
+            __('Via UI', domain: 'elementor-mcp') => __(
+                'Kilo Code sidebar → MCP Servers → Configure MCP Servers',
+                domain: 'elementor-mcp',
+            ),
+        ]),
+    ];
+}

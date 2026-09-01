@@ -1,0 +1,12 @@
+Elementor MCP changelog
+
+1.0.0 - 2026-08-30
+* Completed the Elementor MCP brand, domain, metadata, namespace, and asset
+  migration.
+* Elementor is now the sole supported page-builder integration.
+* Removed alternate page-builder abilities, loaders, registries, skills, tests,
+  prompts, documentation claims, and package references.
+* Preserved WordPress core, Elementor, forms, SEO, custom fields, commerce,
+  localization, diagnostics, and theme-settings integrations.
+* Updated release verification and packaging for the reduced Elementor-only
+  product surface.

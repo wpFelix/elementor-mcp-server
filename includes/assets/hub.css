@@ -1,0 +1,558 @@
+/*
+ * Abilities Hub admin styles. Mirrors Skills and Sandbox: collapsible card
+ * sections, compact rows, restrained pills, and hover-revealed row actions.
+ *
+ * Design tokens are scoped to .elementor-mcp-hub so they cascade to every section
+ * without leaking into the rest of wp-admin.
+ */
+
+.elementor-mcp-hub {
+    /* Text */
+    --elementor-mcp-hub-text: #142033;
+    --elementor-mcp-hub-text-soft: #5e6c7d;
+    --elementor-mcp-hub-muted: #5e6c7d;
+    --elementor-mcp-hub-muted-2: #75859a;
+    --elementor-mcp-hub-muted-3: #95a2b1;
+    --elementor-mcp-hub-hint: #c7d3df;
+
+    /* Surfaces & borders. Greys step up by weight so the layers stay distinct:
+     * rows (white / faint stripe) < row hover < category bar < category hover. */
+    --elementor-mcp-hub-bg: #fff;
+    --elementor-mcp-hub-bg-hover: #f7f9fc;
+    --elementor-mcp-hub-bg-rail: #f4f7fa;
+    --elementor-mcp-hub-row-stripe: #f7f9fc;
+    --elementor-mcp-hub-row-hover: #edf3fb;
+    --elementor-mcp-hub-cat-bg: #edf2f7;
+    --elementor-mcp-hub-cat-hover: #e3eaf2;
+    --elementor-mcp-hub-border: #d7e0ea;
+    --elementor-mcp-hub-border-soft: #e7edf3;
+    --elementor-mcp-hub-border-faint: #edf2f7;
+
+    /* Pill palettes */
+    --elementor-mcp-hub-pill-bg: #f4f4f5;
+    --elementor-mcp-hub-pill-text: #5e6c7d;
+    --elementor-mcp-hub-pill-mcp-bg: #e8f0fd;
+    --elementor-mcp-hub-pill-mcp-text: #1c4ea1;
+    --elementor-mcp-hub-pill-on-bg: #e9f7f4;
+    --elementor-mcp-hub-pill-on-text: #0f766e;
+    --elementor-mcp-hub-pill-off-bg: #fff0ee;
+    --elementor-mcp-hub-pill-off-text: #b42318;
+    --elementor-mcp-hub-pill-protected-bg: #fff6df;
+    --elementor-mcp-hub-pill-protected-text: #8a5200;
+    /* Source: which plugin registered the ability. Uses the Elementor MCP accent so it
+       reads as identity rather than as another status. */
+    --elementor-mcp-hub-pill-source-bg: #e8f0fd;
+    --elementor-mcp-hub-pill-source-text: #1c4ea1;
+
+    /* Focus, radius, shadow */
+    --elementor-mcp-hub-focus: #2d6fd2;
+    --elementor-mcp-hub-radius-sm: 7px;
+    --elementor-mcp-hub-radius: 9px;
+    --elementor-mcp-hub-radius-lg: 13px;
+    --elementor-mcp-hub-shadow: 0 5px 18px rgba(20, 32, 51, 0.06);
+
+    /* Spacing scale (4 / 8 / 12 / 16 / 24) */
+    --elementor-mcp-hub-space-1: 4px;
+    --elementor-mcp-hub-space-2: 8px;
+    --elementor-mcp-hub-space-3: 12px;
+    --elementor-mcp-hub-space-4: 16px;
+    --elementor-mcp-hub-space-6: 24px;
+
+    /* Motion */
+    --elementor-mcp-hub-transition: 120ms ease;
+}
+
+.elementor-mcp-hub .wrap-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--elementor-mcp-hub-space-3);
+    margin: var(--elementor-mcp-hub-space-3) 0 20px;
+}
+
+.elementor-mcp-hub .wrap-title h1 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 400;
+    color: var(--elementor-mcp-hub-text);
+}
+
+.elementor-mcp-hub .wrap-title .description {
+    max-width: 1200px;
+    margin: var(--elementor-mcp-hub-space-2) 0 0;
+    color: var(--elementor-mcp-hub-text-soft);
+}
+
+.elementor-mcp-hub-section {
+    background: var(--elementor-mcp-hub-bg);
+    border: 1px solid var(--elementor-mcp-hub-border);
+    border-radius: var(--elementor-mcp-hub-radius-lg);
+    box-shadow: var(--elementor-mcp-hub-shadow);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Boundary between Elementor MCP's abilities and the other plugins' groups. */
+.elementor-mcp-hub-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--elementor-mcp-hub-space-3);
+    margin: 28px 0 var(--elementor-mcp-hub-space-3);
+    padding: 0;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--elementor-mcp-hub-muted-2);
+}
+
+.elementor-mcp-hub-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--elementor-mcp-hub-border-soft);
+}
+
+/* Provider header (group level) */
+.elementor-mcp-hub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--elementor-mcp-hub-space-4) var(--elementor-mcp-hub-space-6);
+    border-bottom: 1px solid var(--elementor-mcp-hub-border-soft);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.elementor-mcp-hub-header::-webkit-details-marker {
+    display: none;
+}
+
+.elementor-mcp-hub-header:hover {
+    background: var(--elementor-mcp-hub-bg-hover);
+}
+
+.elementor-mcp-hub-header:focus-visible {
+    outline: 2px solid var(--elementor-mcp-hub-focus);
+    outline-offset: -2px;
+}
+
+.elementor-mcp-hub-header::after {
+    content: "";
+    flex: none;
+    width: 7px;
+    height: 7px;
+    margin-left: var(--elementor-mcp-hub-space-3);
+    border-right: 2px solid var(--elementor-mcp-hub-muted-2);
+    border-bottom: 2px solid var(--elementor-mcp-hub-muted-2);
+    transform: rotate(-45deg);
+    transition: transform var(--elementor-mcp-hub-transition);
+}
+
+.elementor-mcp-hub-section[open] > .elementor-mcp-hub-header::after {
+    transform: rotate(45deg);
+}
+
+.elementor-mcp-hub-section:not([open]) > .elementor-mcp-hub-header {
+    border-bottom: none;
+}
+
+.elementor-mcp-hub-header h2 {
+    margin: 0 auto 0 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--elementor-mcp-hub-text);
+    letter-spacing: -0.01em;
+}
+
+.elementor-mcp-hub-header h2 .count {
+    margin-left: var(--elementor-mcp-hub-space-2);
+    color: var(--elementor-mcp-hub-muted-2);
+    font-weight: 400;
+    font-size: 13px;
+}
+
+/* Category sub-section */
+.elementor-mcp-hub-subsection {
+    border-top: 1px solid var(--elementor-mcp-hub-border-faint);
+}
+
+.elementor-mcp-hub-subsection:first-of-type {
+    border-top: none;
+}
+
+.elementor-mcp-hub-subheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--elementor-mcp-hub-space-2) var(--elementor-mcp-hub-space-6);
+    background: var(--elementor-mcp-hub-cat-bg);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.elementor-mcp-hub-subheader::-webkit-details-marker {
+    display: none;
+}
+
+.elementor-mcp-hub-subheader:hover {
+    background: var(--elementor-mcp-hub-cat-hover);
+}
+
+.elementor-mcp-hub-subheader:focus-visible {
+    outline: 2px solid var(--elementor-mcp-hub-focus);
+    outline-offset: -2px;
+}
+
+.elementor-mcp-hub-subheader h3 {
+    margin: 0 auto 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--elementor-mcp-hub-muted-2);
+}
+
+.elementor-mcp-hub-subheader h3 .count {
+    margin-left: var(--elementor-mcp-hub-space-2);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--elementor-mcp-hub-muted-3);
+}
+
+.elementor-mcp-hub-subheader::after {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 6px;
+    margin-left: var(--elementor-mcp-hub-space-3);
+    border-right: 2px solid var(--elementor-mcp-hub-muted-3);
+    border-bottom: 2px solid var(--elementor-mcp-hub-muted-3);
+    transform: rotate(-45deg);
+    transition: transform var(--elementor-mcp-hub-transition);
+}
+
+.elementor-mcp-hub-subsection[open] > .elementor-mcp-hub-subheader::after {
+    transform: rotate(45deg);
+}
+
+/* "All disabled" pill in a provider/category header. The base .pill rules are
+ * scoped to row pill containers, so the header variant is styled on its own. */
+.elementor-mcp-hub-header h2 .elementor-mcp-hub-alloff,
+.elementor-mcp-hub-subheader h3 .elementor-mcp-hub-alloff {
+    margin-left: var(--elementor-mcp-hub-space-2);
+    padding: 2px var(--elementor-mcp-hub-space-2);
+    border-radius: var(--elementor-mcp-hub-radius-sm);
+    background: var(--elementor-mcp-hub-pill-off-bg);
+    color: var(--elementor-mcp-hub-pill-off-text);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 0;
+    vertical-align: middle;
+}
+
+/* Select-all checkbox in section headers. The heading takes the auto margin so
+ * the chevron stays pinned right while checkbox + title group on the left. */
+.elementor-mcp-hub-select-all {
+    display: flex;
+    align-items: center;
+    margin: 0 var(--elementor-mcp-hub-space-3) 0 0;
+}
+
+.elementor-mcp-hub-select-all input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Rows */
+.elementor-mcp-hub-rows {
+    display: block;
+}
+
+.elementor-mcp-hub-row {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) max-content max-content;
+    align-items: center;
+    gap: var(--elementor-mcp-hub-space-3);
+    min-height: 40px;
+    padding: var(--elementor-mcp-hub-space-2) var(--elementor-mcp-hub-space-6);
+    border-bottom: 1px solid var(--elementor-mcp-hub-border-faint);
+    transition: background var(--elementor-mcp-hub-transition);
+}
+
+/* Only an expanded row needs its controls pinned to the top, next to the slug;
+ * collapsed rows (the common case) keep everything vertically centered. */
+.elementor-mcp-hub-row:has(.elementor-mcp-hub-main[open]) {
+    align-items: start;
+}
+
+.elementor-mcp-hub-row:last-child {
+    border-bottom: none;
+}
+
+/* Zebra striping (restarts inside each category). The stripe is far lighter
+ * than the category bar so rows never read as headers; hover steps darker
+ * still, staying visible over both white and striped rows. */
+.elementor-mcp-hub-row:nth-child(even) {
+    background: var(--elementor-mcp-hub-row-stripe);
+}
+
+.elementor-mcp-hub-row:hover {
+    background: var(--elementor-mcp-hub-row-hover);
+}
+
+.elementor-mcp-hub-row.is-off .elementor-mcp-hub-main .slug,
+.elementor-mcp-hub-row.is-off .elementor-mcp-hub-main .desc {
+    color: var(--elementor-mcp-hub-muted-3);
+}
+
+/* While an AJAX toggle is in flight, dim the row and block further clicks. */
+.elementor-mcp-hub-row.is-busy {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.elementor-mcp-hub-select {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.elementor-mcp-hub-select input[type="checkbox"] {
+    margin: 0;
+}
+
+.elementor-mcp-hub-main {
+    min-width: 0;
+}
+
+.elementor-mcp-hub-main--plain,
+.elementor-mcp-hub-summary {
+    display: flex;
+    align-items: baseline;
+    gap: var(--elementor-mcp-hub-space-2);
+    overflow: hidden;
+    min-width: 0;
+}
+
+.elementor-mcp-hub-summary {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.elementor-mcp-hub-summary::-webkit-details-marker {
+    display: none;
+}
+
+.elementor-mcp-hub-summary:hover .slug {
+    text-decoration: underline;
+    text-decoration-color: var(--elementor-mcp-hub-hint);
+    text-underline-offset: 2px;
+}
+
+.elementor-mcp-hub-summary:focus-visible {
+    outline: 2px solid var(--elementor-mcp-hub-focus);
+    outline-offset: 2px;
+}
+
+.elementor-mcp-hub-main[open] > .elementor-mcp-hub-summary .desc {
+    display: none;
+}
+
+.elementor-mcp-hub-detail {
+    padding: var(--elementor-mcp-hub-space-1) 0 var(--elementor-mcp-hub-space-2);
+}
+
+.elementor-mcp-hub-detail .desc-full {
+    margin: 0;
+    max-width: 70ch;
+    color: var(--elementor-mcp-hub-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.elementor-mcp-hub-main .slug {
+    flex: none;
+    font-family: ui-monospace, "DM Mono", "JetBrains Mono", Consolas, monospace;
+    font-size: 13px;
+    color: var(--elementor-mcp-hub-text);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.elementor-mcp-hub-main .desc {
+    flex: 0 1 auto;
+    max-width: 70ch;
+    color: var(--elementor-mcp-hub-muted-2);
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.elementor-mcp-hub-main .desc::before {
+    content: "-";
+    margin-right: 6px;
+    color: var(--elementor-mcp-hub-hint);
+}
+
+/* Pills */
+.elementor-mcp-hub-pills {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--elementor-mcp-hub-space-1);
+    min-height: 26px;
+}
+
+.elementor-mcp-hub-pills .pill {
+    font-size: 11px;
+    padding: 2px var(--elementor-mcp-hub-space-2);
+    border-radius: var(--elementor-mcp-hub-radius-sm);
+    background: var(--elementor-mcp-hub-pill-bg);
+    color: var(--elementor-mcp-hub-pill-text);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.elementor-mcp-hub-pills .pill.mcp {
+    background: var(--elementor-mcp-hub-pill-mcp-bg);
+    color: var(--elementor-mcp-hub-pill-mcp-text);
+}
+
+.elementor-mcp-hub-pills .pill.status.is-enabled {
+    background: var(--elementor-mcp-hub-pill-on-bg);
+    color: var(--elementor-mcp-hub-pill-on-text);
+}
+
+.elementor-mcp-hub-pills .pill.status.is-disabled {
+    background: var(--elementor-mcp-hub-pill-off-bg);
+    color: var(--elementor-mcp-hub-pill-off-text);
+}
+
+.elementor-mcp-hub-pills .pill.source {
+    background: var(--elementor-mcp-hub-pill-source-bg);
+    color: var(--elementor-mcp-hub-pill-source-text);
+    font-weight: 600;
+}
+
+.elementor-mcp-hub-pills .pill.protected {
+    background: var(--elementor-mcp-hub-pill-protected-bg);
+    color: var(--elementor-mcp-hub-pill-protected-text);
+}
+
+/* Row actions (revealed on hover/focus) */
+.elementor-mcp-hub-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--elementor-mcp-hub-space-1);
+    margin: 0;
+    min-height: 26px;
+    opacity: 0;
+    transition: opacity var(--elementor-mcp-hub-transition);
+}
+
+.elementor-mcp-hub-row:hover .elementor-mcp-hub-actions,
+.elementor-mcp-hub-row:focus-within .elementor-mcp-hub-actions {
+    opacity: 1;
+}
+
+.elementor-mcp-hub-actions form {
+    margin: 0;
+}
+
+.elementor-mcp-hub .action-btn {
+    background: transparent;
+    border: 0;
+    padding: var(--elementor-mcp-hub-space-1) 10px;
+    border-radius: var(--elementor-mcp-hub-radius);
+    cursor: pointer;
+    color: var(--elementor-mcp-hub-muted);
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background var(--elementor-mcp-hub-transition), color var(--elementor-mcp-hub-transition);
+    outline: none;
+    box-shadow: none;
+}
+
+.elementor-mcp-hub .action-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.elementor-mcp-hub .action-btn:focus-visible {
+    outline: 2px solid var(--elementor-mcp-hub-focus);
+    outline-offset: 1px;
+}
+
+.elementor-mcp-hub .action-btn:hover,
+.elementor-mcp-hub .action-btn:focus {
+    background: var(--elementor-mcp-hub-bg-rail);
+    color: var(--elementor-mcp-hub-text);
+}
+
+/* Bulk action toolbars */
+.elementor-mcp-hub .tablenav {
+    height: auto;
+    margin: var(--elementor-mcp-hub-space-3) 0;
+}
+
+.elementor-mcp-hub .tablenav.bottom {
+    margin-top: 0;
+}
+
+.elementor-mcp-hub .bulkactions {
+    display: flex;
+    align-items: center;
+    gap: var(--elementor-mcp-hub-space-2);
+}
+
+@media (max-width: 1200px) {
+    .elementor-mcp-hub-row {
+        grid-template-columns: 28px minmax(0, 1fr) minmax(220px, auto);
+    }
+
+    .elementor-mcp-hub-pills,
+    .elementor-mcp-hub-actions {
+        grid-column: 2 / -1;
+        justify-content: flex-start;
+    }
+
+    .elementor-mcp-hub-actions {
+        opacity: 1;
+    }
+}
+
+/* Premium admin alignment. */
+.elementor-mcp-hub .wrap-title h1 {
+    font-size: 32px;
+    font-weight: 750;
+    letter-spacing: -0.032em;
+}
+
+.elementor-mcp-hub-section {
+    border-radius: 13px;
+    box-shadow: 0 5px 18px rgba(20, 32, 51, 0.06);
+}
+
+.elementor-mcp-hub-header {
+    padding: 18px 22px;
+}
+
+.elementor-mcp-hub-header h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.elementor-mcp-hub-row:hover,
+.elementor-mcp-hub-row:focus-within {
+    background: #f8f3f9;
+}

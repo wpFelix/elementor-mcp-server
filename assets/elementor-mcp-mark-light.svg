@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Elementor MCP">
+  <rect width="48" height="48" rx="14" fill="#FFFFFF" stroke="#D7E0EA" stroke-width="2"/>
+  <path d="M8 10h17v5H14v4h10v5H14v4h12v5H8V10Z" fill="#2D6FD2"/>
+  <path d="M23 10h5l4 4 4-4h5v28h-6V20l-3 3-3-3v18h-6V10Z" fill="#0F766E"/>
+  <path d="m28 10 4 4-4 4-4-4 4-4Z" fill="#1C4EA1"/>
+</svg>

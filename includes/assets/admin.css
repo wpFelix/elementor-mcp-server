@@ -1,0 +1,3108 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Elementor MCP <dev@elementormcp.com>
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * Elementor MCP admin design system.
+ *
+ * One stylesheet for every Elementor MCP screen. Before this, each screen carried its
+ * own inline <style> block and invented its own spacing, borders, and colours.
+ *
+ * The 2026 direction is a calm operational workspace: clear WordPress-native
+ * structure, generous white surfaces, useful density, and an accessible
+ * midnight-and-cobalt identity. Warm amber is reserved for orientation and
+ * small moments of emphasis. Green, amber and red communicate state.
+ *
+ * There are no decorative gradients. Hierarchy comes from spacing, typography,
+ * restrained borders and soft elevation rather than heavy black outlines or
+ * offset shadows. This keeps setup, diagnostics, design and paid screens in one
+ * premium system while allowing dense technical values to remain scannable.
+ *
+ * Everything is scoped to body[class*="elementor-mcp"] so it can never leak into
+ * another plugin's screens.
+ */
+
+body[class*='elementor-mcp'] {
+	--elementor-mcp-ink: #142033;
+	--elementor-mcp-ink-2: #304155;
+	--elementor-mcp-muted: #5e6c7d;
+	--elementor-mcp-faint: #75859a;
+
+	--elementor-mcp-canvas: #f4f7fa;
+	--elementor-mcp-surface: #fff;
+	--elementor-mcp-sunk: #edf2f7;
+
+	--elementor-mcp-line: #d7e0ea;
+	--elementor-mcp-line-soft: #e7edf3;
+
+	/* Identity. All text pairings meet WCAG AA against their normal surfaces. */
+	--elementor-mcp-accent: #1c4ea1;
+	--elementor-mcp-accent-strong: #12356f;
+	--elementor-mcp-accent-bright: #2d6fd2;
+	--elementor-mcp-accent-soft: #e8f0fd;
+	--elementor-mcp-highlight: #f0b04a;
+	--elementor-mcp-highlight-soft: #fff5df;
+
+	/* State, not decoration. */
+	--elementor-mcp-armed: #b42318;
+	--elementor-mcp-armed-soft: #fff0ee;
+	--elementor-mcp-ready: #0f766e;
+	--elementor-mcp-ready-soft: #e9f7f4;
+	--elementor-mcp-attention: #8a5200;
+	--elementor-mcp-attention-soft: #fff6df;
+	--elementor-mcp-idle: #6c7c8f;
+
+	--elementor-mcp-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+	--elementor-mcp-border: 1px;
+	--elementor-mcp-radius: 14px;
+	--elementor-mcp-radius-sm: 9px;
+	--elementor-mcp-shadow: 0 12px 32px rgba(20, 32, 51, 0.08);
+	--elementor-mcp-shadow-sm: 0 4px 14px rgba(20, 32, 51, 0.06);
+	--elementor-mcp-gap: 24px;
+}
+
+/* ------------------------------------------------------- WordPress chrome -- */
+
+/*
+ * Elementor MCP is an operational workspace, so its host chrome should feel
+ * like part of the same product. These rules are body-scoped and never alter
+ * the rest of wp-admin.
+ */
+body[class*='elementor-mcp'] #wpadminbar {
+	background: #091524;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+body[class*='elementor-mcp'] #wpadminbar .ab-top-menu > li.hover > .ab-item,
+body[class*='elementor-mcp'] #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+body[class*='elementor-mcp'] #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
+body[class*='elementor-mcp'] #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus {
+	background: #17314f;
+	color: #fff;
+}
+
+body[class*='elementor-mcp'] #adminmenuback,
+body[class*='elementor-mcp'] #adminmenuwrap,
+body[class*='elementor-mcp'] #adminmenu,
+body[class*='elementor-mcp'] #adminmenu .wp-submenu {
+	background: #0d1a2b;
+}
+
+body[class*='elementor-mcp'] #adminmenu a {
+	color: #c5d2e1;
+}
+
+body[class*='elementor-mcp'] #adminmenu div.wp-menu-image::before {
+	color: #91a6bd;
+}
+
+body[class*='elementor-mcp'] #adminmenu li.menu-top:hover,
+body[class*='elementor-mcp'] #adminmenu li.opensub > a.menu-top,
+body[class*='elementor-mcp'] #adminmenu li > a.menu-top:focus {
+	background: #17314f;
+	color: #fff;
+}
+
+body[class*='elementor-mcp'] #adminmenu li.wp-has-current-submenu > a.wp-has-current-submenu,
+body[class*='elementor-mcp'] #adminmenu li.current a.menu-top {
+	background: #1c4ea1;
+	color: #fff;
+	box-shadow: inset 4px 0 0 var(--elementor-mcp-highlight);
+}
+
+body[class*='elementor-mcp'] #adminmenu li.wp-has-current-submenu div.wp-menu-image::before,
+body[class*='elementor-mcp'] #adminmenu li.current div.wp-menu-image::before {
+	color: #fff;
+}
+
+body[class*='elementor-mcp'] #toplevel_page_elementor-mcp-connect .wp-menu-image img {
+	width: 20px;
+	height: 20px;
+	padding: 7px 0 0;
+	opacity: 0.86;
+}
+
+body[class*='elementor-mcp'] #toplevel_page_elementor-mcp-connect.current .wp-menu-image img,
+body[class*='elementor-mcp'] #toplevel_page_elementor-mcp-connect.wp-has-current-submenu .wp-menu-image img,
+body[class*='elementor-mcp'] #toplevel_page_elementor-mcp-connect:hover .wp-menu-image img {
+	opacity: 1;
+}
+
+/* ---------------------------------------------------------------- ground -- */
+
+body[class*='elementor-mcp'] #wpbody-content {
+	background: var(--elementor-mcp-canvas);
+	padding-bottom: 64px;
+}
+
+body[class*='elementor-mcp'] #wpcontent {
+	background: var(--elementor-mcp-canvas);
+}
+
+/*
+ * The content column is centred rather than pinned to the left edge.
+ * WordPress' own screens run full width, but Elementor MCP's are a fixed measure, and
+ * a fixed measure hard against the menu leaves a growing empty gutter on wide
+ * displays — the wider the screen, the more lopsided it looks.
+ */
+body[class*='elementor-mcp'] .wrap {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+/*
+ * The page title is the loudest text on the screen and should look it.
+ *
+ * Matched at any depth inside .wrap, not just as a direct child: the Abilities
+ * screen nests its heading two levels down inside a title block, and a child
+ * combinator left that one page with a default-sized title while every other
+ * screen had a display one.
+ */
+body[class*='elementor-mcp'] .wrap h1,
+body[class*='elementor-mcp'] .wrap h1.wp-heading-inline {
+	font-size: 32px;
+	font-weight: 750;
+	letter-spacing: -0.032em;
+	line-height: 1.1;
+	color: var(--elementor-mcp-ink);
+	padding: 32px 0 9px;
+	margin: 0;
+}
+
+/* A heading that shares its row with an action keeps the row's own spacing. */
+body[class*='elementor-mcp'] .wrap .wrap-title h1 {
+	padding-top: 26px;
+}
+
+/* --------------------------------------------------------------- masthead -- */
+
+.elementor-mcp-masthead {
+	background: #0b1626;
+	margin: 0 0 0 -20px;
+	padding: 0 26px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	min-height: 62px;
+	border-bottom: 1px solid #243a55;
+	box-shadow: 0 5px 16px rgba(9, 21, 36, 0.16);
+	grid-column: 1 / -1;
+	grid-row: 2;
+	position: sticky;
+	top: 32px;
+	z-index: 20;
+}
+
+.elementor-mcp-masthead__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	width: 100%;
+	max-width: 1280px;
+}
+
+.elementor-mcp-masthead__mark {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.elementor-mcp-masthead__mark img {
+	max-height: 29px;
+	width: auto;
+	display: block;
+}
+
+.elementor-mcp-masthead__legend {
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: #9fb1c6;
+	padding-left: 16px;
+	border-left: 1px solid #354b64;
+	line-height: 1;
+}
+
+/* Whether agents can act on this site: the most consequential fact there is, so
+ * it is a bordered plate rather than a line of text. */
+.elementor-mcp-masthead__status {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 7px 14px;
+	border: 1px solid #38516d;
+	border-radius: 10px;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #edf4ff;
+	background: #14263c;
+}
+
+.elementor-mcp-masthead__lamp {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--elementor-mcp-idle);
+	flex: none;
+}
+
+.elementor-mcp-masthead__status--armed {
+	color: #c6f3e7;
+	border-color: #2f806f;
+	background: #123a34;
+}
+
+.elementor-mcp-masthead__status--armed .elementor-mcp-masthead__lamp {
+	background: #43c9aa;
+	box-shadow: 0 0 0 4px rgba(67, 201, 170, 0.18);
+}
+
+.elementor-mcp-masthead__status--attention {
+	color: #ffe0a6;
+	border-color: #8a6120;
+	background: #3e2d0e;
+}
+
+.elementor-mcp-masthead__status--attention .elementor-mcp-masthead__lamp {
+	background: #e0a92f;
+}
+
+/* Off is the resting state: unlit, no colour claim either way. */
+.elementor-mcp-masthead__status--idle .elementor-mcp-masthead__lamp {
+	background: #4a4f55;
+	border: 1px solid #62686e;
+}
+
+@media screen and (max-width: 782px) {
+	.elementor-mcp-masthead {
+		margin-left: -10px;
+		padding: 16px;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.elementor-mcp-masthead__inner {
+		gap: 12px;
+	}
+
+	.elementor-mcp-masthead__legend {
+		display: none;
+	}
+
+	.elementor-mcp-masthead__mark img {
+		max-width: 170px;
+	}
+
+	.elementor-mcp-masthead__status {
+		flex: none;
+		padding-inline: 11px;
+	}
+}
+
+/* --------------------------------------------------------- product menu -- */
+
+/*
+ * Four compact workspaces replace the old link rail. Material's role-based
+ * approach is used here deliberately: neutral surfaces do most of the work,
+ * cobalt marks the current action, and teal/gold are small orientation cues.
+ */
+.elementor-mcp-tabs {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	align-items: stretch;
+	gap: 12px;
+	background: #eaf0f6;
+	border-bottom: 1px solid #d2dce7;
+	margin: 0 0 0 -20px;
+	padding: 14px 30px 16px;
+	box-shadow: 0 6px 18px rgba(20, 32, 51, 0.07);
+}
+
+.elementor-mcp-tabs__group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	min-width: 0;
+	padding: 13px 14px 14px;
+	background: #fff;
+	border: 1px solid #d5dfe9;
+	border-top: 3px solid #1c4ea1;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(20, 32, 51, 0.05);
+}
+
+.elementor-mcp-tabs__group--ai {
+	border-top-color: #0f766e;
+}
+
+.elementor-mcp-tabs__group--elementor {
+	border-top-color: #d18b18;
+}
+
+.elementor-mcp-tabs__group--account {
+	border-top-color: #60738a;
+}
+
+.elementor-mcp-tabs__group-head {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+}
+
+.elementor-mcp-tabs__group-icon {
+	display: grid;
+	place-items: center;
+	width: 27px;
+	height: 27px;
+	flex: none;
+	border-radius: 8px;
+	background: #e8f0fd;
+	color: #1c4ea1;
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+}
+
+.elementor-mcp-tabs__group--ai .elementor-mcp-tabs__group-icon {
+	background: #e9f7f4;
+	color: #0f766e;
+}
+
+.elementor-mcp-tabs__group--elementor .elementor-mcp-tabs__group-icon {
+	background: #fff5df;
+	color: #8a5200;
+}
+
+.elementor-mcp-tabs__group--account .elementor-mcp-tabs__group-icon {
+	background: #edf2f7;
+	color: #52657a;
+}
+
+.elementor-mcp-tabs__heading {
+	font-size: 10.5px;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #304155;
+	line-height: 1;
+}
+
+.elementor-mcp-tabs__items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	align-items: center;
+}
+
+.elementor-mcp-tabs__tab {
+	flex: none;
+	padding: 6px 9px;
+	border-radius: 7px;
+	font-size: 12.5px;
+	font-weight: 600;
+	line-height: 1.35;
+	color: #42556b;
+	text-decoration: none;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	background: #f4f7fa;
+	transition: color 0.12s ease, background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
+}
+
+.elementor-mcp-tabs__tab:hover,
+.elementor-mcp-tabs__tab:focus {
+	color: #12356f;
+	background: #e8f0fd;
+	border-color: #b9cbed;
+	box-shadow: none;
+	transform: translateY(-1px);
+}
+
+.elementor-mcp-tabs__tab.is-current {
+	color: #fff;
+	background: var(--elementor-mcp-accent);
+	border-color: var(--elementor-mcp-accent);
+	box-shadow: 0 4px 10px rgba(28, 78, 161, 0.22);
+}
+
+.elementor-mcp-tabs__tab:focus-visible {
+	outline: 3px solid var(--elementor-mcp-highlight);
+	outline-offset: 1px;
+}
+
+@media screen and (max-width: 1180px) {
+	.elementor-mcp-tabs {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.elementor-mcp-tabs {
+		margin-left: -10px;
+		grid-template-columns: 1fr;
+		padding: 12px;
+	}
+
+	.elementor-mcp-tabs__group {
+		padding: 12px;
+	}
+}
+
+/* ------------------------------------------------------- sidebar shell -- */
+
+/*
+ * The local product navigation is a rail, not a second header. It stays
+ * visible while the long operational screens scroll and leaves the top bar
+ * responsible only for brand and live status.
+ */
+@media screen and (min-width: 783px) {
+	body[class*='elementor-mcp'] #wpbody-content {
+		display: grid;
+		grid-template-columns: 224px minmax(0, 1fr);
+		grid-template-rows: auto auto minmax(0, 1fr) auto;
+		align-items: start;
+	}
+
+	body[class*='elementor-mcp'] #screen-meta {
+		grid-column: 1 / -1;
+		grid-row: 1;
+	}
+
+	body[class*='elementor-mcp'] #wpbody-content > .clear,
+	body[class*='elementor-mcp'] #wpbody-content > script {
+		grid-column: 1 / -1;
+	}
+
+	body[class*='elementor-mcp'] #wpbody-content > .notice {
+		grid-column: 2;
+	}
+
+	body[class*='elementor-mcp'] .wrap {
+		grid-column: 2;
+		grid-row: 3;
+		width: auto;
+		max-width: 1120px;
+		margin: 0 !important;
+		padding: 0 28px;
+	}
+
+	.elementor-mcp-tabs {
+		display: flex;
+		flex-direction: column;
+		align-self: stretch;
+		gap: 2px;
+		box-sizing: border-box;
+		background: #fff;
+		border: 0;
+		border-right: 1px solid #d7e0ea;
+		margin: 0 0 0 -20px;
+		padding: 18px 12px 28px;
+		grid-column: 1;
+		grid-row: 3;
+		position: sticky;
+		top: 94px;
+		height: calc(100vh - 94px);
+		overflow-x: hidden;
+		overflow-y: auto;
+		scrollbar-width: thin;
+		scrollbar-color: #b8c5d3 transparent;
+		box-shadow: 5px 0 16px rgba(20, 32, 51, 0.035);
+	}
+
+	.elementor-mcp-tabs::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+
+	.elementor-mcp-tabs::-webkit-scrollbar-thumb {
+		background: #b8c5d3;
+		border-radius: 999px;
+	}
+}
+
+.elementor-mcp-tabs__intro {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 0 10px 15px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #e7edf3;
+}
+
+.elementor-mcp-tabs__intro span {
+	font-size: 14px;
+	font-weight: 750;
+	letter-spacing: -0.01em;
+	color: #142033;
+}
+
+.elementor-mcp-tabs__intro strong {
+	font-size: 10px;
+	font-weight: 700;
+	color: #75859a;
+}
+
+.elementor-mcp-tabs .elementor-mcp-tabs__group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	min-width: 0;
+	padding: 10px 0 8px;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.elementor-mcp-tabs .elementor-mcp-tabs__group-head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 0 10px;
+}
+
+.elementor-mcp-tabs .elementor-mcp-tabs__group-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	flex: none;
+	border-radius: 6px;
+	background: #e8f0fd;
+	color: #1c4ea1;
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 400;
+	letter-spacing: normal;
+}
+
+.elementor-mcp-tabs .elementor-mcp-tabs__heading {
+	font-size: 9.5px;
+	font-weight: 800;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	color: #52657a;
+	line-height: 1;
+}
+
+.elementor-mcp-tabs .elementor-mcp-tabs__items {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 2px;
+	align-items: stretch;
+}
+
+.elementor-mcp-tabs .elementor-mcp-tabs__tab {
+	display: block;
+	flex: none;
+	padding: 8px 10px 8px 14px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: #42556b;
+	text-decoration: none;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	background: transparent;
+	transition: color 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+
+.elementor-mcp-tabs .elementor-mcp-tabs__tab:hover,
+.elementor-mcp-tabs .elementor-mcp-tabs__tab:focus {
+	color: #12356f;
+	background: #eef4fd;
+	border-color: #d5e1f4;
+	box-shadow: none;
+	transform: none;
+}
+
+.elementor-mcp-tabs .elementor-mcp-tabs__tab.is-current {
+	color: #12356f;
+	background: #e8f0fd;
+	border-color: #c9d8f0;
+	box-shadow: inset 3px 0 0 var(--elementor-mcp-accent);
+}
+
+@media screen and (max-width: 782px) {
+	.elementor-mcp-masthead {
+		position: sticky;
+		top: 46px;
+		min-height: 58px;
+		padding: 10px 12px;
+	}
+
+	body[class*='elementor-mcp'] .wrap {
+		width: auto;
+		max-width: none;
+		margin: 0 !important;
+		padding: 0 14px;
+	}
+
+	.elementor-mcp-tabs {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		gap: 4px;
+		margin-left: -10px;
+		padding: 10px 12px;
+		background: #fff;
+		border: 0;
+		border-bottom: 1px solid #d7e0ea;
+		box-shadow: 0 4px 12px rgba(20, 32, 51, 0.05);
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	.elementor-mcp-tabs__intro {
+		display: none;
+	}
+
+	.elementor-mcp-tabs .elementor-mcp-tabs__group {
+		flex: none;
+		padding: 3px 6px;
+	}
+
+	.elementor-mcp-tabs .elementor-mcp-tabs__group-head {
+		padding: 0 6px 5px;
+	}
+
+	.elementor-mcp-tabs .elementor-mcp-tabs__items {
+		flex-direction: row;
+	}
+
+	.elementor-mcp-tabs .elementor-mcp-tabs__tab {
+		padding: 6px 9px;
+		background: #f4f7fa;
+	}
+
+	.elementor-mcp-tabs .elementor-mcp-tabs__tab.is-current {
+		box-shadow: inset 0 -3px 0 var(--elementor-mcp-accent);
+	}
+}
+
+/* ----------------------------------------------------------------- panel -- */
+
+body[class*='elementor-mcp'] .elementor-mcp-connect-section,
+body[class*='elementor-mcp'] .elementor-mcp-panel,
+body[class*='elementor-mcp'] .postbox {
+	position: relative;
+	background: var(--elementor-mcp-surface);
+	border: var(--elementor-mcp-border) solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius);
+	box-shadow: var(--elementor-mcp-shadow);
+	padding: 26px 28px 28px;
+	margin: 0 0 var(--elementor-mcp-gap);
+}
+
+/* The status bar. A thick top edge reads from across the page; the 3px spine it
+ * replaced did not. Neutral unless a state class says otherwise. */
+body[class*='elementor-mcp'] .elementor-mcp-connect-section::before,
+body[class*='elementor-mcp'] .elementor-mcp-panel::before {
+	content: '';
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 3px;
+	background: #c7d3df;
+	border-radius: var(--elementor-mcp-radius) var(--elementor-mcp-radius) 0 0;
+}
+
+body[class*='elementor-mcp'] .is-armed::before {
+	background: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .is-ready::before {
+	background: var(--elementor-mcp-ready);
+}
+
+body[class*='elementor-mcp'] .is-attention::before {
+	background: var(--elementor-mcp-attention);
+}
+
+/* ------------------------------------------------------------------ step -- */
+
+body[class*='elementor-mcp'] .elementor-mcp-step-heading {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	font-size: 19px;
+	font-weight: 800;
+	letter-spacing: -0.015em;
+	color: var(--elementor-mcp-ink);
+	margin: 0 0 20px;
+	padding: 0;
+}
+
+/* Connecting a client genuinely is a sequence, so the numbers carry meaning. */
+body[class*='elementor-mcp'] .elementor-mcp-step-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	flex: none;
+	border-radius: 10px;
+	background: var(--elementor-mcp-accent);
+	color: #fff;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 14px;
+	font-weight: 700;
+}
+
+/* Section legend: tracked label with a rule running to the panel edge. */
+body[class*='elementor-mcp'] .elementor-mcp-legend {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-ink);
+	margin: 30px 0 12px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-legend::after {
+	content: '';
+	flex: 1;
+	height: 1px;
+	background: var(--elementor-mcp-line-soft);
+}
+
+/* --------------------------------------------------------------- controls -- */
+
+body[class*='elementor-mcp'] .button,
+body[class*='elementor-mcp'] .button-secondary {
+	background: var(--elementor-mcp-surface);
+	border: 1px solid #c7d3df;
+	border-radius: var(--elementor-mcp-radius-sm);
+	color: var(--elementor-mcp-accent);
+	font-weight: 650;
+	height: auto;
+	min-height: 36px;
+	padding: 7px 15px;
+	line-height: 1.6;
+	box-shadow: none;
+	transition: border-color 0.14s ease, box-shadow 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+
+body[class*='elementor-mcp'] .button:hover {
+	background: var(--elementor-mcp-accent-soft);
+	border-color: #9eb7db;
+	color: var(--elementor-mcp-accent-strong);
+	box-shadow: 0 3px 10px rgba(28, 78, 161, 0.1);
+}
+
+body[class*='elementor-mcp'] .button-primary {
+	background: var(--elementor-mcp-accent);
+	border-color: var(--elementor-mcp-accent);
+	color: #fff;
+	font-weight: 650;
+	letter-spacing: 0.005em;
+	text-shadow: none;
+	box-shadow: 0 5px 14px rgba(28, 78, 161, 0.22);
+}
+
+body[class*='elementor-mcp'] .button-primary:hover,
+body[class*='elementor-mcp'] .button-primary:focus {
+	background: var(--elementor-mcp-accent-strong);
+	border-color: var(--elementor-mcp-accent-strong);
+	color: #fff;
+	box-shadow: 0 7px 18px rgba(18, 53, 111, 0.25);
+}
+
+/* Pressing returns the button to the page: the shadow collapses under it. */
+body[class*='elementor-mcp'] .button:active,
+body[class*='elementor-mcp'] .button-primary:active {
+	box-shadow: 0 2px 6px rgba(20, 32, 51, 0.14);
+}
+
+body[class*='elementor-mcp'] .button-link-delete,
+body[class*='elementor-mcp'] .button.is-destructive {
+	color: var(--elementor-mcp-armed);
+	border-color: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .button:focus,
+body[class*='elementor-mcp'] .button-primary:focus,
+body[class*='elementor-mcp'] input:focus,
+body[class*='elementor-mcp'] select:focus,
+body[class*='elementor-mcp'] textarea:focus {
+	outline: 2px solid var(--elementor-mcp-accent-bright);
+	outline-offset: 2px;
+	box-shadow: none;
+}
+
+body[class*='elementor-mcp'] input[type='text'],
+body[class*='elementor-mcp'] input[type='url'],
+body[class*='elementor-mcp'] input[type='search'],
+body[class*='elementor-mcp'] input[type='password'],
+body[class*='elementor-mcp'] input[type='number'],
+body[class*='elementor-mcp'] textarea {
+	border: 1px solid #c7d3df;
+	border-radius: var(--elementor-mcp-radius-sm);
+	background: var(--elementor-mcp-surface);
+	color: var(--elementor-mcp-ink);
+	box-shadow: none;
+	padding: 8px 11px;
+	min-height: 38px;
+}
+
+/* Border and radius only: WordPress paints the dropdown arrow as a background
+ * image, so setting `background` here would erase it. */
+body[class*='elementor-mcp'] select {
+	border: 1px solid #c7d3df;
+	border-radius: var(--elementor-mcp-radius-sm);
+	color: var(--elementor-mcp-ink);
+	box-shadow: none;
+	min-height: 38px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+body[class*='elementor-mcp'] textarea {
+	font-family: var(--elementor-mcp-mono);
+	font-size: 12.5px;
+	line-height: 1.65;
+}
+
+body[class*='elementor-mcp'] input[type='checkbox'],
+body[class*='elementor-mcp'] input[type='radio'] {
+	border: 1px solid #aebdcd;
+	border-radius: 3px;
+}
+
+body[class*='elementor-mcp'] input[type='checkbox']:checked,
+body[class*='elementor-mcp'] input[type='radio']:checked {
+	background: var(--elementor-mcp-accent);
+	border-color: var(--elementor-mcp-accent);
+}
+
+body[class*='elementor-mcp'] input[type='checkbox']:checked::before {
+	filter: brightness(0) invert(1);
+}
+
+/* ----------------------------------------------------------- machine text -- */
+
+/* Ability names, endpoints, counts, tokens: values a machine produced. */
+body[class*='elementor-mcp'] code,
+body[class*='elementor-mcp'] .elementor-mcp-mono {
+	font-family: var(--elementor-mcp-mono);
+	font-size: 12.5px;
+	background: var(--elementor-mcp-sunk);
+	border: 1px solid var(--elementor-mcp-line-soft);
+	border-radius: 4px;
+	padding: 2px 7px;
+	color: var(--elementor-mcp-ink);
+}
+
+/* Machine output is set on an ink plate: it is the machine talking, not us. */
+body[class*='elementor-mcp'] pre {
+	font-family: var(--elementor-mcp-mono);
+	font-size: 12.5px;
+	line-height: 1.7;
+	background: var(--elementor-mcp-ink);
+	color: #e6e8ec;
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius-sm);
+	padding: 18px 20px;
+	overflow-x: auto;
+}
+
+body[class*='elementor-mcp'] pre code {
+	background: none;
+	border: 0;
+	padding: 0;
+	color: inherit;
+}
+
+/* Status pill: a hard-edged plate, sized to be read, not a soft bubble. */
+body[class*='elementor-mcp'] .elementor-mcp-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	padding: 5px 11px;
+	border: 1px solid var(--elementor-mcp-line);
+	border-radius: 999px;
+	color: var(--elementor-mcp-ink);
+	background: var(--elementor-mcp-surface);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-pill--armed {
+	color: var(--elementor-mcp-armed);
+	border-color: var(--elementor-mcp-armed);
+	background: var(--elementor-mcp-armed-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-pill--ready {
+	color: var(--elementor-mcp-ready);
+	border-color: var(--elementor-mcp-ready);
+	background: var(--elementor-mcp-ready-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-pill--attention {
+	color: var(--elementor-mcp-attention);
+	border-color: var(--elementor-mcp-attention);
+	background: var(--elementor-mcp-attention-soft);
+}
+
+/* --------------------------------------------------------------- notices -- */
+
+body[class*='elementor-mcp'] .notice,
+body[class*='elementor-mcp'] div.updated,
+body[class*='elementor-mcp'] div.error {
+	background: var(--elementor-mcp-surface);
+	border: 1px solid var(--elementor-mcp-line);
+	border-left-width: 4px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	box-shadow: none;
+	padding: 13px 17px;
+	margin: 0 0 var(--elementor-mcp-gap);
+}
+
+body[class*='elementor-mcp'] .notice p {
+	margin: 0.35em 0;
+}
+
+body[class*='elementor-mcp'] .notice-success {
+	border-left-color: var(--elementor-mcp-ready);
+}
+
+body[class*='elementor-mcp'] .notice-warning {
+	border-left-color: var(--elementor-mcp-attention);
+}
+
+body[class*='elementor-mcp'] .notice-error,
+body[class*='elementor-mcp'] div.error {
+	border-left-color: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .notice-info {
+	border-left-color: var(--elementor-mcp-accent);
+}
+
+/* ---------------------------------------------------------------- tables -- */
+
+body[class*='elementor-mcp'] .wp-list-table,
+body[class*='elementor-mcp'] table.widefat {
+	border: 1px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius-sm);
+	box-shadow: none;
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+}
+
+body[class*='elementor-mcp'] .wp-list-table thead th,
+body[class*='elementor-mcp'] table.widefat thead th {
+	background: var(--elementor-mcp-sunk);
+	border-bottom: 1px solid var(--elementor-mcp-line);
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-muted);
+	padding: 12px 15px;
+}
+
+body[class*='elementor-mcp'] .wp-list-table tbody td,
+body[class*='elementor-mcp'] table.widefat tbody td {
+	border-bottom: 1px solid var(--elementor-mcp-line-soft);
+	padding: 14px 15px;
+	color: var(--elementor-mcp-ink-2);
+}
+
+body[class*='elementor-mcp'] .wp-list-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+/* ------------------------------------------------------------ typography -- */
+
+body[class*='elementor-mcp'] .wrap p,
+body[class*='elementor-mcp'] .wrap li {
+	color: var(--elementor-mcp-ink-2);
+	font-size: 14px;
+	line-height: 1.65;
+}
+
+body[class*='elementor-mcp'] .wrap h2 {
+	font-size: 19px;
+	font-weight: 800;
+	letter-spacing: -0.015em;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .description,
+body[class*='elementor-mcp'] .elementor-mcp-muted {
+	color: var(--elementor-mcp-muted);
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+/* Intro copy under a page title. One measure for every screen, so the lede is
+ * not re-guessed per page with an inline max-width. */
+body[class*='elementor-mcp'] .elementor-mcp-lede {
+	max-width: 70ch;
+	font-size: 16px;
+	line-height: 1.55;
+	color: var(--elementor-mcp-ink-2);
+	margin: 0 0 26px;
+}
+
+/* WordPress uses this rule to mark the end of the header area; it is not a
+ * divider and must not paint one. */
+body[class*='elementor-mcp'] hr.wp-header-end {
+	display: none;
+}
+
+/*
+ * Buttons are excluded explicitly. WordPress renders both classic `.button`
+ * anchors and React `.components-button` anchors; the generic link selector is
+ * otherwise specific enough to repaint a primary button's white label with its
+ * background colour and make the label disappear.
+ */
+body[class*='elementor-mcp']
+	.wrap
+	a:not(.button):not(.button-primary):not(.button-secondary):not(.components-button):not(.page-title-action) {
+	color: var(--elementor-mcp-accent);
+	font-weight: 600;
+	text-decoration-color: currentColor;
+	text-underline-offset: 3px;
+}
+
+body[class*='elementor-mcp']
+	.wrap
+	a:not(.button):not(.button-primary):not(.button-secondary):not(.components-button):not(.page-title-action):hover {
+	color: var(--elementor-mcp-ink);
+}
+
+/* WordPress' "Add new" affordance beside a heading: a button in everything but
+ * its class name, so it is given the button treatment here. */
+body[class*='elementor-mcp'] .page-title-action,
+body[class*='elementor-mcp'] .wrap a.page-title-action {
+	background: var(--elementor-mcp-surface);
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius-sm);
+	color: var(--elementor-mcp-ink);
+	font-weight: 700;
+	padding: 5px 14px;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+body[class*='elementor-mcp'] .wrap a.page-title-action:hover {
+	background: var(--elementor-mcp-sunk);
+	color: var(--elementor-mcp-ink);
+	box-shadow: var(--elementor-mcp-shadow-sm);
+}
+
+/*
+ * The divide on the Overview screen between what is connected and how to
+ * connect something. Both used to be separate pages; the rule is what keeps
+ * them readable as two halves of one screen rather than one long scroll.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-section-break {
+	margin: 44px 0 20px;
+	padding-top: 30px;
+	border-top: 4px solid var(--elementor-mcp-line);
+	font-size: 26px;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	color: var(--elementor-mcp-ink);
+}
+
+/* ------------------------------------------------------------------ misc -- */
+
+body[class*='elementor-mcp'] hr,
+body[class*='elementor-mcp'] .elementor-mcp-rule {
+	border: 0;
+	border-top: 2px solid var(--elementor-mcp-line-soft);
+	margin: 28px 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-grid {
+	display: grid;
+	gap: var(--elementor-mcp-gap);
+}
+
+@media screen and (min-width: 960px) {
+	body[class*='elementor-mcp'] .elementor-mcp-grid--2 {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* Respect the reduced-motion preference: nothing here needs to animate. */
+@media (prefers-reduced-motion: reduce) {
+	body[class*='elementor-mcp'] * {
+		transition: none !important;
+		animation: none !important;
+	}
+
+	body[class*='elementor-mcp'] .button:hover,
+	body[class*='elementor-mcp'] .button-primary:hover {
+		transform: none;
+	}
+}
+
+/* Pro surfaces share the same calm, premium visual grammar as the Free workspace. */
+body[class*='elementor-mcp'] .elementor-mcp-pro-memory-empty {
+	max-width: 800px;
+	padding: 26px;
+	background: var(--elementor-mcp-surface);
+	border: 1px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius);
+	box-shadow: var(--elementor-mcp-shadow-sm);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-pro-memory-empty p:first-child {
+	margin-top: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-pro-memory-empty p:last-child {
+	margin-bottom: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit > h2,
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit > h3 {
+	margin-top: 28px;
+	color: var(--elementor-mcp-ink);
+	letter-spacing: -0.015em;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit > form,
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit > .widefat,
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit > textarea {
+	border-radius: var(--elementor-mcp-radius-sm);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit textarea.code,
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit textarea[readonly] {
+	padding: 14px 16px;
+	background: #fbfafc;
+	border-color: var(--elementor-mcp-line);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit-card {
+	max-width: 860px;
+	margin: 16px 0 26px;
+	padding: 22px;
+	background: var(--elementor-mcp-surface);
+	border: 1px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius);
+	box-shadow: var(--elementor-mcp-shadow-sm);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit-card > :first-child {
+	margin-top: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit-card > :last-child {
+	margin-bottom: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit-table {
+	max-width: 640px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit-table.is-compact {
+	margin-top: 12px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit-card .elementor-mcp-brand-kit-table {
+	max-width: none;
+	margin: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 14px 0 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-brand-kit-code {
+	width: 100%;
+	max-width: 820px;
+	font-family: var(--elementor-mcp-mono);
+}
+
+/* --------------------------------------------------------- client cards -- */
+
+/*
+ * The Overview screen's answer to "what is talking to my site". One card per AI
+ * client, identified by what it reported on connect rather than by the label
+ * someone typed on a credential.
+ *
+ * The request count is the largest figure on the screen because it is the one
+ * that tells you whether a connection is real or merely configured.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-clients {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+	gap: 14px;
+	margin: 18px 0 10px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card {
+	background: var(--elementor-mcp-surface);
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius);
+	box-shadow: var(--elementor-mcp-shadow-sm);
+	padding: 16px 18px 14px;
+}
+
+/* A client the registry does not know still gets a card, but is not dressed as
+ * a recognised product. */
+body[class*='elementor-mcp'] .elementor-mcp-client-card.is-unknown {
+	border-style: dashed;
+	box-shadow: none;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card__head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 10px;
+	margin: 0 0 12px;
+	padding-bottom: 11px;
+	border-bottom: 2px solid var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card__name {
+	margin: 0;
+	font-size: 17px;
+	font-weight: 800;
+	letter-spacing: -0.015em;
+	color: var(--elementor-mcp-ink);
+	overflow-wrap: anywhere;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card__version {
+	flex: none;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card__facts {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 11px 14px;
+	margin: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card__facts dt {
+	font-size: 9.5px;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-faint);
+	margin: 0 0 2px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card__facts dd {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--elementor-mcp-ink);
+	overflow-wrap: anywhere;
+}
+
+/* Matched on the dd too: the generic fact rule above is one element more
+ * specific, so a bare class here would lose the font-size to it. */
+body[class*='elementor-mcp'] .elementor-mcp-client-card__facts dd.elementor-mcp-client-card__count {
+	font-family: var(--elementor-mcp-mono);
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -0.02em;
+	color: var(--elementor-mcp-accent);
+}
+
+/* Clients that have never connected: present, but plainly not live. */
+body[class*='elementor-mcp'] .elementor-mcp-clients--idle {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 12px 0 8px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 6px 12px;
+	border: 2px dashed var(--elementor-mcp-line-soft);
+	border-radius: 999px;
+	background: var(--elementor-mcp-surface);
+	color: var(--elementor-mcp-muted);
+	font-size: 12.5px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 0.12s ease, border-color 0.12s ease;
+}
+
+body[class*='elementor-mcp'] .wrap a.elementor-mcp-client-chip:hover {
+	color: var(--elementor-mcp-ink);
+	border-color: var(--elementor-mcp-ink);
+	border-style: solid;
+}
+
+/* ---------------------------------------------------- troubleshoot report -- */
+
+/*
+ * The diagnostics screen: a list of probes, each reporting a state. It reuses
+ * the same status vocabulary as the panels rather than inventing a second colour
+ * language, and every row wears its verdict on a thick left edge.
+ *
+ * Moved here from an inline <style> in includes/troubleshoot/ui.php.
+ */
+
+body[class*='elementor-mcp'] .elementor-mcp-troubleshoot {
+	max-width: 100%;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-report {
+	list-style: none;
+	margin: 0 0 4px;
+	padding: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row {
+	display: flex;
+	gap: 14px;
+	margin: 0 0 10px;
+	padding: 14px 17px;
+	background: var(--elementor-mcp-surface);
+	border: 2px solid var(--elementor-mcp-line);
+	border-left-width: 8px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	opacity: 0;
+	transform: translateY(5px);
+	animation: elementor-mcp-ts-in 0.3s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+@keyframes elementor-mcp-ts-in {
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row.is-ok {
+	border-left-color: var(--elementor-mcp-ready);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row.is-warning {
+	border-left-color: var(--elementor-mcp-attention);
+	background: var(--elementor-mcp-attention-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row.is-fail {
+	border-left-color: var(--elementor-mcp-armed);
+	background: var(--elementor-mcp-armed-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row.is-skipped {
+	border-left-color: var(--elementor-mcp-idle);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row.is-info {
+	border-left-color: var(--elementor-mcp-accent);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-dot {
+	flex: 0 0 auto;
+	width: 24px;
+	height: 24px;
+	margin-top: 1px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	border: 2px solid currentColor;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+body[class*='elementor-mcp'] .is-ok .elementor-mcp-ts-dot {
+	background: var(--elementor-mcp-ready-soft);
+	color: var(--elementor-mcp-ready);
+}
+
+body[class*='elementor-mcp'] .is-warning .elementor-mcp-ts-dot {
+	background: var(--elementor-mcp-attention-soft);
+	color: var(--elementor-mcp-attention);
+}
+
+body[class*='elementor-mcp'] .is-fail .elementor-mcp-ts-dot {
+	background: var(--elementor-mcp-armed-soft);
+	color: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .is-skipped .elementor-mcp-ts-dot {
+	background: var(--elementor-mcp-canvas);
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .is-info .elementor-mcp-ts-dot {
+	background: var(--elementor-mcp-accent-soft);
+	color: var(--elementor-mcp-accent);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row-body {
+	min-width: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row-title {
+	font-weight: 700;
+	color: var(--elementor-mcp-ink);
+	margin: 2px 0 3px;
+}
+
+body[class*='elementor-mcp'] .is-skipped .elementor-mcp-ts-row-title,
+body[class*='elementor-mcp'] .is-skipped .elementor-mcp-ts-row-msg {
+	color: var(--elementor-mcp-faint);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-row-msg {
+	color: var(--elementor-mcp-ink-2);
+	font-size: 13px;
+	line-height: 1.55;
+	overflow-wrap: break-word;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-remedy {
+	margin-top: 10px;
+	padding: 11px 14px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	background: var(--elementor-mcp-sunk);
+	border: 2px solid var(--elementor-mcp-line-soft);
+	font-size: 13px;
+	line-height: 1.55;
+	color: var(--elementor-mcp-ink-2);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-remedy .button {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-copy {
+	margin-top: 8px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-copy-text {
+	margin: 0;
+	padding: 12px 14px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	background: var(--elementor-mcp-ink);
+	border: 2px solid var(--elementor-mcp-line);
+	font-family: var(--elementor-mcp-mono);
+	font-size: 12px;
+	line-height: 1.55;
+	color: #e6e8ec;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+/* Verdict chips, matching .elementor-mcp-pill. */
+body[class*='elementor-mcp'] .elementor-mcp-ts-summary {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0 0 16px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 5px 12px;
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: 999px;
+	background: var(--elementor-mcp-surface);
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-chip.is-ok {
+	color: var(--elementor-mcp-ready);
+	border-color: var(--elementor-mcp-ready);
+	background: var(--elementor-mcp-ready-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-chip.is-warning {
+	color: var(--elementor-mcp-attention);
+	border-color: var(--elementor-mcp-attention);
+	background: var(--elementor-mcp-attention-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-chip.is-fail {
+	color: var(--elementor-mcp-armed);
+	border-color: var(--elementor-mcp-armed);
+	background: var(--elementor-mcp-armed-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-chip.is-skipped {
+	color: var(--elementor-mcp-muted);
+	border-color: var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-chip.is-info {
+	color: var(--elementor-mcp-accent);
+	border-color: var(--elementor-mcp-accent);
+	background: var(--elementor-mcp-accent-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-clean {
+	margin: 0 0 16px;
+	padding: 15px 18px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	border: 2px solid var(--elementor-mcp-ready);
+	border-left-width: 8px;
+	background: var(--elementor-mcp-ready-soft);
+	color: var(--elementor-mcp-ready);
+	font-weight: 700;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-clean.is-caveat {
+	border-color: var(--elementor-mcp-attention);
+	background: var(--elementor-mcp-attention-soft);
+	color: var(--elementor-mcp-attention);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-copy-report {
+	margin: 4px 0 16px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-controls {
+	display: flex;
+	gap: 14px;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	margin: 0 0 18px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-method-pick {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-method-label {
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-ink);
+}
+
+/* Placeholder rows while the probes run. */
+body[class*='elementor-mcp'] .elementor-mcp-ts-skeleton {
+	height: 52px;
+	margin: 0 0 10px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	border: 2px solid var(--elementor-mcp-line-soft);
+	background: var(--elementor-mcp-sunk);
+	animation: elementor-mcp-ts-pulse 1.1s ease-in-out infinite alternate;
+}
+
+@keyframes elementor-mcp-ts-pulse {
+	from {
+		opacity: 0.58;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-symptoms {
+	border-top: 2px solid var(--elementor-mcp-line-soft);
+	margin-top: 20px;
+	padding-top: 18px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-symptoms-title {
+	margin: 0 0 8px;
+	font-weight: 700;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-symptoms > select {
+	min-width: min(420px, 100%);
+	max-width: 100%;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-branch {
+	margin-top: 14px;
+	padding: 16px 18px;
+	border: 2px solid var(--elementor-mcp-line-soft);
+	border-radius: var(--elementor-mcp-radius-sm);
+	background: var(--elementor-mcp-sunk);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-branch > p:first-child {
+	margin-top: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-mint-controls,
+body[class*='elementor-mcp'] .elementor-mcp-ts-mint-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 9px;
+	align-items: center;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-ts-mint-row {
+	margin: 5px 0;
+}
+
+/* A minted client id is a credential; set it like one. */
+body[class*='elementor-mcp'] .elementor-mcp-ts-mint-id {
+	display: inline-block;
+	padding: 10px 15px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	background: var(--elementor-mcp-ink);
+	color: #e8eaed;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 13px;
+	letter-spacing: 0.04em;
+	user-select: all;
+}
+
+/* ------------------------------------------------------- connect: client -- */
+
+/*
+ * The Connect screen: method cards, generated client config, and the one-time
+ * password reveal. Moved here from an inline <style> in
+ * includes/admin/connect/page.php.
+ */
+
+/* Grid, not wrapped flex: with three methods the flex version gave each card a
+   width from its own text, so the row read as three mismatched boxes and a
+   wrapped card sat alone at a third of the width. Equal tracks, and a min that
+   drops cleanly to one column on a narrow screen. */
+body[class*='elementor-mcp'] .elementor-mcp-method-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	align-items: stretch;
+	gap: 14px;
+	margin: 0 0 18px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-method-card {
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	text-align: left;
+	cursor: pointer;
+	padding: 17px 19px;
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius);
+	background: var(--elementor-mcp-surface);
+	transition: box-shadow 0.12s ease, transform 0.1s ease;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-method-card:hover {
+	box-shadow: var(--elementor-mcp-shadow-sm);
+	transform: translate(-1px, -1px);
+}
+
+/* Selection is unmistakable: the card fills with the accent. */
+body[class*='elementor-mcp'] .elementor-mcp-method-card.is-active {
+	background: var(--elementor-mcp-accent-soft);
+	box-shadow: var(--elementor-mcp-shadow);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-method-card .description {
+	margin: 0;
+	min-height: 2.6em;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-method-title {
+	font-weight: 800;
+	flex-wrap: wrap;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-recommended-badge {
+	font-family: var(--elementor-mcp-mono);
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-ready);
+	background: var(--elementor-mcp-ready-soft);
+	border: 2px solid var(--elementor-mcp-ready);
+	border-radius: 999px;
+	padding: 2px 9px;
+}
+
+/* Generated config is machine output: ink plate, mono, copy affordance. */
+body[class*='elementor-mcp'] .elementor-mcp-config-block {
+	position: relative;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-config-block pre {
+	background: var(--elementor-mcp-ink);
+	color: #e6e8ec;
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius-sm);
+	padding: 18px 20px;
+	overflow-x: auto;
+	margin: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-copy-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 4px 12px;
+	font-size: 11px;
+	font-family: var(--elementor-mcp-mono);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+/* Shown once and never again, so it is treated as a hand-off, not a field. */
+body[class*='elementor-mcp'] .elementor-mcp-password-box {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	background: var(--elementor-mcp-attention-soft);
+	border: 2px solid var(--elementor-mcp-attention);
+	border-left-width: 8px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	padding: 16px 19px;
+	margin: 14px 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-password-value {
+	font-family: var(--elementor-mcp-mono);
+	font-size: 19px;
+	letter-spacing: 0.06em;
+	font-weight: 700;
+	color: var(--elementor-mcp-ink);
+	user-select: all;
+}
+
+/* Client picker: peers, so the same chip treatment as the product tabs. */
+body[class*='elementor-mcp'] .elementor-mcp-client-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 0 0 16px;
+	padding-bottom: 14px;
+	border-bottom: 2px solid var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-tab {
+	padding: 7px 13px;
+	border: 2px solid var(--elementor-mcp-line-soft);
+	border-radius: 999px;
+	background: var(--elementor-mcp-surface);
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--elementor-mcp-ink-2);
+	transition: border-color 0.12s ease, color 0.12s ease;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-tab:hover {
+	color: var(--elementor-mcp-ink);
+	border-color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-tab.active {
+	color: #fff;
+	font-weight: 700;
+	background: var(--elementor-mcp-ink);
+	border-color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-top-client-tab {
+	padding: 8px 16px;
+	font-size: 13.5px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-tab-content {
+	border: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-revoke-btn {
+	color: var(--elementor-mcp-armed);
+	border-color: var(--elementor-mcp-armed);
+}
+
+/* A value the reader must replace before the config will work. */
+body[class*='elementor-mcp'] .elementor-mcp-placeholder {
+	background: var(--elementor-mcp-armed);
+	color: #fff;
+	font-family: var(--elementor-mcp-mono);
+	font-weight: 700;
+	padding: 1px 6px;
+	border-radius: 4px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-mcp-error-panel {
+	background: var(--elementor-mcp-armed-soft);
+	border: 2px solid var(--elementor-mcp-armed);
+	border-left-width: 8px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	margin: 18px 0 26px;
+	padding: 16px 19px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-mcp-error-panel h2 {
+	color: var(--elementor-mcp-ink);
+	font-size: 17px;
+	line-height: 1.4;
+	margin: 0 0 8px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-mcp-error-panel p {
+	margin: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-production-warning {
+	background: var(--elementor-mcp-attention-soft);
+	border: 2px solid var(--elementor-mcp-attention);
+	border-left-width: 8px;
+	border-radius: var(--elementor-mcp-radius-sm);
+	padding: 15px 19px;
+	margin: 12px 0 26px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-production-warning p {
+	margin: 0;
+	flex: 1 1 auto;
+}
+
+/* The paste-to-agent block: a labelled plate with a collapsed preview. */
+body[class*='elementor-mcp'] .elementor-mcp-paste-block {
+	margin: 14px 0;
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius-sm);
+	overflow: hidden;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-paste-header {
+	background: var(--elementor-mcp-ink);
+	color: #fff;
+	padding: 11px 17px;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 10.5px;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-paste-content {
+	position: relative;
+	background: var(--elementor-mcp-sunk);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-paste-content pre {
+	background: transparent;
+	color: var(--elementor-mcp-ink-2);
+	padding: 17px 19px;
+	border: 0;
+	border-radius: 0;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	margin: 0;
+	max-height: 6.5em;
+	overflow: hidden;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-paste-content.is-expanded pre {
+	max-height: none;
+	overflow: visible;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-paste-content:not(.is-expanded)::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 34px;
+	background: rgba(255, 255, 255, 0.92);
+	pointer-events: none;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-paste-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 12px 16px 16px;
+	background: var(--elementor-mcp-surface);
+	border-top: 2px solid var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-panel-footer,
+body[class*='elementor-mcp'] .elementor-mcp-manage-passwords {
+	margin: 24px 0 0;
+	border-top: 2px solid var(--elementor-mcp-line-soft);
+	padding-top: 18px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-manage-passwords-summary {
+	font-weight: 700;
+	cursor: pointer;
+	list-style: none;
+	color: var(--elementor-mcp-ink);
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	padding: 4px 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-manage-passwords-summary::-webkit-details-marker {
+	display: none;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-manage-passwords-summary::before {
+	content: '▸';
+	color: var(--elementor-mcp-accent);
+	transition: transform 0.15s ease;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-manage-passwords[open] .elementor-mcp-manage-passwords-summary::before {
+	transform: rotate(90deg);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-manage-passwords-body {
+	padding-top: 14px;
+}
+
+/* ---------------------------------------------------------------- context -- */
+
+/*
+ * The Instructions screen: whether custom instructions are injected, a preview
+ * of what the agent actually receives, and the editor for it.
+ *
+ * Moved here from an inline <style> in includes/admin/instructions.php.
+ */
+
+body[class*='elementor-mcp'] .elementor-mcp-context-intro {
+	margin-top: 8px;
+	max-width: 70ch;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-section {
+	margin-top: 28px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-section h2 {
+	margin-bottom: 4px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-panel {
+	background: var(--elementor-mcp-surface);
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius);
+	box-shadow: var(--elementor-mcp-shadow-sm);
+	padding: 20px 24px;
+	margin-top: 14px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-status {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-status .status-text {
+	display: flex;
+	align-items: center;
+	gap: 11px;
+}
+
+/* Same plate as .elementor-mcp-pill: on/off is state, not a badge. */
+body[class*='elementor-mcp'] .elementor-mcp-context-status .status-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 5px 12px;
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: 999px;
+	background: var(--elementor-mcp-surface);
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-status .status-pill.is-on {
+	color: var(--elementor-mcp-ready);
+	border-color: var(--elementor-mcp-ready);
+	background: var(--elementor-mcp-ready-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-status .status-pill.is-off {
+	color: var(--elementor-mcp-muted);
+	border-color: var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-status .status-hint {
+	color: var(--elementor-mcp-muted);
+	margin: 6px 0 0;
+	max-width: 70ch;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-system-box summary {
+	cursor: pointer;
+	font-weight: 700;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-system-preview-wrap {
+	position: relative;
+	margin-top: 14px;
+}
+
+/* This is the literal text handed to the agent, so it is set as machine copy. */
+body[class*='elementor-mcp'] .elementor-mcp-system-preview {
+	box-sizing: border-box;
+	width: 100%;
+	overflow: auto;
+	margin: 0;
+	padding: 16px 18px;
+	background: var(--elementor-mcp-sunk);
+	border: 2px solid var(--elementor-mcp-line-soft);
+	border-radius: var(--elementor-mcp-radius-sm);
+	white-space: pre-wrap;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 12px;
+	line-height: 1.6;
+	color: var(--elementor-mcp-ink-2);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-system-preview.is-excerpt {
+	margin-top: 14px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-system-details[open] + .elementor-mcp-system-preview.is-excerpt {
+	display: none;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-guidance {
+	margin-top: 14px;
+	color: var(--elementor-mcp-ink-2);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-guidance ul {
+	list-style: disc;
+	margin-left: 20px;
+	max-width: 70ch;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-guidance li {
+	margin: 4px 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-context-form {
+	margin-top: 14px;
+}
+
+/* -------------------------------------------------------------- settings -- */
+
+/*
+ * The Settings screen. Each row is one decision: what it is on the left, the
+ * control on the right, and the consequence in the help text — so the page can
+ * be read down the left edge without touching anything.
+ */
+
+body[class*='elementor-mcp'] .elementor-mcp-setting-group__title {
+	font-size: 19px;
+	font-weight: 800;
+	letter-spacing: -0.015em;
+	color: var(--elementor-mcp-ink);
+	margin: 0 0 5px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-setting-group__note {
+	color: var(--elementor-mcp-muted);
+	max-width: 70ch;
+	margin: 0 0 6px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-setting {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 32px;
+	padding: 19px 0;
+	border-top: 2px solid var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-setting:first-of-type {
+	margin-top: 14px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-setting__text {
+	min-width: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-setting__label {
+	display: block;
+	font-weight: 700;
+	font-size: 14.5px;
+	color: var(--elementor-mcp-ink);
+	cursor: pointer;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-setting__help {
+	color: var(--elementor-mcp-muted);
+	font-size: 13px;
+	line-height: 1.6;
+	max-width: 66ch;
+	margin: 4px 0 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-setting__control {
+	flex: none;
+	padding-top: 2px;
+}
+
+/*
+ * A physical switch, not a checkbox: this is equipment. The armed variant is
+ * used only where flipping it grants agents real authority, so the on state
+ * reads red rather than the usual success green.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-switch {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-switch input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-switch__track {
+	position: relative;
+	display: block;
+	width: 52px;
+	height: 30px;
+	border-radius: 999px;
+	background: var(--elementor-mcp-canvas);
+	border: 2px solid var(--elementor-mcp-line);
+	transition: background 0.14s ease;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-switch__track::after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: var(--elementor-mcp-surface);
+	border: 2px solid var(--elementor-mcp-line);
+	transition: transform 0.14s ease;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-switch input:checked + .elementor-mcp-switch__track {
+	background: var(--elementor-mcp-accent);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-switch input:checked + .elementor-mcp-switch__track::after {
+	transform: translateX(22px);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-switch--armed input:checked + .elementor-mcp-switch__track {
+	background: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-switch input:focus-visible + .elementor-mcp-switch__track {
+	outline: 3px solid var(--elementor-mcp-accent);
+	outline-offset: 2px;
+}
+
+/* A setting that lives on another screen: state here, editing there. */
+body[class*='elementor-mcp'] .elementor-mcp-setting-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------- dashboard -- */
+
+/*
+ * The connection strip: a row of readings. The figures are large because they
+ * are the summary of the whole screen, and the label sits above each one so the
+ * row scans as a set of gauges rather than a sentence.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 2px;
+	background: var(--elementor-mcp-line);
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius-sm);
+	overflow: hidden;
+	margin: 18px 0 10px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-stat {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 17px 19px;
+	background: var(--elementor-mcp-surface);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-stat__label {
+	font-size: 9.5px;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-faint);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-stat__value {
+	font-family: var(--elementor-mcp-mono);
+	font-size: 27px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	color: var(--elementor-mcp-ink);
+	line-height: 1.1;
+}
+
+/* Live is the one reading that should catch the eye. */
+body[class*='elementor-mcp'] .elementor-mcp-stat__value.is-armed {
+	color: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-stat__value.is-idle {
+	color: var(--elementor-mcp-muted);
+}
+
+/* ------------------------------------------------------------ approvals -- */
+
+/*
+ * One held agent call. The ability name and its arguments are the whole point,
+ * so they lead; the decision buttons sit under them rather than beside, because
+ * a reviewer should read before choosing.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-approval {
+	border: 2px solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius-sm);
+	padding: 16px 18px;
+	margin: 0 0 14px;
+	background: var(--elementor-mcp-surface);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-approval__head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 14px;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-approval__head code {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-approval pre {
+	margin: 0 0 12px;
+	max-height: 220px;
+	overflow: auto;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-approval__actions {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+/* ----------------------------------------------------------------- plans -- */
+
+/*
+ * The Upgrade screen. Price cards are the one place on any Elementor MCP screen where
+ * a number is the argument, so the figure is set at display size and everything
+ * else defers to it. The recommended tier lifts off the page with the same hard
+ * offset shadow the rest of the system uses, rather than a coloured fill: the
+ * accent belongs to identity, not to a sales nudge.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-plans {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+	gap: 18px;
+	margin: 0 0 var(--elementor-mcp-gap);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 6px;
+	background: var(--elementor-mcp-surface);
+	border: var(--elementor-mcp-border) solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius);
+	padding: 20px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan.is-featured {
+	box-shadow: var(--elementor-mcp-shadow);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan__name {
+	margin: 0;
+	font-size: 17px;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan__sites {
+	margin: 0;
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan__price {
+	margin: 10px 0 0;
+	display: flex;
+	align-items: baseline;
+	gap: 6px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan__amount {
+	font-size: 40px;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan__period {
+	font-size: 13px;
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan__blurb {
+	margin: 4px 0 14px;
+	font-size: 13px;
+	line-height: 1.45;
+	color: var(--elementor-mcp-ink-2);
+	/* Holds the button on one baseline across cards with uneven copy. */
+	flex: 1 1 auto;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan__buy {
+	width: 100%;
+	text-align: center;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-plan__alt {
+	margin: 10px 0 0;
+	font-size: 12px;
+	color: var(--elementor-mcp-muted);
+}
+
+/*
+ * Client card actions: the revoked-credential badge and Forget.
+ *
+ * Forget is a quiet link rather than a button. It removes a record, not a
+ * connection — the destructive act in this area is revoking a credential, and
+ * this must not compete with it for weight.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-client-card__actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 14px;
+	padding-top: 12px;
+	border-top: 1px solid var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card__actions:only-child,
+body[class*='elementor-mcp'] .elementor-mcp-client-card__actions > form:only-child {
+	margin-left: auto;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card__forget {
+	margin: 0;
+	margin-left: auto;
+}
+
+/* --------------------------------------------------------------- prompts -- */
+
+/*
+ * The prompt library. Each prompt is a block of text to be copied whole, so it
+ * is set on the ink plate like the generated configs elsewhere: monospace,
+ * preserved line breaks, and a copy button that is the only affordance.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-prompt {
+	border: var(--elementor-mcp-border) solid var(--elementor-mcp-line);
+	border-radius: var(--elementor-mcp-radius);
+	background: var(--elementor-mcp-surface);
+	padding: 16px;
+	margin: 0 0 14px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-prompt:last-child {
+	margin-bottom: 0;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-prompt__head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 14px;
+	margin-bottom: 12px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-prompt__title {
+	margin: 0;
+	font-size: 15px;
+	font-weight: 700;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-prompt__body {
+	margin: 0;
+	padding: 14px;
+	background: var(--elementor-mcp-ink);
+	color: #f4f4f5;
+	border-radius: var(--elementor-mcp-radius-sm);
+	font-family: var(--elementor-mcp-mono);
+	font-size: 12px;
+	line-height: 1.6;
+	white-space: pre-wrap;
+	word-break: break-word;
+	max-height: 320px;
+	overflow: auto;
+}
+
+/* Locked packs list what they contain without showing the text. */
+body[class*='elementor-mcp'] .elementor-mcp-prompt-locked-list {
+	margin: 0 0 4px;
+	padding-left: 18px;
+	color: var(--elementor-mcp-ink-2);
+	font-size: 13px;
+	line-height: 1.7;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-prompt-lock {
+	margin-left: 6px;
+	font-size: 11px;
+	opacity: 0.75;
+}
+
+/*
+ * A client that has actually connected, in the supported-clients roster.
+ *
+ * Solid rather than dashed, ink rather than grey, with a live dot: the same
+ * grammar the rest of the admin uses for "this is real" versus "this is
+ * possible". Green is reserved for ready states, so it is the dot that carries
+ * the colour rather than the whole chip shouting.
+ */
+body[class*='elementor-mcp'] .elementor-mcp-client-chip.is-connected {
+	border-style: solid;
+	border-color: var(--elementor-mcp-ready);
+	background: var(--elementor-mcp-ready-soft);
+	color: var(--elementor-mcp-ink);
+	gap: 7px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-chip__dot {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--elementor-mcp-ready);
+	flex: none;
+}
+
+/* ======================================================== premium overview -- */
+
+body[class*='elementor-mcp'] #elementor-mcp-connect-flow,
+body[class*='elementor-mcp'] #elementor-mcp-clients,
+body[class*='elementor-mcp'] #elementor-mcp-recent-activity {
+	scroll-margin-top: 28px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center {
+	display: grid;
+	grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+	gap: 34px;
+	align-items: stretch;
+	padding: 34px;
+	margin: 4px 0 18px;
+	background: #10223a;
+	border: 1px solid #10223a;
+	border-radius: 18px;
+	box-shadow: 0 18px 44px rgba(9, 21, 36, 0.2);
+	color: #fff;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center__intro {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-eyebrow {
+	display: block;
+	margin: 0 0 7px;
+	font-size: 10px;
+	font-weight: 750;
+	letter-spacing: 0.15em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-accent);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center .elementor-mcp-eyebrow {
+	color: var(--elementor-mcp-highlight);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center h2 {
+	max-width: 650px;
+	margin: 0;
+	font-size: clamp(25px, 3vw, 38px);
+	font-weight: 750;
+	letter-spacing: -0.035em;
+	line-height: 1.08;
+	color: #fff;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center__intro > p {
+	max-width: 62ch;
+	margin: 12px 0 20px;
+	font-size: 14px;
+	line-height: 1.65;
+	color: #c5d2e1;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center__actions .button {
+	background: #fff;
+	border-color: #fff;
+	color: var(--elementor-mcp-accent);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center__actions .button-primary {
+	background: var(--elementor-mcp-accent-bright);
+	border-color: var(--elementor-mcp-accent-bright);
+	color: #fff;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center__actions .button:hover,
+body[class*='elementor-mcp'] .elementor-mcp-command-center__actions .button:focus {
+	background: var(--elementor-mcp-accent-soft);
+	border-color: var(--elementor-mcp-accent-soft);
+	color: var(--elementor-mcp-accent-strong);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-center__actions .button-primary:hover,
+body[class*='elementor-mcp'] .elementor-mcp-command-center__actions .button-primary:focus {
+	background: var(--elementor-mcp-accent);
+	border-color: var(--elementor-mcp-accent);
+	color: #fff;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-state {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-content: center;
+	gap: 8px 11px;
+	padding: 24px;
+	background: #17314f;
+	border: 1px solid #355574;
+	border-radius: 14px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-state__dot {
+	grid-row: 1 / span 3;
+	width: 11px;
+	height: 11px;
+	margin-top: 3px;
+	border-radius: 50%;
+	background: #9bb0c6;
+	box-shadow: 0 0 0 5px rgba(155, 176, 198, 0.12);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-state.is-live .elementor-mcp-command-state__dot {
+	background: #43c9aa;
+	box-shadow: 0 0 0 5px rgba(67, 201, 170, 0.16);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-state__label {
+	font-size: 10px;
+	font-weight: 750;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #aac8ef;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-state strong {
+	font-size: 15px;
+	line-height: 1.45;
+	color: #fff;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-command-state > span:last-child {
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	line-height: 1.5;
+	color: #b7c5d7;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-metric-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+	margin: 0 0 18px;
+}
+
+body[class*='elementor-mcp'] .wrap a.elementor-mcp-metric {
+	position: relative;
+	display: flex;
+	min-width: 0;
+	min-height: 108px;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 17px;
+	background: var(--elementor-mcp-surface);
+	border: 1px solid var(--elementor-mcp-line);
+	border-radius: 13px;
+	box-shadow: 0 5px 18px rgba(20, 32, 51, 0.05);
+	color: var(--elementor-mcp-ink);
+	text-decoration: none;
+	transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+}
+
+body[class*='elementor-mcp'] .wrap a.elementor-mcp-metric::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 16px;
+	right: 16px;
+	height: 2px;
+	background: #c7d3df;
+}
+
+body[class*='elementor-mcp'] .wrap a.elementor-mcp-metric.is-brand::before {
+	background: var(--elementor-mcp-accent-bright);
+}
+
+body[class*='elementor-mcp'] .wrap a.elementor-mcp-metric.is-success::before {
+	background: var(--elementor-mcp-ready);
+}
+
+body[class*='elementor-mcp'] .wrap a.elementor-mcp-metric.is-warning::before {
+	background: var(--elementor-mcp-highlight);
+}
+
+body[class*='elementor-mcp'] .wrap a.elementor-mcp-metric:hover,
+body[class*='elementor-mcp'] .wrap a.elementor-mcp-metric:focus-visible {
+	transform: translateY(-2px);
+	border-color: #9eb7db;
+	box-shadow: 0 10px 24px rgba(20, 32, 51, 0.1);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-metric__label {
+	font-size: 10px;
+	font-weight: 750;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-metric strong {
+	overflow: hidden;
+	font-size: 29px;
+	font-weight: 730;
+	letter-spacing: -0.035em;
+	line-height: 1;
+	color: var(--elementor-mcp-ink);
+	text-overflow: ellipsis;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-metric__note {
+	overflow: hidden;
+	font-size: 11px;
+	line-height: 1.35;
+	color: var(--elementor-mcp-muted);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-overview-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+	margin: 0 0 16px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-dashboard-card {
+	min-width: 0;
+	padding: 22px 24px;
+	background: var(--elementor-mcp-surface);
+	border: 1px solid var(--elementor-mcp-line);
+	border-radius: 14px;
+	box-shadow: var(--elementor-mcp-shadow-sm);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-dashboard-card__head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 18px;
+	margin-bottom: 14px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-dashboard-card__head h2 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 720;
+	letter-spacing: -0.02em;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-dashboard-card__head > a {
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-dashboard-card__count {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 28px;
+	height: 28px;
+	padding: 0 8px;
+	border-radius: 999px;
+	background: var(--elementor-mcp-accent-soft);
+	font-family: var(--elementor-mcp-mono);
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--elementor-mcp-accent);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list,
+body[class*='elementor-mcp'] .elementor-mcp-activity-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	padding: 12px 0;
+	border-top: 1px solid var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__name {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--elementor-mcp-ink-2);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__value {
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 7px;
+	font-size: 12px;
+	font-weight: 650;
+	text-align: right;
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--elementor-mcp-idle);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__value.is-success {
+	color: var(--elementor-mcp-ready);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__value.is-success .elementor-mcp-health-list__dot {
+	background: var(--elementor-mcp-ready);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__value.is-warning {
+	color: var(--elementor-mcp-attention);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__value.is-warning .elementor-mcp-health-list__dot {
+	background: var(--elementor-mcp-attention);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__value.is-danger {
+	color: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-health-list__value.is-danger .elementor-mcp-health-list__dot {
+	background: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-activity-list li {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 10px;
+	padding: 9px 0;
+	border-top: 1px solid var(--elementor-mcp-line-soft);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-activity-list__marker {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--elementor-mcp-accent-bright);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-activity-list__body {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	gap: 3px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-activity-list__body code {
+	overflow: hidden;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	font-size: 12px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-activity-list__body > span {
+	font-size: 11px;
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-risk-badge {
+	padding: 4px 8px;
+	border-radius: 999px;
+	background: var(--elementor-mcp-attention-soft);
+	font-size: 9px;
+	font-weight: 750;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-attention);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-risk-badge.is-read,
+body[class*='elementor-mcp'] .elementor-mcp-risk-badge.is-readonly {
+	background: var(--elementor-mcp-ready-soft);
+	color: var(--elementor-mcp-ready);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-risk-badge.is-destructive,
+body[class*='elementor-mcp'] .elementor-mcp-risk-badge.is-code_execution {
+	background: var(--elementor-mcp-armed-soft);
+	color: var(--elementor-mcp-armed);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-empty-compact {
+	display: flex;
+	min-height: 118px;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 6px;
+	padding: 20px;
+	border: 1px dashed #cbbfd0;
+	border-radius: 10px;
+	background: var(--elementor-mcp-canvas);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-empty-compact strong {
+	font-size: 14px;
+	color: var(--elementor-mcp-ink);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-empty-compact span {
+	font-size: 12px;
+	line-height: 1.55;
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-quick-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+	padding: 13px 16px;
+	margin: 0 0 34px;
+	background: #fff;
+	border: 1px solid var(--elementor-mcp-line);
+	border-radius: 12px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-quick-actions__label {
+	margin-right: 4px;
+	font-size: 10px;
+	font-weight: 750;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+	color: var(--elementor-mcp-muted);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-quick-actions a {
+	padding: 6px 10px;
+	border-radius: 7px;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-quick-actions a:hover,
+body[class*='elementor-mcp'] .elementor-mcp-quick-actions a:focus-visible {
+	background: var(--elementor-mcp-accent-soft);
+}
+
+/* Existing detailed readings use the same softer data-card language. */
+body[class*='elementor-mcp'] .elementor-mcp-stats {
+	gap: 10px;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	overflow: visible;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-stat {
+	border: 1px solid var(--elementor-mcp-line);
+	border-radius: 10px;
+	background: var(--elementor-mcp-canvas);
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-stat__value {
+	font-size: 24px;
+}
+
+body[class*='elementor-mcp'] .elementor-mcp-client-card {
+	border-color: var(--elementor-mcp-line);
+	border-radius: 12px;
+	box-shadow: none;
+}
+
+body[class*='elementor-mcp'] table.widefat tbody tr:hover td,
+body[class*='elementor-mcp'] .wp-list-table tbody tr:hover td {
+	background: #fbf9fc;
+}
+
+@media screen and (max-width: 1180px) {
+	body[class*='elementor-mcp'] .elementor-mcp-metric-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media screen and (max-width: 782px) {
+	body[class*='elementor-mcp'] .elementor-mcp-command-center {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		padding: 24px;
+		border-radius: 14px;
+	}
+
+	body[class*='elementor-mcp'] .elementor-mcp-metric-grid,
+	body[class*='elementor-mcp'] .elementor-mcp-overview-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	body[class*='elementor-mcp'] .elementor-mcp-dashboard-card {
+		padding: 20px;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	body[class*='elementor-mcp'] .elementor-mcp-metric-grid,
+	body[class*='elementor-mcp'] .elementor-mcp-overview-grid {
+		grid-template-columns: 1fr;
+	}
+
+	body[class*='elementor-mcp'] .elementor-mcp-health-list li {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	body[class*='elementor-mcp'] .elementor-mcp-health-list__value {
+		justify-content: flex-start;
+		text-align: left;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body[class*='elementor-mcp'] *,
+	body[class*='elementor-mcp'] *::before,
+	body[class*='elementor-mcp'] *::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}

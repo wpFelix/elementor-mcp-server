@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest an ability or capability for the free Elementor MCP plugin
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do
+      description: The task, not the implementation. What an agent should be able to accomplish.
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: How do you do it today
+      description: Manually, with another plugin, or not at all.
+  - type: markdown
+    attributes:
+      value: |
+        Elementor Core and WordPress core requests belong here. Advanced
+        Elementor and agency workflows belong in Elementor MCP Pro; suggest
+        those at <https://elementormcp.com/support/contact>.

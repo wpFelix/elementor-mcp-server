@@ -1,0 +1,1125 @@
+/*
+ * Skills admin styles. Visual vocabulary mirrors the Configuration page
+ * (card-based sections, white background, 1px #d7e0ea border, 6px radius,
+ * subtle drop shadow) so the Elementor MCP admin feels cohesive across pages.
+ */
+
+.elementor-mcp-skills .wrap-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 12px 0 24px;
+}
+
+.elementor-mcp-skills .wrap-title h1 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 400;
+    color: #142033;
+}
+
+.elementor-mcp-skills .wrap-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.elementor-mcp-skills-card {
+    background: #fff;
+    border: 1px solid #d7e0ea;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 0 0 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.elementor-mcp-skills-card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 16px;
+}
+
+.elementor-mcp-skills-card-heading h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #142033;
+}
+
+.elementor-mcp-skills-card-heading .description {
+    font-size: 13px;
+    color: #5e6c7d;
+    margin: 4px 0 0;
+}
+
+.elementor-mcp-skills-empty {
+    text-align: center;
+    padding: 48px 24px;
+    background: #fff;
+    border: 1px solid #d7e0ea;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.elementor-mcp-skills-empty .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: #d7e0ea;
+    margin-bottom: 12px;
+}
+
+.elementor-mcp-skills-empty p {
+    color: #5e6c7d;
+    font-size: 14px;
+    margin: 0 0 16px;
+}
+
+.elementor-mcp-skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+}
+
+.elementor-mcp-skills-table thead th {
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #5e6c7d;
+    border-bottom: 1px solid #e0e3e7;
+}
+
+.elementor-mcp-skills-table tbody td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: middle;
+}
+
+.elementor-mcp-skills-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.elementor-mcp-skills-table tbody tr:hover td {
+    background: #f4f7fa;
+}
+
+.elementor-mcp-skills-table code {
+    background: none;
+    padding: 0;
+    font-size: 13px;
+    color: #142033;
+}
+
+.elementor-mcp-skills-table .slug-link {
+    color: #1c4ea1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.elementor-mcp-skills-table .slug-link:hover {
+    text-decoration: underline;
+}
+
+/* ====================================================================
+ * Compact list (Your Skills)
+ *
+ * Tight 44px rows, hover-reveal actions, status indicated by a check
+ * circle on the left that doubles as a click-target to toggle enabled.
+ * Designed to scale to many entries without losing scanability.
+ * ==================================================================== */
+
+.elementor-mcp-skills-d-section {
+    background: #fff;
+    border: 1px solid #d7e0ea;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.elementor-mcp-skills-d-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e4e4e7;
+}
+
+.elementor-mcp-skills-d-header h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #142033;
+    letter-spacing: -0.01em;
+}
+
+.elementor-mcp-skills-d-header h2 .count {
+    color: #75859a;
+    font-weight: 400;
+    font-size: 13px;
+    margin-left: 8px;
+}
+
+.elementor-mcp-skills-trust-warning {
+    margin: 12px 0 16px;
+    border: 1px solid #fde68a;
+    border-left: 3px solid #f59e0b;
+    background: #fffbeb;
+    color: #78350f;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.elementor-mcp-skills-trust-warning > summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.elementor-mcp-skills-trust-warning > summary::-webkit-details-marker {
+    display: none;
+}
+
+.elementor-mcp-skills-trust-warning .dashicons {
+    flex: 0 0 auto;
+    color: #d97706;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.elementor-mcp-skills-trust-warning .summary-text {
+    flex: 1 1 auto;
+}
+
+.elementor-mcp-skills-trust-warning .summary-toggle {
+    flex: 0 0 auto;
+    color: #b45309;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.elementor-mcp-skills-trust-warning[open] .summary-toggle::after {
+    content: " ↑";
+}
+
+.elementor-mcp-skills-trust-warning:not([open]) .summary-toggle::after {
+    content: " ↓";
+}
+
+.elementor-mcp-skills-trust-body {
+    padding: 0 14px 12px 40px;
+    border-top: 1px solid #fde68a;
+    margin-top: 4px;
+    padding-top: 10px;
+}
+
+.elementor-mcp-skills-trust-body p {
+    margin: 0 0 6px;
+}
+
+.elementor-mcp-skills-trust-body ul {
+    margin: 6px 0 8px;
+    padding-left: 18px;
+    list-style: disc;
+}
+
+.elementor-mcp-skills-trust-body li {
+    margin-bottom: 4px;
+}
+
+.elementor-mcp-skills-search {
+    width: 240px;
+    height: 30px;
+    /* Right-align with the end of the pills column. The row's actions
+       column is ~102px wide + 12px gap, but it's invisible until hover, so
+       the bare header would float ~114px past the pills. */
+    margin-right: 114px;
+    padding: 0 10px;
+    border: 1px solid #d4d4d8;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    color: #142033;
+}
+
+.elementor-mcp-skills-search:focus {
+    outline: none;
+    border-color: #1c4ea1;
+    box-shadow: 0 0 0 1px #1c4ea1;
+}
+
+.elementor-mcp-skills-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 12px 24px;
+    border-top: 1px solid #e4e4e7;
+}
+
+.elementor-mcp-skills-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    padding: 0 8px;
+    border: 1px solid #d4d4d8;
+    border-radius: 4px;
+    background: #fff;
+    color: #142033;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.elementor-mcp-skills-pagination .page-numbers:hover {
+    background: #f4f4f5;
+}
+
+.elementor-mcp-skills-pagination .page-numbers.current {
+    background: #1c4ea1;
+    border-color: #1c4ea1;
+    color: #fff;
+}
+
+.elementor-mcp-skills-pagination .page-numbers.dots {
+    border-color: transparent;
+    background: transparent;
+}
+
+.elementor-mcp-skills-d-list {
+    display: block;
+}
+
+.elementor-mcp-skills-d-row {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) minmax(160px, auto) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 0 24px;
+    height: 44px;
+    border-bottom: 1px solid #f4f4f5;
+    transition: background 0.1s;
+}
+
+.elementor-mcp-skills-d-row:last-child {
+    border-bottom: none;
+}
+
+.elementor-mcp-skills-d-row.is-just-imported {
+    animation: elementor-mcp-skills-import-flash 3s ease-out;
+}
+
+/* External-source sections (e.g. Elementor MCP Pro): read-only, no toggle,
+   no hover actions, subtle grey wash to differentiate from the user's
+   own skills above. */
+.elementor-mcp-skills-d-section--external .elementor-mcp-skills-d-list {
+    background: #fafafa;
+}
+
+.elementor-mcp-skills-d-row.is-external {
+    cursor: default;
+}
+
+.elementor-mcp-skills-d-row.is-external:hover {
+    background: #f4f4f5;
+}
+
+.elementor-mcp-skills-d-source-icon {
+    color: #a1a1aa;
+    font-size: 14px;
+    text-align: center;
+}
+
+.elementor-mcp-skills-d-main--external {
+    pointer-events: none;
+    text-decoration: none;
+}
+
+.elementor-mcp-skills-d-main--external .slug {
+    color: #5e6c7d;
+}
+
+.elementor-mcp-skills-d-main--external .desc {
+    color: #a1a1aa;
+}
+
+.elementor-mcp-skills-d-readonly-note {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #f4f4f5;
+    color: #75859a;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.elementor-mcp-skills-d-source-blurb {
+    margin: 0;
+    padding: 10px 24px;
+    border-bottom: 1px solid #e4e4e7;
+    background: #fafafa;
+    color: #75859a;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.elementor-mcp-skills-d-source-blurb a {
+    color: #1c4ea1;
+    text-decoration: none;
+}
+
+.elementor-mcp-skills-d-source-blurb a:hover {
+    text-decoration: underline;
+}
+
+@keyframes elementor-mcp-skills-import-flash {
+    0% { background: #d1fae5; }
+    70% { background: #d1fae5; }
+    100% { background: transparent; }
+}
+
+.elementor-mcp-skills-d-row:hover {
+    background: #fafafa;
+}
+
+.elementor-mcp-skills-d-toggle {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.elementor-mcp-skills-d-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid #d4d4d8;
+    background: #fff;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.12s, border-color 0.12s;
+    outline: none;
+    box-shadow: none;
+}
+
+.elementor-mcp-skills-d-check:focus { outline: none; box-shadow: none; }
+.elementor-mcp-skills-d-check:focus-visible {
+    outline: 2px solid #1c4ea1;
+    outline-offset: 2px;
+}
+
+.elementor-mcp-skills-d-check:hover {
+    border-color: #75859a;
+}
+
+.elementor-mcp-skills-d-row.is-on .elementor-mcp-skills-d-check {
+    background: #142033;
+    border-color: #142033;
+}
+
+.elementor-mcp-skills-d-row.is-on .elementor-mcp-skills-d-check::after {
+    content: "";
+    width: 6px;
+    height: 3px;
+    border-left: 1.5px solid #fff;
+    border-bottom: 1.5px solid #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 4px;
+    left: 3px;
+}
+
+.elementor-mcp-skills-d-main {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    min-width: 0;
+}
+
+.elementor-mcp-skills-d-main:hover .slug {
+    color: #1c4ea1;
+}
+
+/* Suppress the browser's default focus ring on click; keep it only for
+   keyboard users via :focus-visible. */
+.elementor-mcp-skills-d-main:focus {
+    outline: none;
+}
+
+.elementor-mcp-skills-d-main:focus-visible {
+    outline: 2px solid #1c4ea1;
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+
+.elementor-mcp-skills-d-main .slug {
+    font-family: ui-monospace, "DM Mono", "JetBrains Mono", Consolas, monospace;
+    font-size: 13px;
+    color: #142033;
+    font-weight: 500;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    transition: color 0.12s;
+}
+
+.elementor-mcp-skills-d-main .desc {
+    color: #75859a;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.elementor-mcp-skills-d-main .desc::before {
+    content: "—";
+    margin-right: 6px;
+    color: #d4d4d8;
+}
+
+.elementor-mcp-skills-d-main .desc-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    margin-left: 4px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.elementor-mcp-skills-d-main .desc-badge.is-missing {
+    background: #fee2e2;
+    color: #b32d2e;
+}
+
+.elementor-mcp-skills-d-pills {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.elementor-mcp-skills-d-pills .pill {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #f4f4f5;
+    color: #5e6c7d;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.elementor-mcp-skills-d-pills .pill.auto {
+    background: #e8f0fd;
+    color: #1d4ed8;
+}
+
+.elementor-mcp-skills-d-pills .pill.cmd {
+    background: #faf5ff;
+    color: #7e22ce;
+}
+
+.elementor-mcp-skills-d-pills .pill.warn {
+    background: #fef3c7;
+    color: #92400e;
+    cursor: help;
+}
+
+.elementor-mcp-skills-d-pills .pill.warn.is-critical {
+    background: #fee2e2;
+    color: #b32d2e;
+}
+
+.elementor-mcp-skills-d-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.12s;
+}
+
+.elementor-mcp-skills-d-row:hover .elementor-mcp-skills-d-actions,
+.elementor-mcp-skills-d-row:focus-within .elementor-mcp-skills-d-actions {
+    opacity: 1;
+}
+
+.elementor-mcp-skills-d-actions form {
+    margin: 0;
+    display: inline;
+}
+
+.elementor-mcp-skills-d-actions .action-btn {
+    background: transparent;
+    border: 0;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #5e6c7d;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background 0.12s, color 0.12s;
+    outline: none;
+    box-shadow: none;
+}
+
+.elementor-mcp-skills-d-actions .action-btn:focus { outline: none; box-shadow: none; }
+.elementor-mcp-skills-d-actions .action-btn:focus-visible {
+    outline: 2px solid #1c4ea1;
+    outline-offset: 1px;
+}
+
+.elementor-mcp-skills-d-actions .action-btn:hover,
+.elementor-mcp-skills-d-actions .action-btn:focus {
+    background: #f4f4f5;
+    color: #142033;
+}
+
+.elementor-mcp-skills-d-actions .action-btn--danger:hover,
+.elementor-mcp-skills-d-actions .action-btn--danger:focus {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Trash subsection — visually subdued. Actions stay visible (no
+   hover-reveal) so users can act on trashed items quickly. */
+.elementor-mcp-skills-d-section--trash {
+    background: #fafafa;
+    border-color: #e4e4e7;
+}
+
+.elementor-mcp-skills-d-section--trash .elementor-mcp-skills-d-header {
+    background: #f4f4f5;
+}
+
+.elementor-mcp-skills-d-section--trash .elementor-mcp-skills-d-header h2 {
+    color: #75859a;
+}
+
+.elementor-mcp-skills-d-trash-hint {
+    font-size: 12px;
+    color: #a1a1aa;
+}
+
+.elementor-mcp-skills-d-row.is-trashed {
+    color: #75859a;
+}
+
+.elementor-mcp-skills-d-row.is-trashed .elementor-mcp-skills-d-main .slug {
+    color: #75859a;
+    text-decoration: line-through;
+    text-decoration-color: #d4d4d8;
+}
+
+.elementor-mcp-skills-d-trash-icon {
+    color: #a1a1aa;
+    font-size: 16px;
+    text-align: center;
+}
+
+.elementor-mcp-skills-d-main--trash {
+    pointer-events: none;
+}
+
+.elementor-mcp-skills-d-actions--trash {
+    opacity: 1;
+}
+
+.elementor-mcp-skills-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.elementor-mcp-skills-badge--agentic {
+    background: #e7f3ff;
+    color: #1e5b94;
+}
+
+.elementor-mcp-skills-badge--prompt {
+    background: #fff5df;
+    color: #8a5200;
+}
+
+.elementor-mcp-skills-badge--status-enabled {
+    background: #e7f5e9;
+    color: #1f6f30;
+}
+
+.elementor-mcp-skills-badge--status-disabled {
+    background: #edf2f7;
+    color: #5e6c7d;
+}
+
+.elementor-mcp-skills-badges {
+    display: inline-flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.elementor-mcp-skills-warning {
+    display: inline-block;
+    color: #8a6d00;
+    background: #fef7e0;
+    border-radius: 4px;
+    font-size: 11px;
+    padding: 2px 8px;
+    margin-left: 6px;
+}
+
+.elementor-mcp-skills-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.elementor-mcp-skills-actions form {
+    display: inline;
+    margin: 0;
+}
+
+.elementor-mcp-skills-action-btn--danger {
+    color: #b32d2e;
+    border-color: #b32d2e;
+}
+
+.elementor-mcp-skills-action-btn--danger:hover,
+.elementor-mcp-skills-action-btn--danger:focus {
+    background: #fdecea;
+    color: #b32d2e;
+    border-color: #b32d2e;
+}
+
+.elementor-mcp-skills-upload-form {
+    margin: 0;
+}
+
+/* The "Upload .md" trigger is a <label> so the file input opens
+   natively without JS. WP core gives <a>.page-title-action
+   `vertical-align: baseline`, but <label> inherits `middle`, which makes
+   the button drift up next to "Add new". Pin it to the same baseline. */
+label.page-title-action {
+    vertical-align: baseline;
+}
+
+.elementor-mcp-skills-upload-form input[type="file"] {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.elementor-mcp-skills-edit-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 20px;
+    margin: 0;
+}
+
+.elementor-mcp-skills-edit-main,
+.elementor-mcp-skills-edit-sidebar {
+    background: #fff;
+    border: 1px solid #d7e0ea;
+    border-radius: 6px;
+    padding: 20px 24px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.elementor-mcp-skills-edit-sidebar h2 {
+    margin: 0 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #5e6c7d;
+}
+
+.elementor-mcp-skills-edit-main label strong,
+.elementor-mcp-skills-edit-sidebar label strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #142033;
+}
+
+.elementor-mcp-skills-checkbox-row label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.elementor-mcp-skills-checkbox-row label strong {
+    display: inline;
+    margin: 0;
+}
+
+.elementor-mcp-skills-checkbox-row .description {
+    display: block;
+    margin: 4px 0 0 22px;
+    color: #5e6c7d;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.elementor-mcp-skills-inline-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.elementor-mcp-skills-inline-row label {
+    flex: 0 0 auto;
+}
+
+.elementor-mcp-skills-inline-row label strong {
+    display: inline;
+    margin: 0;
+}
+
+.elementor-mcp-skills-inline-row select,
+.elementor-mcp-skills-inline-row input[type="number"] {
+    flex: 0 0 auto;
+    width: 80px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #d7e0ea;
+    font-size: 13px;
+    margin: 0;
+}
+
+.elementor-mcp-skills-help {
+    margin: -8px 0 16px;
+    color: #5e6c7d;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.elementor-mcp-skills-save-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 24px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid #e0e3e7;
+}
+
+.elementor-mcp-skills-save-row select {
+    flex: 1;
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #d7e0ea;
+    font-size: 13px;
+}
+
+.elementor-mcp-skills-save-row .button-link {
+    margin-left: auto;
+    color: #5e6c7d;
+    text-decoration: none;
+}
+
+.elementor-mcp-skills-save-row .button-link:hover {
+    color: #1c4ea1;
+}
+
+.elementor-mcp-skills-edit-main .description {
+    color: #5e6c7d;
+    font-weight: normal;
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+.elementor-mcp-skills-edit-main input[type="text"],
+.elementor-mcp-skills-edit-main textarea,
+.elementor-mcp-skills-edit-sidebar input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #d7e0ea;
+    font-size: 13px;
+}
+
+/* Title field — hero treatment: large, borderless, just an underline
+   on focus so the page feels like a document being authored, not a
+   form being filled. */
+.elementor-mcp-skills-title-field {
+    margin: 0 0 24px;
+}
+
+.elementor-mcp-skills-edit-main input[type="text"].elementor-mcp-skills-title-input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #ececee;
+    border-radius: 4px 4px 0 0;
+    background: transparent;
+    padding: 8px 10px;
+    margin-left: -10px;
+    font-family: ui-monospace, "DM Mono", "JetBrains Mono", Consolas, monospace;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: #142033;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.elementor-mcp-skills-edit-main input[type="text"].elementor-mcp-skills-title-input::placeholder {
+    color: #d4d4d8;
+    font-weight: 500;
+}
+
+.elementor-mcp-skills-edit-main input[type="text"].elementor-mcp-skills-title-input:hover {
+    background: #fafafa;
+    border-bottom-color: #d4d4d8;
+}
+
+.elementor-mcp-skills-edit-main input[type="text"].elementor-mcp-skills-title-input:focus {
+    background: #fafafa;
+    border-bottom-color: #1c4ea1;
+    outline: 0;
+    box-shadow: none;
+}
+
+.elementor-mcp-skills-edit-main input[type="text"].elementor-mcp-skills-title-input:invalid:not(:placeholder-shown) {
+    border-bottom-color: #b32d2e;
+}
+
+.elementor-mcp-skills-title-hint {
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: #75859a;
+}
+
+/* Field group — small uppercase label sitting above the input. Tightens
+   the visual relationship between label and input compared to the WP
+   default block layout. */
+.elementor-mcp-skills-field {
+    margin: 0 0 20px;
+}
+
+.elementor-mcp-skills-field-label {
+    display: block;
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #75859a;
+}
+
+.elementor-mcp-skills-body-wrap {
+    position: relative;
+}
+
+.elementor-mcp-skills-body-hint {
+    position: absolute;
+    top: 8px;
+    left: 44px;
+    right: 12px;
+    z-index: 4;
+    pointer-events: none;
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.elementor-mcp-skills-body-hint p {
+    margin: 0;
+}
+
+.elementor-mcp-skills-body-hint p + p {
+    margin-top: 2px;
+}
+
+.elementor-mcp-skills-body-hint-emoji {
+    margin-right: 4px;
+}
+
+.elementor-mcp-skills-body-hint strong {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.elementor-mcp-skills-body-hint em {
+    color: #475569;
+    font-style: italic;
+}
+
+.elementor-mcp-skills-body-hint.is-hidden {
+    display: none;
+}
+
+.elementor-mcp-skills-field-help {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #75859a;
+}
+
+.elementor-mcp-skills-field-help p {
+    margin: 0 0 6px;
+}
+
+.elementor-mcp-skills-field-examples {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.elementor-mcp-skills-field-examples li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 4px;
+}
+
+.elementor-mcp-skills-field-examples li:last-child {
+    margin-bottom: 0;
+}
+
+.elementor-mcp-skills-example-label {
+    flex: 0 0 auto;
+    min-width: 64px;
+    padding: 1px 7px;
+    border-radius: 3px;
+    background: #f4f4f5;
+    color: #5e6c7d;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.elementor-mcp-skills-example-label.is-better {
+    background: #ecfdf5;
+    color: #15803d;
+}
+
+.elementor-mcp-skills-field-examples .elementor-mcp-skills-example-text {
+    color: #3f3f46;
+    font-style: italic;
+}
+
+
+/* Markdown toolbar — a thin strip of inline-format buttons that sits
+   directly on top of the CodeMirror editor. Buttons act on the current
+   selection (or insert a placeholder when nothing is selected). */
+.elementor-mcp-skills-md-toolbar {
+    display: flex;
+    gap: 2px;
+    padding: 4px;
+    background: #f4f4f5;
+    border: 1px solid #e4e4e7;
+    border-bottom: 0;
+    border-radius: 4px 4px 0 0;
+}
+
+.elementor-mcp-skills-md-toolbar button {
+    background: transparent;
+    border: 0;
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #5e6c7d;
+    font-size: 13px;
+    font-family: inherit;
+    line-height: 1.2;
+    min-width: 32px;
+    transition: background 0.12s, color 0.12s;
+}
+
+.elementor-mcp-skills-md-toolbar button:hover,
+.elementor-mcp-skills-md-toolbar button:focus-visible {
+    background: #fff;
+    color: #142033;
+    outline: 0;
+}
+
+.elementor-mcp-skills-md-toolbar button code {
+    background: transparent;
+    padding: 0;
+    font-size: 12px;
+    color: inherit;
+}
+
+.elementor-mcp-skills-field .CodeMirror {
+    border-radius: 0 0 4px 4px;
+    border-top: 0;
+}
+
+.elementor-mcp-skills-edit-main textarea {
+    line-height: 1.5;
+}
+
+.elementor-mcp-skills-edit-main p,
+.elementor-mcp-skills-edit-sidebar p {
+    margin: 0 0 16px;
+}
+
+.elementor-mcp-skills-edit-sidebar p:last-child {
+    margin-bottom: 0;
+}
+
+.elementor-mcp-skills-edit-grid em {
+    display: inline-block;
+    margin-top: 4px;
+    color: #5e6c7d;
+    font-size: 12px;
+}
+
+@media (max-width: 960px) {
+    .elementor-mcp-skills-edit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Premium admin alignment. */
+.elementor-mcp-skills .wrap-title h1 {
+    font-size: 32px;
+    font-weight: 750;
+    letter-spacing: -0.032em;
+}
+
+.elementor-mcp-skills-card,
+.elementor-mcp-skills-empty,
+.elementor-mcp-skills-d-section,
+.elementor-mcp-skills-edit-main,
+.elementor-mcp-skills-edit-sidebar {
+    border-color: #d7e0ea;
+    border-radius: 13px;
+    box-shadow: 0 5px 18px rgba(20, 32, 51, 0.06);
+}
+
+.elementor-mcp-skills-table tbody tr:hover td,
+.elementor-mcp-skills-d-row:hover {
+    background: #f8f3f9;
+}
+
+.elementor-mcp-skills-table .slug-link,
+.elementor-mcp-skills a:not(.button) {
+    color: #1c4ea1;
+}

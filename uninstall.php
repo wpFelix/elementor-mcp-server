@@ -1,0 +1,337 @@
+<?php
+
+// SPDX-FileCopyrightText: 2026 Elementor MCP <dev@elementormcp.com>
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+declare(strict_types=1);
+
+// phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Uninstall removes this plugin's own custom tables and options; direct queries and the DROP are the entire job of this file, and it runs only when WordPress itself invokes an uninstall.
+
+/**
+ * Remove everything Elementor MCP stored.
+ *
+ * WordPress runs this file in a request where the plugin is NOT loaded, so it
+ * cannot call any Elementor MCP function or reference any Elementor MCP constant. Every
+ * key is repeated literally here on purpose; the lists are grouped to match the
+ * files that own them so a new key is easy to add in the right place.
+ *
+ * Two things are deliberately left on disk:
+ *
+ * - wp-content/elementor-mcp-sandbox/ holds PHP written through the sandbox. That is
+ *   the site owner's own code, and deleting source is not recoverable, so it
+ *   stays. The directory is inert once the plugin is gone.
+ * - Designs and skills are documents somebody wrote, for the same reason. They
+ *   are removed only when the site has explicitly opted in by setting
+ *   elementor_mcp_delete_content_on_uninstall; absent means keep.
+ * - Nothing outside Elementor MCP's own prefixes is touched.
+ */
+
+if (!defined('WP_UNINSTALL_PLUGIN')) {
+    exit();
+}
+
+function elementor_mcp_uninstall_wpdb(): wpdb
+{
+    // @mago-expect lint:no-global -- $wpdb is WordPress' database handle.
+    global $wpdb;
+
+    /** @var wpdb $wpdb */
+    return $wpdb;
+}
+
+/**
+ * Tables created by Elementor MCP on each site.
+ *
+ * @return list<string>
+ */
+function elementor_mcp_uninstall_tables(): array
+{
+    $wpdb = elementor_mcp_uninstall_wpdb();
+
+    return [
+        $wpdb->prefix . 'elementor_mcp_chat_sessions',
+        $wpdb->prefix . 'elementor_mcp_connections',
+        $wpdb->prefix . 'elementor_mcp_tokens',
+        $wpdb->prefix . 'elementor_mcp_oauth_clients',
+        $wpdb->prefix . 'elementor_mcp_oauth_auth_codes',
+        $wpdb->prefix . 'elementor_mcp_oauth_access_tokens',
+        $wpdb->prefix . 'elementor_mcp_oauth_refresh_tokens',
+    ];
+}
+
+/**
+ * Options written by Elementor MCP, by owning file.
+ *
+ * @return list<string>
+ */
+function elementor_mcp_uninstall_options(): array
+{
+    return [
+        // includes/chat/schema.php
+        'elementor_mcp_chat_schema_version',
+        // includes/connections.php
+        'elementor_mcp_connections_schema_version',
+        // includes/tokens.php
+        'elementor_mcp_tokens_schema_version',
+        // Legacy pre-table chat storage.
+        'elementor_mcp_chat_sessions',
+        // includes/oauth/
+        'elementor_mcp_oauth_schema_version',
+        'elementor_mcp_oauth_private_key',
+        'elementor_mcp_oauth_public_key',
+        'elementor_mcp_oauth_encryption_key',
+        // includes/environment.php + includes/abilities/policy.php
+        'elementor_mcp_ai_abilities_enabled',
+        // Read before this loop runs; see elementor_mcp_uninstall_current_site().
+        'elementor_mcp_delete_content_on_uninstall',
+        'elementor_mcp_ai_abilities_domain',
+        'elementor_mcp_ability_rules',
+        // includes/safety.php
+        'elementor_mcp_safety_profile',
+        // includes/preview/gate.php + includes/preview/store.php
+        'elementor_mcp_require_preview_before_write',
+        'elementor_mcp_preview_index',
+        'elementor_mcp_safety_policy_version',
+        // includes/change-log.php
+        'elementor_mcp_change_log',
+        // includes/admin/instructions.php
+        'elementor_mcp_instructions_enabled',
+        'elementor_mcp_instructions_content',
+        // includes/design/cpt.php
+        'elementor_mcp_active_design',
+        // includes/admin/pro-upsell.php
+        'elementor_mcp_pro_upsell_installed_at',
+        // includes/troubleshoot/bootstrap.php
+        'elementor_mcp_mcp_last_request',
+        // includes/telemetry/settings.php. Absent from the wordpress.org build,
+        // which never writes them; deleting an option that does not exist is a
+        // no-op, so the list does not need to know which build this is.
+        'elementor_mcp_telemetry_enabled',
+        'elementor_mcp_install_id',
+        // Written only by the first-run notice that 1.6.0 shipped and 1.6.1
+        // removed. Listed so an install that saw it does not keep the row.
+        'elementor_mcp_telemetry_notice_acknowledged',
+    ];
+}
+
+/**
+ * Post types holding data Elementor MCP generated, which goes with the plugin.
+ *
+ * @return list<string>
+ */
+function elementor_mcp_uninstall_machine_post_types(): array
+{
+    return [
+    ];
+}
+
+/**
+ * Post types holding what the site owner wrote, which does not.
+ *
+ * A design is a document somebody authored: a palette argued for, rules about
+ * what the site must never do, reasoning that took a conversation to produce.
+ * A skill is the same. Neither can be regenerated from anything left behind,
+ * and both used to be deleted here without asking — the same decision as
+ * deleting a site's posts, made silently on the way out.
+ *
+ * This file already draws that line for the sandbox directory, on the grounds
+ * that it holds the owner's own code and deleting source is not recoverable.
+ * Authored content is the same category and now gets the same treatment.
+ *
+ * @return list<string>
+ */
+function elementor_mcp_uninstall_authored_post_types(): array
+{
+    return [
+        'elementor_mcp_skill',
+        'elementor_mcp_design',
+    ];
+}
+
+/**
+ * Whether the site asked for its authored content to be destroyed too.
+ *
+ * Opt-in, and read before any option is deleted. Absent means keep, so a site
+ * that never made the choice keeps its designs and skills.
+ */
+function elementor_mcp_uninstall_should_delete_authored(): bool
+{
+    $choice = get_option('elementor_mcp_delete_content_on_uninstall', false);
+
+    return $choice === '1' || $choice === 1 || $choice === true;
+}
+
+/**
+ * User meta keys, including the dismissal prefix handled by LIKE below.
+ *
+ * @return list<string>
+ */
+function elementor_mcp_uninstall_user_meta_keys(): array
+{
+    return [
+        'elementor_mcp_production_warning_dismissed',
+        'elementor_mcp_troubleshoot_dismissed',
+        'elementor_mcp_chat_consent',
+    ];
+}
+
+/**
+ * Cron hooks Elementor MCP schedules.
+ *
+ * @return list<string>
+ */
+function elementor_mcp_uninstall_cron_hooks(): array
+{
+    return [
+        'elementor_mcp_oauth_gc',
+        // includes/telemetry/settings.php
+        'elementor_mcp_telemetry_ping',
+    ];
+}
+
+/**
+ * Delete posts of a post type without relying on the type being registered.
+ *
+ * wp_delete_post() is used rather than a direct DELETE so that post meta,
+ * revisions, and term relationships go with them.
+ */
+function elementor_mcp_uninstall_delete_posts(string $post_type): void
+{
+    $wpdb = elementor_mcp_uninstall_wpdb();
+
+    /** @var list<int>|null $ids */
+    // @mago-expect analysis:possibly-invalid-argument -- $wpdb->posts is a trusted table name.
+    $ids = $wpdb->get_col(
+        // @mago-expect analysis:possibly-invalid-argument
+        $wpdb->prepare("SELECT ID FROM {$wpdb->posts} WHERE post_type = %s", $post_type),
+    );
+    if (!is_array($ids)) {
+        return;
+    }
+
+    foreach ($ids as $id) {
+        wp_delete_post((int) $id, force_delete: true);
+    }
+}
+
+/**
+ * Delete every option whose name starts with the given prefix.
+ *
+ * Covers the generated keys — pending OAuth authorizations and the transients
+ * Elementor MCP stores under its own prefixes — that cannot be listed literally.
+ */
+function elementor_mcp_uninstall_delete_options_like(string $prefix): void
+{
+    $wpdb = elementor_mcp_uninstall_wpdb();
+
+    /** @var list<string>|null $names */
+    // @mago-expect analysis:possibly-invalid-argument -- $wpdb->options is a trusted table name.
+    $names = $wpdb->get_col(
+        // @mago-expect analysis:possibly-invalid-argument
+        $wpdb->prepare(
+            "SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s",
+            $wpdb->esc_like($prefix) . '%',
+        ),
+    );
+    if (!is_array($names)) {
+        return;
+    }
+
+    foreach ($names as $name) {
+        delete_option((string) $name);
+    }
+}
+
+/**
+ * Remove every Elementor MCP trace from the current site.
+ */
+function elementor_mcp_uninstall_current_site(): void
+{
+    $wpdb = elementor_mcp_uninstall_wpdb();
+
+    foreach (elementor_mcp_uninstall_cron_hooks() as $hook) {
+        wp_clear_scheduled_hook($hook);
+    }
+
+    // Read before the options are deleted below, or the answer is gone by the
+    // time it is asked for.
+    $delete_authored = elementor_mcp_uninstall_should_delete_authored();
+
+    foreach (elementor_mcp_uninstall_machine_post_types() as $post_type) {
+        elementor_mcp_uninstall_delete_posts($post_type);
+    }
+    if ($delete_authored) {
+        foreach (elementor_mcp_uninstall_authored_post_types() as $post_type) {
+            elementor_mcp_uninstall_delete_posts($post_type);
+        }
+    }
+
+    foreach (elementor_mcp_uninstall_options() as $option) {
+        delete_option($option);
+    }
+
+    // Generated option names: pending OAuth authorizations, plus Elementor MCP's own
+    // transients and their timeout twins.
+    foreach ([
+        'elementor_mcp_oauth_pending_',
+        // includes/preview/store.php: one option per pending preview, plus the
+        // compare-and-set lock each apply claims.
+        'elementor_mcp_preview_',
+        '_transient_elementor_mcp_',
+        '_transient_timeout_elementor_mcp_',
+        '_site_transient_elementor_mcp_',
+        '_site_transient_timeout_elementor_mcp_',
+    ] as $prefix) {
+        elementor_mcp_uninstall_delete_options_like($prefix);
+    }
+
+    foreach (elementor_mcp_uninstall_user_meta_keys() as $meta_key) {
+        // @mago-expect analysis:possibly-invalid-argument -- $wpdb->usermeta is a trusted table name.
+        $wpdb->query(
+            // @mago-expect analysis:possibly-invalid-argument
+            $wpdb->prepare("DELETE FROM {$wpdb->usermeta} WHERE meta_key = %s", $meta_key),
+        );
+    }
+
+    // Per-notice dismissal flags: includes/admin/pro-upsell.php writes one key
+    // per notice under this prefix.
+    // @mago-expect analysis:possibly-invalid-argument -- $wpdb->usermeta is a trusted table name.
+    $wpdb->query(
+        // @mago-expect analysis:possibly-invalid-argument
+        $wpdb->prepare(
+            "DELETE FROM {$wpdb->usermeta} WHERE meta_key LIKE %s",
+            $wpdb->esc_like('elementor_mcp_pro_dismissed_') . '%',
+        ),
+    );
+
+    // Tables last: the post deletions above read from them.
+    //
+    // Not prepared, and cannot be: $wpdb->prepare() has no placeholder for an
+    // identifier, only for values. The names come from elementor_mcp_uninstall_tables(),
+    // which builds each one from $wpdb->prefix and a literal — no request data
+    // reaches this string.
+    foreach (elementor_mcp_uninstall_tables() as $table) {
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,PluginCheck.Security.DirectDB.UnescapedDBParameter,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- No values are interpolated at all — prepare() has no placeholder for a table identifier, and the names come from $wpdb->prefix plus a literal.
+        $wpdb->query("DROP TABLE IF EXISTS {$table}");
+    }
+}
+
+if (is_multisite()) {
+    // @mago-expect analysis:mixed-assignment -- WordPress returns site ids when fields=ids.
+    $elementor_mcp_site_ids = get_sites(['fields' => 'ids', 'number' => 0]);
+    if (is_array($elementor_mcp_site_ids)) {
+        // @mago-expect analysis:mixed-assignment
+        foreach ($elementor_mcp_site_ids as $elementor_mcp_site_id) {
+            switch_to_blog((int) $elementor_mcp_site_id);
+            try {
+                elementor_mcp_uninstall_current_site();
+            } finally {
+                restore_current_blog();
+            }
+        }
+    }
+
+    return;
+}
+
+elementor_mcp_uninstall_current_site();

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 64" fill="none" role="img" aria-label="Elementor MCP">
+  <rect x="1.25" y="1.25" width="61.5" height="61.5" rx="15" fill="#0F1D31" stroke="#36536F" stroke-width="2.5"/>
+  <path d="M12 14h20v6H18v5h12v6H18v5h14v6H12V14Z" fill="#78A9ED"/>
+  <path d="M27 14h6l5 5 5-5h6v28h-7V25l-4 4-4-4v17h-7V14Z" fill="#43C9AA"/>
+  <path d="m33 14 5 5-5 5-5-5 5-5Z" fill="#F0B04A"/>
+  <text x="80" y="41" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" letter-spacing="-1.1">Elementor <tspan fill="#78A9ED">MCP</tspan></text>
+</svg>

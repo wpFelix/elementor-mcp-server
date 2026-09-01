@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Verify and publish installable ZIP
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - uses: shivammathur/setup-php@b604ade2a87db23f8871b7182e69ec5e75effb45 # v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+
+      - name: Verify tag matches plugin version
+        shell: bash
+        run: |
+          plugin_version="$(sed -n 's/^ \* Version:[[:space:]]*//p' elementor-mcp.php | head -n 1 | tr -d '[:space:]')"
+          if [ "${GITHUB_REF_NAME}" != "v${plugin_version}" ]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match plugin version ${plugin_version}." >&2
+            exit 1
+          fi
+
+      - name: Install development dependencies
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Verify PHP source and dependencies
+        run: |
+          composer validate --strict --no-check-publish
+          composer audit --locked
+          composer test
+          composer lint
+          composer analyze
+
+      - name: Build and verify the chat interface
+        run: |
+          bun install --frozen-lockfile
+          bun run build
+          git diff --exit-code -- includes/assets/chat
+
+      - name: Build the production plugin ZIP
+        shell: bash
+        run: |
+          composer install --no-dev --no-interaction --prefer-dist
+          bash scripts/package.sh
+          unzip -t build/elementor-mcp.zip
+          sha256sum build/elementor-mcp.zip > build/elementor-mcp.zip.sha256
+
+      - name: Create draft release with installable assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            build/elementor-mcp.zip \
+            build/elementor-mcp.zip.sha256 \
+            --verify-tag \
+            --draft \
+            --generate-notes \
+            --title "Elementor MCP ${GITHUB_REF_NAME#v}"
+
+      - name: Publish as the latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release edit "${GITHUB_REF_NAME}" --draft=false --latest
