@@ -8,10 +8,10 @@
 
 .elementor-mcp-hub {
     /* Text */
-    --elementor-mcp-hub-text: #142033;
-    --elementor-mcp-hub-text-soft: #5e6c7d;
-    --elementor-mcp-hub-muted: #5e6c7d;
-    --elementor-mcp-hub-muted-2: #75859a;
+    --elementor-mcp-hub-text: #0f1115;
+    --elementor-mcp-hub-text-soft: #6b7280;
+    --elementor-mcp-hub-muted: #6b7280;
+    --elementor-mcp-hub-muted-2: #9099a5;
     --elementor-mcp-hub-muted-3: #95a2b1;
     --elementor-mcp-hub-hint: #c7d3df;
 
@@ -19,33 +19,33 @@
      * rows (white / faint stripe) < row hover < category bar < category hover. */
     --elementor-mcp-hub-bg: #fff;
     --elementor-mcp-hub-bg-hover: #f7f9fc;
-    --elementor-mcp-hub-bg-rail: #f4f7fa;
+    --elementor-mcp-hub-bg-rail: #f6f7f9;
     --elementor-mcp-hub-row-stripe: #f7f9fc;
     --elementor-mcp-hub-row-hover: #edf3fb;
-    --elementor-mcp-hub-cat-bg: #edf2f7;
+    --elementor-mcp-hub-cat-bg: #eef0f3;
     --elementor-mcp-hub-cat-hover: #e3eaf2;
-    --elementor-mcp-hub-border: #d7e0ea;
-    --elementor-mcp-hub-border-soft: #e7edf3;
-    --elementor-mcp-hub-border-faint: #edf2f7;
+    --elementor-mcp-hub-border: #d1d5db;
+    --elementor-mcp-hub-border-soft: #e5e7eb;
+    --elementor-mcp-hub-border-faint: #eef0f3;
 
     /* Pill palettes */
     --elementor-mcp-hub-pill-bg: #f4f4f5;
-    --elementor-mcp-hub-pill-text: #5e6c7d;
-    --elementor-mcp-hub-pill-mcp-bg: #e8f0fd;
-    --elementor-mcp-hub-pill-mcp-text: #1c4ea1;
-    --elementor-mcp-hub-pill-on-bg: #e9f7f4;
-    --elementor-mcp-hub-pill-on-text: #0f766e;
+    --elementor-mcp-hub-pill-text: #6b7280;
+    --elementor-mcp-hub-pill-mcp-bg: #f7ecee;
+    --elementor-mcp-hub-pill-mcp-text: #8b1d2c;
+    --elementor-mcp-hub-pill-on-bg: #eef7f1;
+    --elementor-mcp-hub-pill-on-text: #15803d;
     --elementor-mcp-hub-pill-off-bg: #fff0ee;
-    --elementor-mcp-hub-pill-off-text: #b42318;
-    --elementor-mcp-hub-pill-protected-bg: #fff6df;
-    --elementor-mcp-hub-pill-protected-text: #8a5200;
+    --elementor-mcp-hub-pill-off-text: #d03801;
+    --elementor-mcp-hub-pill-protected-bg: #fdf3e2;
+    --elementor-mcp-hub-pill-protected-text: #b45309;
     /* Source: which plugin registered the ability. Uses the Elementor MCP accent so it
        reads as identity rather than as another status. */
-    --elementor-mcp-hub-pill-source-bg: #e8f0fd;
-    --elementor-mcp-hub-pill-source-text: #1c4ea1;
+    --elementor-mcp-hub-pill-source-bg: #f7ecee;
+    --elementor-mcp-hub-pill-source-text: #8b1d2c;
 
     /* Focus, radius, shadow */
-    --elementor-mcp-hub-focus: #2d6fd2;
+    --elementor-mcp-hub-focus: #b8324a;
     --elementor-mcp-hub-radius-sm: 7px;
     --elementor-mcp-hub-radius: 9px;
     --elementor-mcp-hub-radius-lg: 13px;

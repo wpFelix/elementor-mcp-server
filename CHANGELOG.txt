@@ -1,5 +1,14 @@
 Elementor MCP changelog
 
+1.0.1 - 2026-09-06
+* Rebranded the admin interface to the elementormcp.com identity: the garnet
+  accent replaces the previous blue, and ink and surface tones now match the
+  website.
+* Replaced every brand asset — marks, logo lockups, directory icon and banners —
+  with the current logo.
+* Moved the destructive-action colour away from the new accent so an armed
+  state cannot be mistaken for ordinary chrome.
+
 1.0.0 - 2026-08-30
 * Completed the Elementor MCP brand, domain, metadata, namespace, and asset
   migration.

@@ -78,8 +78,8 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.02em;
-	background: #edf2f7;
-	color: #5e6c7d;
+	background: #eef0f3;
+	color: #6b7280;
 }
 
 .elementor-mcp-badge--removed,
@@ -105,8 +105,8 @@
 	border-radius: 3px;
 	font-size: 12px;
 	font-weight: 600;
-	background: #edf2f7;
-	color: #5e6c7d;
+	background: #eef0f3;
+	color: #6b7280;
 	vertical-align: middle;
 }
 
@@ -163,7 +163,7 @@
 /* Premium admin alignment. */
 .elementor-mcp-diff-value {
 	border-radius: 9px;
-	background: #f4f7fa;
+	background: #f6f7f9;
 }
 
 .elementor-mcp-badge,
@@ -173,7 +173,7 @@
 
 .elementor-mcp-panel--actions {
 	padding: 18px 20px;
-	border: 1px solid #d7e0ea;
+	border: 1px solid #d1d5db;
 	border-radius: 12px;
 	background: #fff;
 }

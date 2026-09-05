@@ -662,7 +662,7 @@ function elementor_mcp_render_json_config_block(): void
                 domain: 'elementor-mcp',
             ); ?></button>
         </div>
-        <div id="elementor-mcp-config-footer" style="font-size:13px; color:#5e6c7d; border-top: 1px solid #d7e0ea;">
+        <div id="elementor-mcp-config-footer" style="font-size:13px; color:#6b7280; border-top: 1px solid #d1d5db;">
             <div id="elementor-mcp-config-merge-note" style="padding: 10px 16px 0;">
                 <?php esc_html_e(
                     'If your config file already has content, merge this into your existing config instead of replacing it.',

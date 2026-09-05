@@ -11,7 +11,7 @@ declare(strict_types=1);
  * Plugin Name: Elementor MCP
  * Plugin URI: https://elementormcp.com
  * Description: WordPress MCP server and Elementor MCP server with 41 typed page-building abilities, OAuth, safety profiles, approvals, rollback, and prompts.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.9
  * Requires PHP: 8.0
  * Update URI: https://elementormcp.com/elementor-mcp/

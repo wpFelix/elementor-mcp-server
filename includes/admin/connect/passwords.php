@@ -234,7 +234,7 @@ function elementor_mcp_render_password_step(
                         domain: 'elementor-mcp',
                     ); ?>
                 </p>
-                <pre style="background:#f4f7fa; border:1px solid #d7e0ea; padding:10px 12px; margin:6px 0 0; font-size:13px; border-radius:8px;">define('WP_ENVIRONMENT_TYPE', 'local');</pre>
+                <pre style="background:#f6f7f9; border:1px solid #d1d5db; padding:10px 12px; margin:6px 0 0; font-size:13px; border-radius:8px;">define('WP_ENVIRONMENT_TYPE', 'local');</pre>
             <?php endif; ?>
         </div>
     <?php endif; ?>
@@ -246,7 +246,7 @@ function elementor_mcp_render_password_step(
                 domain: 'elementor-mcp',
             ); ?></p>
             <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                <code id="elementor-mcp-new-pw-value" style="font-size:14px; font-weight:600; padding:6px 10px; background:#fff; border:1px solid #d7e0ea; border-radius:8px;"><?php echo
+                <code id="elementor-mcp-new-pw-value" style="font-size:14px; font-weight:600; padding:6px 10px; background:#fff; border:1px solid #d1d5db; border-radius:8px;"><?php echo
                     esc_html($new_password)
                 ; ?></code>
                 <button type="button" class="button button-small" onclick="elementorMcpCopy('elementor-mcp-new-pw-value', this)">

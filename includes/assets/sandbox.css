@@ -6,7 +6,7 @@
 
 .elementor-mcp-sandbox-section {
     background: #fff;
-    border: 1px solid #d7e0ea;
+    border: 1px solid #d1d5db;
     border-radius: 6px;
     margin: 16px 0 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
@@ -24,12 +24,12 @@
     margin: 0;
     font-size: 15px;
     font-weight: 600;
-    color: #142033;
+    color: #0f1115;
     letter-spacing: -0.01em;
 }
 
 .elementor-mcp-sandbox-header h2 .count {
-    color: #75859a;
+    color: #9099a5;
     font-weight: 400;
     font-size: 13px;
     margin-left: 8px;
@@ -86,12 +86,12 @@
 }
 
 .elementor-mcp-sandbox-check:hover {
-    border-color: #75859a;
+    border-color: #9099a5;
 }
 
 .elementor-mcp-sandbox-row.is-on .elementor-mcp-sandbox-check {
-    background: #142033;
-    border-color: #142033;
+    background: #0f1115;
+    border-color: #0f1115;
 }
 
 .elementor-mcp-sandbox-row.is-on .elementor-mcp-sandbox-check::after {
@@ -122,7 +122,7 @@
 .elementor-mcp-sandbox-main .slug {
     font-family: ui-monospace, "DM Mono", "JetBrains Mono", Consolas, monospace;
     font-size: 13px;
-    color: #142033;
+    color: #0f1115;
     font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
@@ -131,7 +131,7 @@
 }
 
 .elementor-mcp-sandbox-main .meta {
-    color: #75859a;
+    color: #9099a5;
     font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
@@ -155,7 +155,7 @@
     padding: 2px 8px;
     border-radius: 3px;
     background: #f4f4f5;
-    color: #5e6c7d;
+    color: #6b7280;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -183,7 +183,7 @@
 
 .elementor-mcp-sandbox-pills .pill.warn {
     background: #fee2e2;
-    color: #b32d2e;
+    color: #d03801;
 }
 
 .elementor-mcp-sandbox-actions {
@@ -204,7 +204,7 @@
     border: 0;
     padding: 4px 10px;
     border-radius: 3px;
-    color: #1c4ea1;
+    color: #8b1d2c;
     font-size: 12px;
     cursor: pointer;
     text-decoration: none;
@@ -212,11 +212,11 @@
 }
 
 .elementor-mcp-sandbox-actions .action-btn:hover {
-    background: #e8f0fd;
+    background: #f7ecee;
 }
 
 .elementor-mcp-sandbox-actions .action-btn--danger {
-    color: #b32d2e;
+    color: #d03801;
 }
 
 .elementor-mcp-sandbox-actions .action-btn--danger:hover {
@@ -226,13 +226,13 @@
 .elementor-mcp-sandbox-empty {
     padding: 32px 24px;
     text-align: center;
-    color: #75859a;
+    color: #9099a5;
     font-size: 13px;
 }
 
 /* Premium admin alignment. */
 .elementor-mcp-sandbox-section {
-    border-color: #d7e0ea;
+    border-color: #d1d5db;
     border-radius: 13px;
     box-shadow: 0 5px 18px rgba(20, 32, 51, 0.06);
     overflow: hidden;
@@ -243,15 +243,15 @@
 }
 
 .elementor-mcp-sandbox-row.is-on .elementor-mcp-sandbox-check {
-    background: #1c4ea1;
-    border-color: #1c4ea1;
+    background: #8b1d2c;
+    border-color: #8b1d2c;
 }
 
 .elementor-mcp-sandbox-actions .action-btn {
-    color: #1c4ea1;
+    color: #8b1d2c;
     border-radius: 7px;
 }
 
 .elementor-mcp-sandbox-actions .action-btn:hover {
-    background: #e8f0fd;
+    background: #f7ecee;
 }

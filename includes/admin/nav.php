@@ -168,14 +168,7 @@ function elementor_mcp_nav_group(string $slug): string
  */
 function elementor_mcp_admin_menu_icon(): string
 {
-    $svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-hidden="true">'
-        . '<g fill="#c5d2e1">'
-        . '<circle cx="10" cy="2.2" r="1.25"/>'
-        . '<path d="M9.25 3h1.5v1.15h2.75A3.5 3.5 0 0 1 17 7.65v5.1a3.5 3.5 0 0 1-3.5 3.5h-7A3.5 3.5 0 0 1 3 12.75v-5.1a3.5 3.5 0 0 1 3.5-3.5h2.75V3Zm-2.6 3.15c-.9 0-1.65.74-1.65 1.65v4.8c0 .91.74 1.65 1.65 1.65h6.7c.91 0 1.65-.74 1.65-1.65V7.8c0-.91-.74-1.65-1.65-1.65h-6.7Z"/>'
-        . '<circle cx="7.5" cy="9.5" r="1.15"/>'
-        . '<circle cx="12.5" cy="9.5" r="1.15"/>'
-        . '<path d="M7.25 12h5.5v1.25h-5.5zM1.25 8.25H3v4h-1.75zM17 8.25h1.75v4H17z"/>'
-        . '</g></svg>';
+    $svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-hidden="true"><g fill="#c5d2e1"><rect x="7.1" y="3.6" width="2.1" height="12.8" rx="0.8"/><rect x="7.1" y="3.6" width="9.1" height="2.6" rx="0.8"/><rect x="7.1" y="8.7" width="7.2" height="2.6" rx="0.8"/><rect x="7.1" y="13.8" width="8.7" height="2.6" rx="0.8"/></g><g fill="none" stroke="#c5d2e1" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 6.6 2.2 10l2.4 3.4"/></g></svg>';
 
     return 'data:image/svg+xml;base64,' . base64_encode($svg);
 }

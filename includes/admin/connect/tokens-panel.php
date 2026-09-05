@@ -142,7 +142,7 @@ function elementor_mcp_render_token_step(?string $new_token, ?WP_Error $token_er
                 domain: 'elementor-mcp',
             ); ?></strong></p>
             <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                <code id="elementor-mcp-new-token-value" style="font-size:13px; font-weight:600; padding:6px 10px; background:#fff; border:1px solid #d7e0ea; border-radius:8px; word-break:break-all;"><?php echo
+                <code id="elementor-mcp-new-token-value" style="font-size:13px; font-weight:600; padding:6px 10px; background:#fff; border:1px solid #d1d5db; border-radius:8px; word-break:break-all;"><?php echo
                     esc_html($new_token)
                 ; ?></code>
                 <button type="button" class="button button-small" onclick="elementorMcpCopy('elementor-mcp-new-token-value', this)">
@@ -169,7 +169,7 @@ function elementor_mcp_render_token_step(?string $new_token, ?WP_Error $token_er
          * the reveal into the start of a setup rather than the end of a form.
          */
         ?>
-        <div class="elementor-mcp-token-next" style="margin:0 0 20px; padding:14px 16px; border:1px solid #d7e0ea; border-left:4px solid #1c4ea1; border-radius:10px; background:#fff;">
+        <div class="elementor-mcp-token-next" style="margin:0 0 20px; padding:14px 16px; border:1px solid #d1d5db; border-left:4px solid #8b1d2c; border-radius:10px; background:#fff;">
             <p style="margin:0 0 8px;"><strong><?php esc_html_e(
                 'How to connect with this token',
                 domain: 'elementor-mcp',
@@ -363,7 +363,7 @@ function elementor_mcp_render_token_config_section(string $url, ?string $token):
                     onclick="elementorMcpCopy('elementor-mcp-token-config-code', this)"
                 ><?php esc_html_e('Copy', domain: 'elementor-mcp'); ?></button>
             </div>
-            <div id="elementor-mcp-token-config-footer" style="font-size:13px; color:#5e6c7d; border-top:1px solid #d7e0ea;">
+            <div id="elementor-mcp-token-config-footer" style="font-size:13px; color:#6b7280; border-top:1px solid #d1d5db;">
                 <div id="elementor-mcp-token-config-merge-note" style="padding:10px 16px 0;">
                     <?php esc_html_e(
                         'If your config file already has content, merge this into it instead of replacing it.',

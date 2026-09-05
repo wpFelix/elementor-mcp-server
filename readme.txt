@@ -4,7 +4,7 @@ Tags: mcp, elementor, wordpress, ai, automation
 Requires at least: 6.9
 Tested up to: 7.0
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,11 @@ maintenance only.
 Documentation: https://elementormcp.com
 
 == Changelog ==
+
+= 1.0.1 =
+* Rebranded the admin interface to the elementormcp.com identity.
+* Replaced every brand asset with the current logo.
+* Separated the destructive-action colour from the new accent.
 
 = 1.0.0 =
 * Completed the Elementor MCP brand, domain, metadata, and asset migration.

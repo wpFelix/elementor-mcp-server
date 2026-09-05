@@ -247,10 +247,10 @@ function elementor_mcp_pro_upsell_headline(): string
 function elementor_mcp_pro_brand(): array
 {
     return [
-        'ink' => '#142033',
-        'teal' => '#1c4ea1',
-        'copper' => '#2d6fd2',
-        'paper' => '#f4f7fa',
+        'ink' => '#0f1115',
+        'teal' => '#8b1d2c',
+        'copper' => '#b8324a',
+        'paper' => '#f6f7f9',
         'muted' => 'rgba(255,255,255,.62)',
     ];
 }
@@ -273,7 +273,7 @@ add_action(
         $entries = $submenu['elementor-mcp-connect'];
         $entries[] = [
             // Brass on the dark admin menu, matching the product palette.
-            '<span style="color:#2d6fd2;font-weight:700;">' . esc_html__('Get Pro', domain: 'elementor-mcp') . '</span>',
+            '<span style="color:#b8324a;font-weight:700;">' . esc_html__('Get Pro', domain: 'elementor-mcp') . '</span>',
             elementor_mcp_manage_capability(),
             esc_url(ELEMENTOR_MCP_PRO_URL . '?utm_source=plugin&utm_medium=submenu'),
         ];

@@ -1,6 +1,6 @@
 /*
  * Skills admin styles. Visual vocabulary mirrors the Configuration page
- * (card-based sections, white background, 1px #d7e0ea border, 6px radius,
+ * (card-based sections, white background, 1px #d1d5db border, 6px radius,
  * subtle drop shadow) so the Elementor MCP admin feels cohesive across pages.
  */
 
@@ -16,7 +16,7 @@
     margin: 0;
     font-size: 23px;
     font-weight: 400;
-    color: #142033;
+    color: #0f1115;
 }
 
 .elementor-mcp-skills .wrap-actions {
@@ -26,7 +26,7 @@
 
 .elementor-mcp-skills-card {
     background: #fff;
-    border: 1px solid #d7e0ea;
+    border: 1px solid #d1d5db;
     border-radius: 6px;
     padding: 20px 24px;
     margin: 0 0 20px;
@@ -45,12 +45,12 @@
     margin: 0;
     font-size: 18px;
     font-weight: 600;
-    color: #142033;
+    color: #0f1115;
 }
 
 .elementor-mcp-skills-card-heading .description {
     font-size: 13px;
-    color: #5e6c7d;
+    color: #6b7280;
     margin: 4px 0 0;
 }
 
@@ -58,7 +58,7 @@
     text-align: center;
     padding: 48px 24px;
     background: #fff;
-    border: 1px solid #d7e0ea;
+    border: 1px solid #d1d5db;
     border-radius: 6px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
 }
@@ -67,12 +67,12 @@
     font-size: 48px;
     width: 48px;
     height: 48px;
-    color: #d7e0ea;
+    color: #d1d5db;
     margin-bottom: 12px;
 }
 
 .elementor-mcp-skills-empty p {
-    color: #5e6c7d;
+    color: #6b7280;
     font-size: 14px;
     margin: 0 0 16px;
 }
@@ -90,13 +90,13 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.4px;
-    color: #5e6c7d;
+    color: #6b7280;
     border-bottom: 1px solid #e0e3e7;
 }
 
 .elementor-mcp-skills-table tbody td {
     padding: 14px 12px;
-    border-bottom: 1px solid #edf2f7;
+    border-bottom: 1px solid #eef0f3;
     vertical-align: middle;
 }
 
@@ -105,18 +105,18 @@
 }
 
 .elementor-mcp-skills-table tbody tr:hover td {
-    background: #f4f7fa;
+    background: #f6f7f9;
 }
 
 .elementor-mcp-skills-table code {
     background: none;
     padding: 0;
     font-size: 13px;
-    color: #142033;
+    color: #0f1115;
 }
 
 .elementor-mcp-skills-table .slug-link {
-    color: #1c4ea1;
+    color: #8b1d2c;
     text-decoration: none;
     font-weight: 500;
 }
@@ -135,7 +135,7 @@
 
 .elementor-mcp-skills-d-section {
     background: #fff;
-    border: 1px solid #d7e0ea;
+    border: 1px solid #d1d5db;
     border-radius: 6px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
     overflow: hidden;
@@ -154,12 +154,12 @@
     margin: 0;
     font-size: 15px;
     font-weight: 600;
-    color: #142033;
+    color: #0f1115;
     letter-spacing: -0.01em;
 }
 
 .elementor-mcp-skills-d-header h2 .count {
-    color: #75859a;
+    color: #9099a5;
     font-weight: 400;
     font-size: 13px;
     margin-left: 8px;
@@ -250,13 +250,13 @@
     border-radius: 6px;
     background: #fff;
     font-size: 13px;
-    color: #142033;
+    color: #0f1115;
 }
 
 .elementor-mcp-skills-search:focus {
     outline: none;
-    border-color: #1c4ea1;
-    box-shadow: 0 0 0 1px #1c4ea1;
+    border-color: #8b1d2c;
+    box-shadow: 0 0 0 1px #8b1d2c;
 }
 
 .elementor-mcp-skills-pagination {
@@ -277,7 +277,7 @@
     border: 1px solid #d4d4d8;
     border-radius: 4px;
     background: #fff;
-    color: #142033;
+    color: #0f1115;
     font-size: 13px;
     text-decoration: none;
 }
@@ -287,8 +287,8 @@
 }
 
 .elementor-mcp-skills-pagination .page-numbers.current {
-    background: #1c4ea1;
-    border-color: #1c4ea1;
+    background: #8b1d2c;
+    border-color: #8b1d2c;
     color: #fff;
 }
 
@@ -347,7 +347,7 @@
 }
 
 .elementor-mcp-skills-d-main--external .slug {
-    color: #5e6c7d;
+    color: #6b7280;
 }
 
 .elementor-mcp-skills-d-main--external .desc {
@@ -360,7 +360,7 @@
     padding: 2px 8px;
     border-radius: 3px;
     background: #f4f4f5;
-    color: #75859a;
+    color: #9099a5;
     font-size: 11px;
     font-weight: 500;
     text-transform: uppercase;
@@ -372,13 +372,13 @@
     padding: 10px 24px;
     border-bottom: 1px solid #e4e4e7;
     background: #fafafa;
-    color: #75859a;
+    color: #9099a5;
     font-size: 12px;
     line-height: 1.55;
 }
 
 .elementor-mcp-skills-d-source-blurb a {
-    color: #1c4ea1;
+    color: #8b1d2c;
     text-decoration: none;
 }
 
@@ -418,17 +418,17 @@
 
 .elementor-mcp-skills-d-check:focus { outline: none; box-shadow: none; }
 .elementor-mcp-skills-d-check:focus-visible {
-    outline: 2px solid #1c4ea1;
+    outline: 2px solid #8b1d2c;
     outline-offset: 2px;
 }
 
 .elementor-mcp-skills-d-check:hover {
-    border-color: #75859a;
+    border-color: #9099a5;
 }
 
 .elementor-mcp-skills-d-row.is-on .elementor-mcp-skills-d-check {
-    background: #142033;
-    border-color: #142033;
+    background: #0f1115;
+    border-color: #0f1115;
 }
 
 .elementor-mcp-skills-d-row.is-on .elementor-mcp-skills-d-check::after {
@@ -454,7 +454,7 @@
 }
 
 .elementor-mcp-skills-d-main:hover .slug {
-    color: #1c4ea1;
+    color: #8b1d2c;
 }
 
 /* Suppress the browser's default focus ring on click; keep it only for
@@ -464,7 +464,7 @@
 }
 
 .elementor-mcp-skills-d-main:focus-visible {
-    outline: 2px solid #1c4ea1;
+    outline: 2px solid #8b1d2c;
     outline-offset: -2px;
     border-radius: 4px;
 }
@@ -472,7 +472,7 @@
 .elementor-mcp-skills-d-main .slug {
     font-family: ui-monospace, "DM Mono", "JetBrains Mono", Consolas, monospace;
     font-size: 13px;
-    color: #142033;
+    color: #0f1115;
     font-weight: 500;
     white-space: nowrap;
     flex: 0 0 auto;
@@ -480,7 +480,7 @@
 }
 
 .elementor-mcp-skills-d-main .desc {
-    color: #75859a;
+    color: #9099a5;
     font-size: 13px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -507,7 +507,7 @@
 
 .elementor-mcp-skills-d-main .desc-badge.is-missing {
     background: #fee2e2;
-    color: #b32d2e;
+    color: #d03801;
 }
 
 .elementor-mcp-skills-d-pills {
@@ -521,13 +521,13 @@
     padding: 2px 8px;
     border-radius: 3px;
     background: #f4f4f5;
-    color: #5e6c7d;
+    color: #6b7280;
     font-weight: 500;
     letter-spacing: 0.01em;
 }
 
 .elementor-mcp-skills-d-pills .pill.auto {
-    background: #e8f0fd;
+    background: #f7ecee;
     color: #1d4ed8;
 }
 
@@ -544,7 +544,7 @@
 
 .elementor-mcp-skills-d-pills .pill.warn.is-critical {
     background: #fee2e2;
-    color: #b32d2e;
+    color: #d03801;
 }
 
 .elementor-mcp-skills-d-actions {
@@ -571,7 +571,7 @@
     padding: 4px 10px;
     border-radius: 4px;
     cursor: pointer;
-    color: #5e6c7d;
+    color: #6b7280;
     font-size: 12px;
     text-decoration: none;
     line-height: 1.4;
@@ -582,14 +582,14 @@
 
 .elementor-mcp-skills-d-actions .action-btn:focus { outline: none; box-shadow: none; }
 .elementor-mcp-skills-d-actions .action-btn:focus-visible {
-    outline: 2px solid #1c4ea1;
+    outline: 2px solid #8b1d2c;
     outline-offset: 1px;
 }
 
 .elementor-mcp-skills-d-actions .action-btn:hover,
 .elementor-mcp-skills-d-actions .action-btn:focus {
     background: #f4f4f5;
-    color: #142033;
+    color: #0f1115;
 }
 
 .elementor-mcp-skills-d-actions .action-btn--danger:hover,
@@ -610,7 +610,7 @@
 }
 
 .elementor-mcp-skills-d-section--trash .elementor-mcp-skills-d-header h2 {
-    color: #75859a;
+    color: #9099a5;
 }
 
 .elementor-mcp-skills-d-trash-hint {
@@ -619,11 +619,11 @@
 }
 
 .elementor-mcp-skills-d-row.is-trashed {
-    color: #75859a;
+    color: #9099a5;
 }
 
 .elementor-mcp-skills-d-row.is-trashed .elementor-mcp-skills-d-main .slug {
-    color: #75859a;
+    color: #9099a5;
     text-decoration: line-through;
     text-decoration-color: #d4d4d8;
 }
@@ -657,8 +657,8 @@
 }
 
 .elementor-mcp-skills-badge--prompt {
-    background: #fff5df;
-    color: #8a5200;
+    background: #fdf3e2;
+    color: #b45309;
 }
 
 .elementor-mcp-skills-badge--status-enabled {
@@ -667,8 +667,8 @@
 }
 
 .elementor-mcp-skills-badge--status-disabled {
-    background: #edf2f7;
-    color: #5e6c7d;
+    background: #eef0f3;
+    color: #6b7280;
 }
 
 .elementor-mcp-skills-badges {
@@ -699,15 +699,15 @@
 }
 
 .elementor-mcp-skills-action-btn--danger {
-    color: #b32d2e;
-    border-color: #b32d2e;
+    color: #d03801;
+    border-color: #d03801;
 }
 
 .elementor-mcp-skills-action-btn--danger:hover,
 .elementor-mcp-skills-action-btn--danger:focus {
     background: #fdecea;
-    color: #b32d2e;
-    border-color: #b32d2e;
+    color: #d03801;
+    border-color: #d03801;
 }
 
 .elementor-mcp-skills-upload-form {
@@ -741,7 +741,7 @@ label.page-title-action {
 .elementor-mcp-skills-edit-main,
 .elementor-mcp-skills-edit-sidebar {
     background: #fff;
-    border: 1px solid #d7e0ea;
+    border: 1px solid #d1d5db;
     border-radius: 6px;
     padding: 20px 24px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
@@ -753,7 +753,7 @@ label.page-title-action {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.4px;
-    color: #5e6c7d;
+    color: #6b7280;
 }
 
 .elementor-mcp-skills-edit-main label strong,
@@ -761,7 +761,7 @@ label.page-title-action {
     display: block;
     margin-bottom: 4px;
     font-size: 13px;
-    color: #142033;
+    color: #0f1115;
 }
 
 .elementor-mcp-skills-checkbox-row label {
@@ -778,7 +778,7 @@ label.page-title-action {
 .elementor-mcp-skills-checkbox-row .description {
     display: block;
     margin: 4px 0 0 22px;
-    color: #5e6c7d;
+    color: #6b7280;
     font-size: 12px;
     line-height: 1.5;
 }
@@ -805,14 +805,14 @@ label.page-title-action {
     width: 80px;
     padding: 6px 8px;
     border-radius: 4px;
-    border: 1px solid #d7e0ea;
+    border: 1px solid #d1d5db;
     font-size: 13px;
     margin: 0;
 }
 
 .elementor-mcp-skills-help {
     margin: -8px 0 16px;
-    color: #5e6c7d;
+    color: #6b7280;
     font-size: 12px;
     line-height: 1.5;
 }
@@ -830,22 +830,22 @@ label.page-title-action {
     flex: 1;
     padding: 6px 8px;
     border-radius: 4px;
-    border: 1px solid #d7e0ea;
+    border: 1px solid #d1d5db;
     font-size: 13px;
 }
 
 .elementor-mcp-skills-save-row .button-link {
     margin-left: auto;
-    color: #5e6c7d;
+    color: #6b7280;
     text-decoration: none;
 }
 
 .elementor-mcp-skills-save-row .button-link:hover {
-    color: #1c4ea1;
+    color: #8b1d2c;
 }
 
 .elementor-mcp-skills-edit-main .description {
-    color: #5e6c7d;
+    color: #6b7280;
     font-weight: normal;
     margin-left: 6px;
     font-size: 12px;
@@ -857,7 +857,7 @@ label.page-title-action {
     width: 100%;
     padding: 8px 10px;
     border-radius: 4px;
-    border: 1px solid #d7e0ea;
+    border: 1px solid #d1d5db;
     font-size: 13px;
 }
 
@@ -881,7 +881,7 @@ label.page-title-action {
     font-weight: 600;
     line-height: 1.15;
     letter-spacing: -0.015em;
-    color: #142033;
+    color: #0f1115;
     transition: background 0.15s, border-color 0.15s;
 }
 
@@ -897,19 +897,19 @@ label.page-title-action {
 
 .elementor-mcp-skills-edit-main input[type="text"].elementor-mcp-skills-title-input:focus {
     background: #fafafa;
-    border-bottom-color: #1c4ea1;
+    border-bottom-color: #8b1d2c;
     outline: 0;
     box-shadow: none;
 }
 
 .elementor-mcp-skills-edit-main input[type="text"].elementor-mcp-skills-title-input:invalid:not(:placeholder-shown) {
-    border-bottom-color: #b32d2e;
+    border-bottom-color: #d03801;
 }
 
 .elementor-mcp-skills-title-hint {
     margin: 6px 0 0;
     font-size: 12px;
-    color: #75859a;
+    color: #9099a5;
 }
 
 /* Field group — small uppercase label sitting above the input. Tightens
@@ -926,7 +926,7 @@ label.page-title-action {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #75859a;
+    color: #9099a5;
 }
 
 .elementor-mcp-skills-body-wrap {
@@ -975,7 +975,7 @@ label.page-title-action {
     margin-top: 8px;
     font-size: 12px;
     line-height: 1.5;
-    color: #75859a;
+    color: #9099a5;
 }
 
 .elementor-mcp-skills-field-help p {
@@ -1005,7 +1005,7 @@ label.page-title-action {
     padding: 1px 7px;
     border-radius: 3px;
     background: #f4f4f5;
-    color: #5e6c7d;
+    color: #6b7280;
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
@@ -1044,7 +1044,7 @@ label.page-title-action {
     padding: 4px 10px;
     border-radius: 3px;
     cursor: pointer;
-    color: #5e6c7d;
+    color: #6b7280;
     font-size: 13px;
     font-family: inherit;
     line-height: 1.2;
@@ -1055,7 +1055,7 @@ label.page-title-action {
 .elementor-mcp-skills-md-toolbar button:hover,
 .elementor-mcp-skills-md-toolbar button:focus-visible {
     background: #fff;
-    color: #142033;
+    color: #0f1115;
     outline: 0;
 }
 
@@ -1087,7 +1087,7 @@ label.page-title-action {
 .elementor-mcp-skills-edit-grid em {
     display: inline-block;
     margin-top: 4px;
-    color: #5e6c7d;
+    color: #6b7280;
     font-size: 12px;
 }
 
@@ -1109,7 +1109,7 @@ label.page-title-action {
 .elementor-mcp-skills-d-section,
 .elementor-mcp-skills-edit-main,
 .elementor-mcp-skills-edit-sidebar {
-    border-color: #d7e0ea;
+    border-color: #d1d5db;
     border-radius: 13px;
     box-shadow: 0 5px 18px rgba(20, 32, 51, 0.06);
 }
@@ -1121,5 +1121,5 @@ label.page-title-action {
 
 .elementor-mcp-skills-table .slug-link,
 .elementor-mcp-skills a:not(.button) {
-    color: #1c4ea1;
+    color: #8b1d2c;
 }

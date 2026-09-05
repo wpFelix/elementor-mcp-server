@@ -756,7 +756,7 @@ function elementor_mcp_render_config_section(string $rest_url, string $username,
                     domain: 'elementor-mcp',
                 ); ?></button>
             </div>
-            <div id="elementor-mcp-npxless-footer" style="font-size:13px; color:#5e6c7d; border-top: 1px solid #d7e0ea;">
+            <div id="elementor-mcp-npxless-footer" style="font-size:13px; color:#6b7280; border-top: 1px solid #d1d5db;">
                 <div id="elementor-mcp-npxless-hint" style="padding: 10px 16px;">
                     <?php esc_html_e('Add to your project’s .mcp.json file.', domain: 'elementor-mcp'); ?>
                 </div>

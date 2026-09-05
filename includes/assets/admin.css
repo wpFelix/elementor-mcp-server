@@ -22,34 +22,34 @@
  */
 
 body[class*='elementor-mcp'] {
-	--elementor-mcp-ink: #142033;
-	--elementor-mcp-ink-2: #304155;
-	--elementor-mcp-muted: #5e6c7d;
-	--elementor-mcp-faint: #75859a;
+	--elementor-mcp-ink: #0f1115;
+	--elementor-mcp-ink-2: #3b4250;
+	--elementor-mcp-muted: #6b7280;
+	--elementor-mcp-faint: #9099a5;
 
-	--elementor-mcp-canvas: #f4f7fa;
+	--elementor-mcp-canvas: #f6f7f9;
 	--elementor-mcp-surface: #fff;
-	--elementor-mcp-sunk: #edf2f7;
+	--elementor-mcp-sunk: #eef0f3;
 
-	--elementor-mcp-line: #d7e0ea;
-	--elementor-mcp-line-soft: #e7edf3;
+	--elementor-mcp-line: #d1d5db;
+	--elementor-mcp-line-soft: #e5e7eb;
 
 	/* Identity. All text pairings meet WCAG AA against their normal surfaces. */
-	--elementor-mcp-accent: #1c4ea1;
-	--elementor-mcp-accent-strong: #12356f;
-	--elementor-mcp-accent-bright: #2d6fd2;
-	--elementor-mcp-accent-soft: #e8f0fd;
-	--elementor-mcp-highlight: #f0b04a;
-	--elementor-mcp-highlight-soft: #fff5df;
+	--elementor-mcp-accent: #8b1d2c;
+	--elementor-mcp-accent-strong: #66121f;
+	--elementor-mcp-accent-bright: #b8324a;
+	--elementor-mcp-accent-soft: #f7ecee;
+	--elementor-mcp-highlight: #b45309;
+	--elementor-mcp-highlight-soft: #fdf3e2;
 
 	/* State, not decoration. */
-	--elementor-mcp-armed: #b42318;
+	--elementor-mcp-armed: #d03801;
 	--elementor-mcp-armed-soft: #fff0ee;
-	--elementor-mcp-ready: #0f766e;
-	--elementor-mcp-ready-soft: #e9f7f4;
-	--elementor-mcp-attention: #8a5200;
-	--elementor-mcp-attention-soft: #fff6df;
-	--elementor-mcp-idle: #6c7c8f;
+	--elementor-mcp-ready: #15803d;
+	--elementor-mcp-ready-soft: #eef7f1;
+	--elementor-mcp-attention: #b45309;
+	--elementor-mcp-attention-soft: #fdf3e2;
+	--elementor-mcp-idle: #6b7280;
 
 	--elementor-mcp-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 	--elementor-mcp-border: 1px;
@@ -76,7 +76,7 @@ body[class*='elementor-mcp'] #wpadminbar .ab-top-menu > li.hover > .ab-item,
 body[class*='elementor-mcp'] #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
 body[class*='elementor-mcp'] #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
 body[class*='elementor-mcp'] #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus {
-	background: #17314f;
+	background: #171a21;
 	color: #fff;
 }
 
@@ -98,13 +98,13 @@ body[class*='elementor-mcp'] #adminmenu div.wp-menu-image::before {
 body[class*='elementor-mcp'] #adminmenu li.menu-top:hover,
 body[class*='elementor-mcp'] #adminmenu li.opensub > a.menu-top,
 body[class*='elementor-mcp'] #adminmenu li > a.menu-top:focus {
-	background: #17314f;
+	background: #171a21;
 	color: #fff;
 }
 
 body[class*='elementor-mcp'] #adminmenu li.wp-has-current-submenu > a.wp-has-current-submenu,
 body[class*='elementor-mcp'] #adminmenu li.current a.menu-top {
-	background: #1c4ea1;
+	background: #8b1d2c;
 	color: #fff;
 	box-shadow: inset 4px 0 0 var(--elementor-mcp-highlight);
 }
@@ -260,7 +260,7 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 }
 
 .elementor-mcp-masthead__status--armed .elementor-mcp-masthead__lamp {
-	background: #43c9aa;
+	background: #b8324a;
 	box-shadow: 0 0 0 4px rgba(67, 201, 170, 0.18);
 }
 
@@ -333,13 +333,13 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 	padding: 13px 14px 14px;
 	background: #fff;
 	border: 1px solid #d5dfe9;
-	border-top: 3px solid #1c4ea1;
+	border-top: 3px solid #8b1d2c;
 	border-radius: 12px;
 	box-shadow: 0 4px 12px rgba(20, 32, 51, 0.05);
 }
 
 .elementor-mcp-tabs__group--ai {
-	border-top-color: #0f766e;
+	border-top-color: #15803d;
 }
 
 .elementor-mcp-tabs__group--elementor {
@@ -363,25 +363,25 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 	height: 27px;
 	flex: none;
 	border-radius: 8px;
-	background: #e8f0fd;
-	color: #1c4ea1;
+	background: #f7ecee;
+	color: #8b1d2c;
 	font-size: 11px;
 	font-weight: 800;
 	letter-spacing: -0.02em;
 }
 
 .elementor-mcp-tabs__group--ai .elementor-mcp-tabs__group-icon {
-	background: #e9f7f4;
-	color: #0f766e;
+	background: #eef7f1;
+	color: #15803d;
 }
 
 .elementor-mcp-tabs__group--elementor .elementor-mcp-tabs__group-icon {
-	background: #fff5df;
-	color: #8a5200;
+	background: #fdf3e2;
+	color: #b45309;
 }
 
 .elementor-mcp-tabs__group--account .elementor-mcp-tabs__group-icon {
-	background: #edf2f7;
+	background: #eef0f3;
 	color: #52657a;
 }
 
@@ -390,7 +390,7 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 	font-weight: 800;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: #304155;
+	color: #3b4250;
 	line-height: 1;
 }
 
@@ -412,14 +412,14 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 	text-decoration: none;
 	white-space: nowrap;
 	border: 1px solid transparent;
-	background: #f4f7fa;
+	background: #f6f7f9;
 	transition: color 0.12s ease, background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
 }
 
 .elementor-mcp-tabs__tab:hover,
 .elementor-mcp-tabs__tab:focus {
-	color: #12356f;
-	background: #e8f0fd;
+	color: #66121f;
+	background: #f7ecee;
 	border-color: #b9cbed;
 	box-shadow: none;
 	transform: translateY(-1px);
@@ -501,7 +501,7 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 		box-sizing: border-box;
 		background: #fff;
 		border: 0;
-		border-right: 1px solid #d7e0ea;
+		border-right: 1px solid #d1d5db;
 		margin: 0 0 0 -20px;
 		padding: 18px 12px 28px;
 		grid-column: 1;
@@ -534,20 +534,20 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 	gap: 10px;
 	padding: 0 10px 15px;
 	margin-bottom: 5px;
-	border-bottom: 1px solid #e7edf3;
+	border-bottom: 1px solid #e5e7eb;
 }
 
 .elementor-mcp-tabs__intro span {
 	font-size: 14px;
 	font-weight: 750;
 	letter-spacing: -0.01em;
-	color: #142033;
+	color: #0f1115;
 }
 
 .elementor-mcp-tabs__intro strong {
 	font-size: 10px;
 	font-weight: 700;
-	color: #75859a;
+	color: #9099a5;
 }
 
 .elementor-mcp-tabs .elementor-mcp-tabs__group {
@@ -577,8 +577,8 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 	height: 22px;
 	flex: none;
 	border-radius: 6px;
-	background: #e8f0fd;
-	color: #1c4ea1;
+	background: #f7ecee;
+	color: #8b1d2c;
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: 400;
@@ -620,7 +620,7 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 
 .elementor-mcp-tabs .elementor-mcp-tabs__tab:hover,
 .elementor-mcp-tabs .elementor-mcp-tabs__tab:focus {
-	color: #12356f;
+	color: #66121f;
 	background: #eef4fd;
 	border-color: #d5e1f4;
 	box-shadow: none;
@@ -628,8 +628,8 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 }
 
 .elementor-mcp-tabs .elementor-mcp-tabs__tab.is-current {
-	color: #12356f;
-	background: #e8f0fd;
+	color: #66121f;
+	background: #f7ecee;
 	border-color: #c9d8f0;
 	box-shadow: inset 3px 0 0 var(--elementor-mcp-accent);
 }
@@ -658,7 +658,7 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 		padding: 10px 12px;
 		background: #fff;
 		border: 0;
-		border-bottom: 1px solid #d7e0ea;
+		border-bottom: 1px solid #d1d5db;
 		box-shadow: 0 4px 12px rgba(20, 32, 51, 0.05);
 		overflow-x: auto;
 		overflow-y: hidden;
@@ -683,7 +683,7 @@ body[class*='elementor-mcp'] .wrap .wrap-title h1 {
 
 	.elementor-mcp-tabs .elementor-mcp-tabs__tab {
 		padding: 6px 9px;
-		background: #f4f7fa;
+		background: #f6f7f9;
 	}
 
 	.elementor-mcp-tabs .elementor-mcp-tabs__tab.is-current {
@@ -2670,7 +2670,7 @@ body[class*='elementor-mcp'] .elementor-mcp-command-state {
 	align-content: center;
 	gap: 8px 11px;
 	padding: 24px;
-	background: #17314f;
+	background: #171a21;
 	border: 1px solid #355574;
 	border-radius: 14px;
 }
@@ -2686,7 +2686,7 @@ body[class*='elementor-mcp'] .elementor-mcp-command-state__dot {
 }
 
 body[class*='elementor-mcp'] .elementor-mcp-command-state.is-live .elementor-mcp-command-state__dot {
-	background: #43c9aa;
+	background: #b8324a;
 	box-shadow: 0 0 0 5px rgba(67, 201, 170, 0.16);
 }
 
